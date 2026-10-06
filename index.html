@@ -486,7 +486,9 @@ function bindPlayer(d){
 }
 
 function bindTools(d){
-  $('#dlPdfOff').onclick = () => d.pdfOfficial && window.open(d.pdfOfficial, '_blank');
+  const pdfBtn = $('#dlPdfOff');
+  pdfBtn.style.display = d.pdfOfficial ? '' : 'none';   // 该期没有可用 PDF 时不显示按钮
+  pdfBtn.onclick = () => d.pdfOfficial && window.open(d.pdfOfficial, '_blank');
 }
 
 /* ---------- 历史 ---------- */
