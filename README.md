@@ -1,14 +1,11 @@
 # 随身英语 · 每日一读
 
-每天自动抓取 cooltv.top「词典 → BBC 学英语 → 随身英语（Take Away English）」的最新一期，
-生成一个可以直接打开的网页：英文正文、官方中文导读、词汇表、测验与答案、音频播放器、PDF 下载。
-
 打开网页即是当天内容，不用再去网站一层层点。
 
 ## 文件结构
 
 ```
-cooltv-tae/
+takeaway/
 ├── index.html                  # 每日一屏网页（打开即读）
 ├── fetch_daily.py              # 抓取脚本（Python 3，无第三方依赖）
 ├── gen_pdf.py                  # 把某期数据渲染成中英对照 PDF（依赖 weasyprint）
