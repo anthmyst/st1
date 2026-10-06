@@ -1,14 +1,13 @@
 {
  "series": "随身英语",
  "slug": "take-away-english",
- "updatedAt": "2026-10-06T17:10:39+0000",
+ "updatedAt": "2026-10-06T17:22:15+0000",
  "latest": {
   "ep": "Episode 261005",
   "title": "Why we like collecting things 我们为什么喜欢收藏东西",
   "desc": "",
   "pub": "2026-10-04T16:00:00.000Z",
   "level": "中级",
-  "thumb": "data/img/Episode_261005.jpg",
   "file": "data/archive/14joj3a.json"
  },
  "items": [
@@ -18,7 +17,6 @@
    "desc": "",
    "pub": "2026-10-04T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_261005.jpg",
    "file": "data/archive/14joj3a.json"
   },
   {
@@ -27,7 +25,6 @@
    "desc": "When is it good to laugh at yourself?",
    "pub": "2026-09-27T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260928.jpg",
    "file": "data/archive/14jnyz7.json"
   },
   {
@@ -36,7 +33,6 @@
    "desc": "Read about the pros and cons of daydreaming",
    "pub": "2026-09-20T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260921.jpg",
    "file": "data/archive/14jnyz0.json"
   },
   {
@@ -45,7 +41,6 @@
    "desc": "Enjoying your portable fan? Here's why you should also be careful with it",
    "pub": "2026-09-13T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260914.jpg",
    "file": "data/archive/14jnyy6.json"
   },
   {
@@ -54,7 +49,6 @@
    "desc": "Why are confident humans like healthy peacocks?",
    "pub": "2026-09-06T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260907.jpg",
    "file": "data/archive/14jnyxc.json"
   },
   {
@@ -63,7 +57,6 @@
    "desc": "How does motion sickness affect the enjoyment of rollercoasters?",
    "pub": "2026-08-30T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260831.jpg",
    "file": "data/archive/14jny5o.json"
   },
   {
@@ -72,7 +65,6 @@
    "desc": "Have you ever wondered why you feel a certain way in different months?",
    "pub": "2026-08-23T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260824.jpg",
    "file": "data/archive/14jny4u.json"
   },
   {
@@ -81,7 +73,6 @@
    "desc": "Did you know that 'blood', 'food' and 'good', which have different vowel sounds now, probably used to rhyme?",
    "pub": "2026-08-16T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260817.jpg",
    "file": "data/archive/14jny40.json"
   },
   {
@@ -90,7 +81,6 @@
    "desc": "How could farting help some animals survive in the wild?",
    "pub": "2026-08-09T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260810.jpg",
    "file": "data/archive/14jny3t.json"
   },
   {
@@ -99,7 +89,6 @@
    "desc": "Why are people looking to the past for comfort?",
    "pub": "2026-08-02T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260803.jpg",
    "file": "data/archive/14jny2z.json"
   },
   {
@@ -108,7 +97,6 @@
    "desc": "Learn how to manage this unhappy emotion",
    "pub": "2026-07-26T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260727.jpg",
    "file": "data/archive/14jnxao.json"
   },
   {
@@ -117,7 +105,6 @@
    "desc": "In search of birds and their beautiful song",
    "pub": "2026-07-19T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260720.jpg",
    "file": "data/archive/14jnxah.json"
   },
   {
@@ -126,7 +113,6 @@
    "desc": "Why is it hard to sleep in the heat?",
    "pub": "2026-07-12T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260713.jpg",
    "file": "data/archive/14jnx9n.json"
   },
   {
@@ -135,7 +121,6 @@
    "desc": "Is it too hot at the World Cup?",
    "pub": "2026-07-05T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260706.jpg",
    "file": "data/archive/14jnx8t.json"
   },
   {
@@ -144,7 +129,6 @@
    "desc": "Do your summer holidasy reach the expectations set out by social media?",
    "pub": "2026-06-28T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260629.jpg",
    "file": "data/archive/14jnwgh.json"
   },
   {
@@ -153,7 +137,6 @@
    "desc": "What makes yoghurt healthy",
    "pub": "2026-06-21T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260622.jpg",
    "file": "data/archive/14jnwga.json"
   },
   {
@@ -162,7 +145,6 @@
    "desc": "Breathing keeps us alive, but could it also make us feel better?",
    "pub": "2026-06-14T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260615.jpg",
    "file": "data/archive/14jnwfg.json"
   },
   {
@@ -171,7 +153,6 @@
    "desc": "How do we enjoy a rainy day?",
    "pub": "2026-06-07T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260608.jpg",
    "file": "data/archive/14jnwem.json"
   },
   {
@@ -180,7 +161,6 @@
    "desc": "Sweat your way to exam success",
    "pub": "2026-05-31T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260601.jpg",
    "file": "data/archive/14jnwef.json"
   },
   {
@@ -189,7 +169,6 @@
    "desc": "Do you 'look forward' to the future?",
    "pub": "2026-05-24T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260525.jpg",
    "file": "data/archive/14jnvm4.json"
   },
   {
@@ -198,7 +177,6 @@
    "desc": "Why isn't it a problem that your face is covered in mites?",
    "pub": "2026-05-17T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260518.jpg",
    "file": "data/archive/14jnvla.json"
   },
   {
@@ -207,7 +185,6 @@
    "desc": "Why do we send cards to loved ones?",
    "pub": "2026-05-10T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260511.jpg",
    "file": "data/archive/14jnvl3.json"
   },
   {
@@ -216,7 +193,6 @@
    "desc": "How safe are your leftovers?",
    "pub": "2026-05-03T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260504.jpg",
    "file": "data/archive/14jnvk9.json"
   },
   {
@@ -225,7 +201,6 @@
    "desc": "Are certain regions more likely to have higher levels of a certain personality trait?",
    "pub": "2026-04-26T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260427.jpg",
    "file": "data/archive/14jnurx.json"
   },
   {
@@ -234,7 +209,6 @@
    "desc": "Birds teach each other how to build a home",
    "pub": "2026-04-19T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260420.jpg",
    "file": "data/archive/14jnurq.json"
   },
   {
@@ -243,7 +217,6 @@
    "desc": "How much drama can fit into one minute?",
    "pub": "2026-04-12T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260413.jpg",
    "file": "data/archive/14jnuqw.json"
   },
   {
@@ -252,7 +225,6 @@
    "desc": "What is friction-maxxing and how can it help us protect our brains?",
    "pub": "2026-04-05T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260406.jpg",
    "file": "data/archive/14jnuq2.json"
   },
   {
@@ -261,7 +233,6 @@
    "desc": "Why is fibre gaining popularity?",
    "pub": "2026-03-29T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260330.jpg",
    "file": "data/archive/14jntye.json"
   },
   {
@@ -270,7 +241,6 @@
    "desc": "Could we live on Venus?",
    "pub": "2026-03-22T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260323.jpg",
    "file": "data/archive/14jntxk.json"
   },
   {
@@ -279,7 +249,6 @@
    "desc": "Can singing provide a physical workout?",
    "pub": "2026-03-15T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260316.jpg",
    "file": "data/archive/14jntwq.json"
   },
   {
@@ -288,7 +257,6 @@
    "desc": "Are your phone habits changing TV?",
    "pub": "2026-03-08T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260309.jpg",
    "file": "data/archive/14jntvw.json"
   },
   {
@@ -297,7 +265,6 @@
    "desc": "A red Moon in June?",
    "pub": "2026-03-01T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260302.jpg",
    "file": "data/archive/14jntvp.json"
   },
   {
@@ -306,7 +273,6 @@
    "desc": "Are balance and body awareness senses too?",
    "pub": "2026-02-22T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260223.jpg",
    "file": "data/archive/14jnt3b.json"
   },
   {
@@ -315,7 +281,6 @@
    "desc": "Seeing faces in objects?",
    "pub": "2026-02-15T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260216.jpg",
    "file": "data/archive/14jnt2h.json"
   },
   {
@@ -324,7 +289,6 @@
    "desc": "Do you often procrastinate?",
    "pub": "2026-02-08T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260209.jpg",
    "file": "data/archive/14jnt1n.json"
   },
   {
@@ -333,7 +297,6 @@
    "desc": "What’s the best way to avoid losing all your photos?",
    "pub": "2026-02-01T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260202.jpg",
    "file": "data/archive/14jnt1g.json"
   },
   {
@@ -342,7 +305,6 @@
    "desc": "What's the newest winter sport at the 2026 Olympics?",
    "pub": "2026-01-25T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260126.jpg",
    "file": "data/archive/14jns95.json"
   },
   {
@@ -351,7 +313,6 @@
    "desc": "Are we too dependent on our cars?",
    "pub": "2026-01-18T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260119.jpg",
    "file": "data/archive/14jns8b.json"
   },
   {
@@ -360,7 +321,6 @@
    "desc": "What historic worlds can you find underground in the UK?",
    "pub": "2026-01-11T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260112.jpg",
    "file": "data/archive/14jns84.json"
   },
   {
@@ -369,7 +329,6 @@
    "desc": "AI probably won't take your job, but how will it change it?",
    "pub": "2026-01-04T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_260105.jpg",
    "file": "data/archive/14jns7a.json"
   },
   {
@@ -378,7 +337,6 @@
    "desc": "Trees may be wiser than we thought",
    "pub": "2025-12-28T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_251229.jpg",
    "file": "data/archive/14iz5rh.json"
   },
   {
@@ -387,7 +345,6 @@
    "desc": "What makes a good wildlife photographer?",
    "pub": "2025-12-21T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_251222.jpg",
    "file": "data/archive/14iz5ra.json"
   },
   {
@@ -396,7 +353,6 @@
    "desc": "What could you do before your second sleep?",
    "pub": "2025-12-14T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_251215.jpg",
    "file": "data/archive/14iz5qg.json"
   },
   {
@@ -405,7 +361,6 @@
    "desc": "Is friendship nature's anti-ageing secret?",
    "pub": "2025-12-07T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_251208.jpg",
    "file": "data/archive/14iz5pm.json"
   },
   {
@@ -414,7 +369,6 @@
    "desc": "The inside of your showerhead is more active than you think!",
    "pub": "2025-11-30T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_251201.jpg",
    "file": "data/archive/14iz5pf.json"
   },
   {
@@ -423,7 +377,6 @@
    "desc": "Is BMI really the best way to check our health?",
    "pub": "2025-11-23T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_251124.jpg",
    "file": "data/archive/14iz4x3.json"
   },
   {
@@ -432,7 +385,6 @@
    "desc": "A fitness routine for people who don't like exercise",
    "pub": "2025-11-16T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_251117.jpg",
    "file": "data/archive/14iz4w9.json"
   },
   {
@@ -441,7 +393,6 @@
    "desc": "Want to eat just like a lion?",
    "pub": "2025-11-09T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_251110.jpg",
    "file": "data/archive/14iz4w2.json"
   },
   {
@@ -450,7 +401,6 @@
    "desc": "What makes AI seem human?",
    "pub": "2025-11-02T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_251103.jpg",
    "file": "data/archive/14iz4v8.json"
   },
   {
@@ -459,7 +409,6 @@
    "desc": "Can you recognise others by the way they move?",
    "pub": "2025-10-26T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_251027.jpg",
    "file": "data/archive/14iz42x.json"
   },
   {
@@ -468,7 +417,6 @@
    "desc": "Could an asteroid hit Earth soon?",
    "pub": "2025-10-19T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_251020.jpg",
    "file": "data/archive/14iz42q.json"
   },
   {
@@ -477,7 +425,6 @@
    "desc": "Is your pet reading your thoughts?",
    "pub": "2025-10-12T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_251013.jpg",
    "file": "data/archive/14iz41w.json"
   },
   {
@@ -486,7 +433,6 @@
    "desc": "Should children be paid for doing household chores?",
    "pub": "2025-10-05T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_251006.jpg",
    "file": "data/archive/14iz412.json"
   },
   {
@@ -495,7 +441,6 @@
    "desc": "Grate it, chop it, stick it in tea!",
    "pub": "2025-09-28T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_250929.jpg",
    "file": "data/archive/14iyjwz.json"
   },
   {
@@ -504,7 +449,6 @@
    "desc": "Are you suffering from rust out?",
    "pub": "2025-09-21T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_250922.jpg",
    "file": "data/archive/14iyjws.json"
   },
   {
@@ -513,7 +457,6 @@
    "desc": "What are some of the most beautiful slow train routes in the UK?",
    "pub": "2025-09-14T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_250915.jpg",
    "file": "data/archive/14iyjvy.json"
   },
   {
@@ -522,7 +465,6 @@
    "desc": "Is it bad to eat too much food colouring?",
    "pub": "2025-09-07T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_250908.jpg",
    "file": "data/archive/14iyjv4.json"
   },
   {
@@ -531,7 +473,6 @@
    "desc": "Why should you be careful at the buffet?",
    "pub": "2025-08-31T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_250901.jpg",
    "file": "data/archive/14iyjux.json"
   },
   {
@@ -540,7 +481,6 @@
    "desc": "What makes a restaurant outstanding?",
    "pub": "2025-08-24T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_250825.jpg",
    "file": "data/archive/14iyj2m.json"
   },
   {
@@ -549,7 +489,6 @@
    "desc": "Technology and humans can make mistakes, so who should we trust?",
    "pub": "2025-08-17T16:00:00.000Z",
    "level": "中级",
-   "thumb": "data/img/Episode_250818.jpg",
    "file": "data/archive/14iyj1s.json"
   }
  ]
