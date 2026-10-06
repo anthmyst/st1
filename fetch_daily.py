@@ -247,8 +247,12 @@ def main():
             if local:
                 e["pdfOfficial"] = local
                 changed = True
-        # 这几期拿不到官方 PDF，改用保留下来的中英对照版
-        if eid in KEEP_BILINGUAL and not (e.get("pdfOfficial") or "").strip():
+            else:
+                # 官方 PDF 已失效（BBC 未发布或已下架）：留着死链会点开空白页，先清掉
+                e["pdfOfficial"] = ""
+                changed = True
+        # 拿不到官方 PDF 时，若本地还有保留的中英对照版，就用它兜底
+        if not (e.get("pdfOfficial") or "").strip():
             cand = f"data/archive/{eid}.pdf"
             if os.path.exists(os.path.join(HERE, *cand.split("/"))):
                 e["pdfOfficial"] = cand
