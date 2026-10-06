@@ -178,6 +178,19 @@ body.hide-en .para .en{opacity:.22;filter:blur(.4px)}
   margin:0 0 16px;font-size:14px;color:var(--ink-2);line-height:1.7;
 }
 .note .en{font-size:14.5px;color:var(--ink);margin-bottom:5px}
+.note.vocab{padding:9px 16px}
+.note.vocab .vrow{
+  display:flex;gap:10px;align-items:baseline;
+  padding:6px 0;border-bottom:1px dashed rgba(92,64,51,.18);
+}
+.note.vocab .vrow:last-child{border-bottom:0}
+.note.vocab .ven{
+  flex:0 0 auto;max-width:46%;font-weight:700;color:var(--brand);
+  font-size:14px;line-height:1.5;
+}
+.note.vocab .vzh{
+  flex:1;min-width:0;color:var(--ink-2);font-size:13.5px;line-height:1.6;
+}
 .pn{color:var(--brand-2);font-weight:800;margin-right:5px;font-variant-numeric:tabular-nums}
 .para.plain .en{font-weight:600;color:var(--ink)}
 .para.quiz .en{color:var(--ink-2);font-size:15.5px}
@@ -373,6 +386,37 @@ document.addEventListener('click', e => {
   }
 });
 
+/* 词汇表：en 仅首项 + zh(中文/英文交替拼接串) → 逐组 [{en, zh}] 配对 */
+function parseVocab(en, zh){
+  en = (en||'').trim();
+  if (!zh) return en ? [[en,'']] : [];
+  // 英文术语内的省略号当连接符，合成一个术语（如 take… by storm）
+  zh = zh.replace(/([A-Za-z])\s*[…·]\s*([A-Za-z])/g, '$1 $2');
+  const toks = [];
+  const re = /([ -~]+|[^ -~]+)/g; let m;
+  while ((m = re.exec(zh))){
+    const t = m[0].trim();
+    if (!t) continue;
+    toks.push([/[一-鿿]/.test(t) ? 'zh' : 'en', t]);
+  }
+  const blocks = []; let curEn = en, curZh = '';
+  for (const [k,t] of toks){
+    if (k === 'en'){
+      if (/[A-Za-z]/.test(t)){
+        if (curEn !== null || curZh.trim()) blocks.push([curEn, curZh.trim()]);
+        curEn = t; curZh = '';
+      } else {
+        // 无字母的英文段（引号/省略号等）：并回当前中文译文，半角引号转全角
+        curZh += t.replace(/"/g,'\u201c').replace(/'/g,'\u2019');
+      }
+    } else {
+      curZh += t;
+    }
+  }
+  if (curEn !== null || curZh.trim()) blocks.push([curEn, curZh.trim()]);
+  return blocks;
+}
+
 /* ---------- 渲染 ---------- */
 function render(d){
   DATA = d; curEp = d.ep || d.id || '';
@@ -386,7 +430,11 @@ function render(d){
       openSec = true; pn = 0; continue;
     }
     if (t === 'vocab'){
-      body += `<div class="note"><div class="en">${marks(en)}</div>${zh?`<div>${esc(zh)}</div>`:''}</div>`;
+      const pairs = parseVocab(en, zh);
+      const inner = pairs.length
+        ? pairs.map(([e,z]) => `<div class="vrow"><span class="ven">${marks(e)}</span><span class="vzh">${esc(z)}</span></div>`).join('')
+        : `<div>${esc(zh)||marks(en)}</div>`;
+      body += `<div class="note vocab">${inner}</div>`;
       continue;
     }
     if (!en && zh){
