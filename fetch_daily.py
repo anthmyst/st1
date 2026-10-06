@@ -127,6 +127,31 @@ def download_thumb(thumb_url, ep_id):
         return ""
 
 
+def download_official_pdf(pdf_url, key):
+    """把 BBC 官方英文 PDF 下载到本站目录。
+
+    cooltv 的 /api/bbc-media 代理有防盗链：脚本直连（无 Referer）可下载，
+    但浏览器新标签打开会带 Referer 被拒（403 空白页），且地址栏暴露 cooltv.top。
+    所以抓取时落盘，页面指向本站文件。
+    """
+    if not pdf_url:
+        return ""
+    fn = f"{(key or 'ep').replace(' ', '_')}.official.pdf"
+    path = os.path.join(ARCHIVE, fn)
+    try:
+        if os.path.exists(path) and os.path.getsize(path) > 1000:
+            return f"data/archive/{fn}"
+        req = Request(pdf_url, headers={"User-Agent": UA})
+        with urlopen(req, timeout=60) as r, open(path, "wb") as f:
+            f.write(r.read())
+        if os.path.getsize(path) > 1000:
+            return f"data/archive/{fn}"
+        os.remove(path)
+    except Exception as e:                          # noqa: BLE001
+        print(f"！官方 PDF 下载失败 {key}: {e}", file=sys.stderr)
+    return ""
+
+
 def ensure_pdf(data, key):
     """为某期生成中英对照 PDF（依赖 weasyprint）。失败则静默跳过。"""
     out = os.path.join(ARCHIVE, f"{key}.pdf")
@@ -185,6 +210,9 @@ def main():
         remote_thumb = (BASE + it["thumb"]) if (it.get("thumb") or "").startswith("/") else (it.get("thumb") or "")
         data["thumb"] = download_thumb(remote_thumb, data.get("ep") or key) or remote_thumb
         data["desc"] = it.get("desc") or ""
+        # 官方英文 PDF 落盘到本站，避免浏览器直连 cooltv 代理（403 + 暴露来源）
+        data["pdfOfficial"] = (download_official_pdf(data.get("pdfOfficial") or "", key)
+                               or data.get("pdfOfficial") or "")
         ensure_pdf(data, key)                      # 生成中英对照 PDF（若有 weasyprint）
         with open(os.path.join(ARCHIVE, f"{key}.json"), "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=1)
@@ -217,12 +245,22 @@ def main():
         sys.exit(1)
 
     # 为尚未生成 PDF 的归档补一份（首次运行或新增时）
+    # 同时把仍指向 cooltv 代理的官方 PDF 下载到本站（历史归档回填）
     for e in eps:
+        changed = False
         if not e.get("pdf"):
             ensure_pdf(e, e.get("id") or "")
             if e.get("pdf"):
-                with open(os.path.join(ARCHIVE, f"{e.get('id')}.json"), "w", encoding="utf-8") as f:
-                    json.dump(e, f, ensure_ascii=False, indent=1)
+                changed = True
+        off = e.get("pdfOfficial") or ""
+        if off.startswith("http"):
+            local = download_official_pdf(off, e.get("id") or "")
+            if local:
+                e["pdfOfficial"] = local
+                changed = True
+        if changed and e.get("id"):
+            with open(os.path.join(ARCHIVE, f"{e.get('id')}.json"), "w", encoding="utf-8") as f:
+                json.dump(e, f, ensure_ascii=False, indent=1)
 
     latest = eps[0]
     # latest.pdf：始终指向最新一期的本地 PDF
