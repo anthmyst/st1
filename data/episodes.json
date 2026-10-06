@@ -1,0 +1,124 @@
+{
+ "series": "随身英语",
+ "slug": "take-away-english",
+ "updatedAt": "2026-10-06T21:30:14+0800",
+ "latest": {
+  "ep": "Episode 261005",
+  "title": "Why we like collecting things 我们为什么喜欢收藏东西",
+  "desc": "",
+  "pub": "2026-10-04T16:00:00.000Z",
+  "level": "中级",
+  "thumb": "data/img/Episode_261005.jpg",
+  "file": "data/archive/14joj3a.json"
+ },
+ "items": [
+  {
+   "ep": "Episode 261005",
+   "title": "Why we like collecting things 我们为什么喜欢收藏东西",
+   "desc": "",
+   "pub": "2026-10-04T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_261005.jpg",
+   "file": "data/archive/14joj3a.json"
+  },
+  {
+   "ep": "Episode 260928",
+   "title": "The UK's favourite type of humour 英国人钟爱的幽默形式",
+   "desc": "When is it good to laugh at yourself?",
+   "pub": "2026-09-27T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260928.jpg",
+   "file": "data/archive/14jnyz7.json"
+  },
+  {
+   "ep": "Episode 260921",
+   "title": "Daydreaming: a distraction or a vehicle for ideas? 白日梦：让人分心的干扰，还是灵感的来源？",
+   "desc": "Read about the pros and cons of daydreaming",
+   "pub": "2026-09-20T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260921.jpg",
+   "file": "data/archive/14jnyz0.json"
+  },
+  {
+   "ep": "Episode 260914",
+   "title": "Portable fan problems 手持小风扇引发的问题",
+   "desc": "Enjoying your portable fan? Here's why you should also be careful with it",
+   "pub": "2026-09-13T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260914.jpg",
+   "file": "data/archive/14jnyy6.json"
+  },
+  {
+   "ep": "Episode 260907",
+   "title": "The peacock effect: Why overconfidence can be good for you 孔雀效应：为什么过度自信可能对你有好处",
+   "desc": "Why are confident humans like healthy peacocks?",
+   "pub": "2026-09-06T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260907.jpg",
+   "file": "data/archive/14jnyxc.json"
+  },
+  {
+   "ep": "Episode 260831",
+   "title": "Why don't I like rollercoasters anymore? 为什么我不再喜欢坐过山车了?",
+   "desc": "How does motion sickness affect the enjoyment of rollercoasters?",
+   "pub": "2026-08-30T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260831.jpg",
+   "file": "data/archive/14jny5o.json"
+  },
+  {
+   "ep": "Episode 260824",
+   "title": "How seasons affect our moods 四季如何影响我们的情绪",
+   "desc": "Have you ever wondered why you feel a certain way in different months?",
+   "pub": "2026-08-23T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260824.jpg",
+   "file": "data/archive/14jny4u.json"
+  },
+  {
+   "ep": "Episode 260817",
+   "title": "Which English accent is the oldest? 哪一种英语口音历史最悠久？",
+   "desc": "Did you know that 'blood', 'food' and 'good', which have different vowel sounds now, probably used to rhyme?",
+   "pub": "2026-08-16T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260817.jpg",
+   "file": "data/archive/14jny40.json"
+  },
+  {
+   "ep": "Episode 260810",
+   "title": "The art of farts 关于 “肠道排气” 的科学",
+   "desc": "How could farting help some animals survive in the wild?",
+   "pub": "2026-08-09T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260810.jpg",
+   "file": "data/archive/14jny3t.json"
+  },
+  {
+   "ep": "Episode 260803",
+   "title": "Gen Z's love of the past 热衷怀旧的 “Z 世代”",
+   "desc": "Why are people looking to the past for comfort?",
+   "pub": "2026-08-02T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260803.jpg",
+   "file": "data/archive/14jny2z.json"
+  },
+  {
+   "ep": "Episode 260727",
+   "title": "How to cope with disappointment 如何应对失望情绪",
+   "desc": "Learn how to manage this unhappy emotion",
+   "pub": "2026-07-26T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260727.jpg",
+   "file": "data/archive/14jnxao.json"
+  },
+  {
+   "ep": "Episode 260720",
+   "title": "Birdwatching boom 观鸟热潮",
+   "desc": "In search of birds and their beautiful song",
+   "pub": "2026-07-19T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260720.jpg",
+   "file": "data/archive/14jnxah.json"
+  }
+ ]
+}

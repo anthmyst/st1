@@ -1,0 +1,69 @@
+name: daily-take-away-english
+
+on:
+  schedule:
+    # UTC 22:30 = 北京时间次日 06:30，每天早上自动抓取
+    - cron: "30 22 * * *"
+  workflow_dispatch: {}   # 允许手动触发
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  fetch-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 安装系统依赖（CJK 字体 + weasyprint 运行库）
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y fonts-noto-cjk libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0
+
+      - name: 安装 Python 依赖
+        run: pip install -r requirements.txt
+
+      - name: 抓取最新一期并生成 PDF
+        # 首跑拉满最近 60 期做归档；之后已归档的会自动跳过，每天只补新的一期
+        run: python3 fetch_daily.py --all 60
+
+      - name: 有更新才提交
+        id: diff
+        run: |
+          git config user.name  "tae-bot"
+          git config user.email "actions@users.noreply.github.com"
+          if [[ -n "$(git status --porcelain data)" ]]; then
+            git add data
+            git commit -m "daily update: $(date -u +%F) 最新一期"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "今天没有新内容"
+          fi
+
+      - name: 组装 Pages 站点
+        run: |
+          mkdir -p _site
+          cp index.html _site/
+          cp -r data _site/data
+          cp README.md _site/ 2>/dev/null || true
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - uses: actions/deploy-pages@v4
+        if: steps.diff.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'

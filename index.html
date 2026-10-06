@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+<title>随身英语 · 每日一读</title>
+<meta name="theme-color" content="#FDF6EC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FDF6EC; --card:#FFFFFF; --ink:#4A3728; --ink-2:#8A7460; --ink-3:#B9A894;
+  --brand:#C2703D; --brand-2:#DD9A5E; --brand-soft:#FBEDDD;
+  --line:#EFE0CE; --en:#3D2E22; --zh:#9C7B5C;
+  --ok:#5B8C5A; --r:16px;
+  --shadow:0 1px 2px rgba(120,90,60,.05), 0 8px 24px -12px rgba(120,90,60,.18);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Nunito Sans",-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+  font-size:16px; line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,.brand{font-family:"Varela Round","Nunito Sans",sans-serif;font-weight:400}
+a{color:inherit;text-decoration:none}
+
+/* ---------- 顶栏 ---------- */
+.top{
+  position:sticky; top:0; z-index:30;
+  background:rgba(253,246,236,.86);
+  backdrop-filter:saturate(1.6) blur(14px);
+  -webkit-backdrop-filter:saturate(1.6) blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.top-in{
+  max-width:820px; margin:0 auto; padding:9px 18px;
+  display:flex; align-items:center; gap:10px;
+}
+.logo{
+  width:30px;height:30px;border-radius:9px;flex:none;
+  background:linear-gradient(140deg,var(--brand-2),var(--brand));
+  display:grid;place-items:center;color:#fff;font-size:15px;
+  box-shadow:0 3px 10px -3px rgba(194,112,61,.6);
+}
+.brand{font-size:16px;letter-spacing:.2px;color:var(--ink)}
+.brand small{display:block;font-size:10.5px;color:var(--ink-3);letter-spacing:.6px;margin-top:-3px}
+.top-sp{flex:1}
+.btn-hist{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:13px;font-weight:600;color:var(--brand);
+  background:var(--brand-soft);border:0;border-radius:999px;
+  padding:6px 13px;cursor:pointer;transition:.18s;
+}
+.btn-hist:hover{background:#F7E2CB}
+
+/* ---------- 布局 ---------- */
+.wrap{max-width:820px;margin:0 auto;padding:20px 18px 90px}
+
+/* ---------- 期号头图卡 ---------- */
+.hero{
+  background:var(--card); border:1px solid var(--line); border-radius:var(--r);
+  box-shadow:var(--shadow); overflow:hidden; margin-bottom:16px;
+}
+.hero-body{padding:18px 20px 16px}
+.kicker{
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  font-size:11.5px;letter-spacing:.7px;text-transform:uppercase;
+  color:var(--brand);font-weight:700;margin-bottom:9px;
+}
+.kicker .dot{width:3px;height:3px;border-radius:50%;background:var(--brand-2)}
+.pill{
+  background:var(--brand-soft);color:var(--brand);
+  padding:2px 9px;border-radius:999px;font-size:11px;
+  font-weight:700;letter-spacing:.4px;
+}
+h1.title{
+  font-size:23px;line-height:1.35;margin:0 0 4px;color:var(--en);
+  letter-spacing:.1px;
+}
+.title-sub{font-size:15.5px;color:var(--zh);font-weight:600;margin:0 0 4px}
+.meta-line{
+  display:flex;align-items:center;gap:7px;flex-wrap:wrap;
+  margin-top:11px;font-size:12.5px;color:var(--ink-3);
+}
+.meta-line .sep{opacity:.5}
+
+/* ---------- 播放器 ---------- */
+.player{
+  margin-top:15px;background:var(--brand-soft);border-radius:13px;
+  padding:11px 13px;display:flex;align-items:center;gap:12px;
+}
+.pp{
+  width:42px;height:42px;border-radius:50%;flex:none;border:0;cursor:pointer;
+  background:linear-gradient(140deg,var(--brand-2),var(--brand));color:#fff;
+  display:grid;place-items:center;transition:.18s;
+  box-shadow:0 4px 12px -4px rgba(194,112,61,.65);
+}
+.pp:hover{transform:scale(1.06)}
+.pp:active{transform:scale(.96)}
+.pp svg{width:17px;height:17px;fill:#fff}
+.pmid{flex:1;min-width:0}
+.ptime{font-size:11.5px;color:var(--brand);font-weight:700;margin-bottom:5px;letter-spacing:.3px;font-variant-numeric:tabular-nums}
+.bar{
+  height:6px;border-radius:99px;background:#EBD4BB;position:relative;cursor:pointer;
+}
+.bar-fill{position:absolute;inset:0 auto 0 0;width:0;border-radius:99px;background:var(--brand);transition:width .12s linear}
+.bar-fill::after{
+  content:"";position:absolute;right:-5px;top:50%;transform:translateY(-50%);
+  width:11px;height:11px;border-radius:50%;background:#fff;
+  box-shadow:0 1px 4px rgba(120,90,60,.4);
+}
+.pctl{display:flex;gap:2px;align-items:center}
+.pib{background:none;border:0;cursor:pointer;color:var(--brand);padding:6px;border-radius:8px;line-height:0;transition:.15s}
+.pib:hover{background:#F5E3CC}
+.pib svg{width:16px;height:16px;fill:currentColor}
+.pib.on{color:var(--ok)}
+.pib .rc{font-size:10.5px;font-weight:800;font-variant-numeric:tabular-nums}
+.speed{font-size:12px;font-weight:800;color:var(--brand);background:none;border:0;cursor:pointer;padding:6px 7px;border-radius:8px;font-variant-numeric:tabular-nums}
+.speed:hover{background:#F5E3CC}
+
+/* ---------- 工具条 ---------- */
+.tools{
+  display:flex;gap:7px;flex-wrap:wrap;align-items:center;
+  margin:0 0 14px;
+}
+.tool{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:12.5px;font-weight:700;color:var(--ink-2);
+  background:var(--card);border:1px solid var(--line);
+  border-radius:999px;padding:6px 13px;cursor:pointer;transition:.18s;
+}
+.tool:hover{border-color:var(--brand-2);color:var(--brand)}
+.tool.on{background:var(--brand);border-color:var(--brand);color:#fff}
+.tool svg{width:13px;height:13px;fill:currentColor}
+.tool.dl{color:var(--brand);border-color:var(--brand-soft);background:var(--brand-soft)}
+
+/* ---------- 正文 ---------- */
+.article{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  box-shadow:var(--shadow);padding:6px 22px 22px;
+}
+.sec-h{
+  font-size:13px;font-weight:800;letter-spacing:.6px;color:var(--brand);
+  text-transform:uppercase;margin:22px 0 10px;display:flex;align-items:center;gap:9px;
+}
+.sec-h::after{content:"";flex:1;height:1px;background:var(--line)}
+.para{margin:0 0 17px}
+.para .en{
+  font-size:16.5px;line-height:1.78;color:var(--en);
+  transition:opacity .2s;
+}
+.para .zh{
+  font-size:14px;line-height:1.75;color:var(--zh);
+  margin-top:5px;padding-left:11px;border-left:2px solid var(--line);
+}
+body.hide-zh .para .zh,body.hide-zh .note .zh{display:none}
+body.hide-en .para .en{opacity:.22;filter:blur(.4px)}
+.note{
+  background:var(--brand-soft);border-radius:11px;padding:12px 15px;
+  margin:0 0 16px;font-size:14px;color:#8A6034;line-height:1.7;
+}
+.note .en{font-size:14.5px;color:#7A5530;margin-bottom:5px}
+.pn{color:var(--brand-2);font-weight:800;margin-right:5px;font-variant-numeric:tabular-nums}
+.para.plain .en{font-weight:600;color:var(--ink)}
+.para.quiz .en{color:var(--ink-2);font-size:15.5px}
+.para.quiz .zh{color:var(--ink-3);font-size:13.5px}
+.txt-en{font-weight:600}
+.txt-zh{color:var(--ink-2);font-weight:600}
+
+/* 点词查询 */
+.w{cursor:pointer;border-radius:4px;transition:background .15s;padding:0 1px}
+.w:hover{background:#FBEBD5}
+.w.act{background:#F5D9B4;box-shadow:inset 0 -2px 0 var(--brand-2)}
+
+/* ---------- 历史抽屉 ---------- */
+.mask{
+  position:fixed;inset:0;background:rgba(74,55,40,.32);
+  backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:.25s;z-index:40;
+}
+.mask.on{opacity:1;pointer-events:auto}
+.drawer{
+  position:fixed;top:0;right:0;bottom:0;width:min(400px,90vw);z-index:41;
+  background:var(--bg);box-shadow:-12px 0 40px -14px rgba(74,55,40,.35);
+  transform:translateX(102%);transition:transform .3s cubic-bezier(.3,.9,.3,1);
+  display:flex;flex-direction:column;
+}
+.drawer.on{transform:none}
+.dr-head{
+  padding:16px 18px;border-bottom:1px solid var(--line);
+  display:flex;align-items:center;gap:10px;
+}
+.dr-head h3{margin:0;font-size:17px;color:var(--ink)}
+.dr-head .cnt{font-size:12px;color:var(--ink-3);font-weight:700}
+.dr-x{
+  margin-left:auto;width:30px;height:30px;border-radius:50%;border:0;
+  background:var(--brand-soft);color:var(--brand);cursor:pointer;
+  display:grid;place-items:center;font-size:17px;line-height:1;
+}
+.dr-list{flex:1;overflow-y:auto;padding:10px 12px 30px;-webkit-overflow-scrolling:touch}
+.ep{
+  display:flex;gap:11px;align-items:flex-start;
+  padding:11px 12px;border-radius:12px;cursor:pointer;transition:.15s;
+  border:1px solid transparent;
+}
+.ep:hover{background:#FBF1E4}
+.ep.cur{background:var(--brand-soft);border-color:#F0D8BC}
+.ep-th{
+  width:52px;height:52px;flex:none;border-radius:10px;overflow:hidden;
+  background:linear-gradient(140deg,#F3E3CE,#E9D3B7);object-fit:cover;
+}
+.ep-b{min-width:0;flex:1}
+.ep-t{font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ep-d{font-size:12px;color:var(--ink-3);margin-top:3px;display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.ep-d .badge{background:var(--brand-soft);color:var(--brand);padding:1px 7px;border-radius:99px;font-weight:700;font-size:10.5px}
+
+/* ---------- 加载/空态 ---------- */
+.state{
+  text-align:center;padding:70px 20px;color:var(--ink-3);
+}
+.state .big{font-size:34px;margin-bottom:12px;opacity:.5}
+.state p{margin:0 0 6px;font-size:14px}
+.spin{
+  width:22px;height:22px;border:2.5px solid var(--line);border-top-color:var(--brand);
+  border-radius:50%;animation:sp .7s linear infinite;margin:0 auto 14px;
+}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+/* ---------- 词卡浮层 ---------- */
+.pop{
+  position:fixed;z-index:60;background:#3D2E22;color:#FDF6EC;
+  padding:9px 14px;border-radius:11px;font-size:14px;font-weight:600;
+  box-shadow:0 10px 30px -8px rgba(61,46,34,.55);
+  opacity:0;pointer-events:none;transition:.16s;transform:translateY(6px);
+  max-width:78vw;line-height:1.5;
+}
+.pop.on{opacity:1;pointer-events:auto;transform:none}
+.pop .py{color:#DD9A5E;font-size:12px;font-weight:700;display:block;margin-top:1px}
+
+.foot{
+  text-align:center;font-size:11.5px;color:var(--ink-3);
+  padding:26px 18px 10px;line-height:1.9;
+}
+.foot a{color:var(--brand-2);font-weight:700}
+
+@media(max-width:560px){
+  .wrap{padding:14px 13px 80px}
+  .hero-body{padding:15px 16px 14px}
+  h1.title{font-size:20px}
+  .article{padding:4px 16px 18px}
+  .para .en{font-size:16px}
+  .top-in{padding:8px 13px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <div class="logo">🎧</div>
+    <div class="brand">随身英语<small>TAKE AWAY ENGLISH · 每日一读</small></div>
+    <div class="top-sp"></div>
+    <button class="btn-hist" id="openHist">
+      <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 11h-4v-2h2V6h2v7z"/></svg>
+      往期
+    </button>
+  </div>
+</header>
+
+<main class="wrap">
+  <div id="app">
+    <div class="state"><div class="spin"></div><p>正在载入最新一期…</p></div>
+  </div>
+  <div class="foot">
+    内容版权归 <a href="https://www.bbc.co.uk/learningenglish/chinese/features/take-away-english" target="_blank" rel="noopener">BBC Learning English</a> 所有 ·
+    数据来源 <a href="https://cooltv.top" target="_blank" rel="noopener">cooltv.top</a> · 仅供个人学习使用
+  </div>
+</main>
+
+<div class="mask" id="mask"></div>
+<aside class="drawer" id="drawer">
+  <div class="dr-head">
+    <div>
+      <h3>往期回顾</h3>
+      <div class="cnt" id="epCount">—</div>
+    </div>
+    <button class="dr-x" id="closeHist">✕</button>
+  </div>
+  <div class="dr-list" id="epList"></div>
+</aside>
+
+<div class="pop" id="pop"></div>
+<audio id="au" preload="metadata"></audio>
+
+<script>
+const $ = s => document.querySelector(s);
+const app = $('#app'), au = $('#au'), pop = $('#pop');
+let DATA = null, eps = [], curEp = '';
+let rateIdx = 0; const RATES = [1, 0.85, 0.7, 1.25];
+let loop = false;
+
+const esc = s => String(s == null ? '' : s)
+  .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+  .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+
+const fmt = t => {
+  if (!isFinite(t) || t < 0) t = 0;
+  const m = Math.floor(t/60), s = Math.floor(t%60);
+  return m + ':' + String(s).padStart(2,'0');
+};
+const fmtDate = p => {
+  if (!p) return '';
+  const d = new Date(p);
+  if (isNaN(d)) return '';
+  return `${d.getFullYear()} 年 ${d.getMonth()+1} 月 ${d.getDate()} 日`;
+};
+
+/* ---------- 点词查询（本地轻量释义 + 浏览器语音） ---------- */
+function marks(txt){
+  return esc(txt).replace(/\b([A-Za-z][A-Za-z''-]{1,})\b/g,
+    '<span class="w">$1</span>');
+}
+function showPop(el, word){
+  const r = el.getBoundingClientRect();
+  pop.innerHTML = `<span class="py">${esc(word)}</span>🔊 点击听发音`;
+  pop.classList.add('on');
+  const pw = pop.offsetWidth;
+  let left = r.left + r.width/2 - pw/2;
+  left = Math.max(10, Math.min(left, innerWidth - pw - 10));
+  pop.style.left = left + 'px';
+  pop.style.top = (r.top - pop.offsetHeight - 8) + 'px';
+}
+function speak(word){
+  try{
+    const u = new SpeechSynthesisUtterance(word);
+    u.lang = 'en-GB'; u.rate = .9;
+    speechSynthesis.cancel(); speechSynthesis.speak(u);
+  }catch(e){}
+}
+document.addEventListener('click', e => {
+  const w = e.target.closest('.w');
+  if (w){
+    document.querySelectorAll('.w.act').forEach(x => x.classList.remove('act'));
+    w.classList.add('act');
+    showPop(w, w.textContent);
+    speak(w.textContent);
+    e.stopPropagation();
+    return;
+  }
+  if (!e.target.closest('.pop')) {
+    pop.classList.remove('on');
+    document.querySelectorAll('.w.act').forEach(x => x.classList.remove('act'));
+  }
+});
+
+/* ---------- 渲染 ---------- */
+function render(d){
+  DATA = d; curEp = d.ep || d.id || '';
+  const paras = d.paragraphs || [];
+  let body = '', openSec = false, pn = 0;
+  for (const p of paras){
+    const t = p.t, zh = p.zh || '';
+    let en = p.en || '';
+    if (t === 'h'){
+      body += `</div><div class="sec-blk"><div class="sec-h">${esc(zh || en)}</div>`;
+      openSec = true; pn = 0; continue;
+    }
+    if (t === 'vocab'){
+      body += `<div class="note"><div class="en">${marks(en)}</div>${zh?`<div>${esc(zh)}</div>`:''}</div>`;
+      continue;
+    }
+    if (!en && zh){
+      body += `<div class="note"><div>${esc(zh)}</div></div>`;
+      continue;
+    }
+    if (t === 'note'){
+      body += `<div class="note">${en?`<div class="en">${marks(en)}</div>`:''}${zh?`<div>${esc(zh)}</div>`:''}</div>`;
+      continue;
+    }
+    // 普通段落：带序号
+    let isNum = /^\d+\s/.test(en);
+    let cls = 'para' + (isNum ? '' : (t === 'p' && en.length && !/^[a-z]\./.test(en) && pn === 0 && openSec ? ' plain' : ''));
+    if (/^[a-z]\.|^\d+\./.test(en) && en.length > 30) cls = 'para quiz';
+    let num = '';
+    if (isNum){
+      const m = en.match(/^(\d+)\s+(.*)$/s);
+      if (m){ num = `<span class="pn">${m[1]}</span>`; en = m[2]; }
+    }
+    body += `<div class="${cls}">${num?num:''}<div class="en">${marks(en)}</div>`
+          + (zh ? `<div class="zh">${esc(zh)}</div>` : '') + `</div>`;
+  }
+  const html = `
+    <section class="hero">
+      <div class="hero-body">
+        <div class="kicker">
+          <span class="pill">${esc(d.level || '中级')}</span>
+          <span>${esc(d.ep || '')}</span>
+          <span class="dot"></span>
+          <span>随身英语</span>
+        </div>
+        <h1 class="title">${esc(enPart(d.title))}</h1>
+        <p class="title-sub">${esc(zhPart(d.title))}</p>
+        <div class="meta-line">
+          <span>${fmtDate(d.pub)}</span>
+          <span class="sep">·</span>
+          <span>官方中文导读 + 词汇表 + 测验解析</span>
+          ${d.desc?`<span class="sep">·</span><span>${esc(d.desc)}</span>`:''}
+        </div>
+        <div class="player">
+          <button class="pp" id="pp" aria-label="播放">
+            <svg viewBox="0 0 24 24" id="ppIcon"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <div class="pmid">
+            <div class="ptime"><span id="tcur">0:00</span> / <span id="tdur">--:--</span></div>
+            <div class="bar" id="bar"><div class="bar-fill" id="fill"></div></div>
+          </div>
+          <div class="pctl">
+            <button class="pib" id="loop" title="单句循环"><svg viewBox="0 0 24 24"><path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z"/></svg></button>
+            <button class="speed" id="speed">1.0×</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="tools">
+      <button class="tool on" data-tg="zh"><svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.7 7.6 1 12c1.7 4.4 6 7.5 11 7.5s9.3-3.1 11-7.5c-1.7-4.4-6-7.5-11-7.5zm0 12.5a5 5 0 110-10 5 5 0 010 10z"/></svg>中文</button>
+      <button class="tool" data-tg="en"><svg viewBox="0 0 24 24"><path d="M3 5h18v14H3z" opacity=".25"/><path d="M9.5 9l4.5 3-4.5 3z"/></svg>只看英文</button>
+      <button class="tool dl" id="dlPdf">下载 PDF</button>
+      <button class="tool dl" id="dlPdfOff">官方PDF</button>
+      <button class="tool dl" id="dlMp3">下载 MP3</button>
+      <a class="tool dl" id="srcLink" href="#" target="_blank" rel="noopener">BBC 原文</a>
+    </div>
+
+    <article class="article" id="article">${body}</article>
+  `;
+  app.innerHTML = html;
+  bindPlayer(d);
+  bindTools(d);
+}
+
+function enPart(t){ // 英文标题取前半段
+  if (!t) return '';
+  const i = t.search(/[\u4e00-\u9fa5]/);
+  return (i > 0 ? t.slice(0, i) : t).trim();
+}
+function zhPart(t){
+  if (!t) return '';
+  const i = t.search(/[\u4e00-\u9fa5]/);
+  return i >= 0 ? t.slice(i).trim() : '';
+}
+
+/* ---------- 播放器 ---------- */
+function bindPlayer(d){
+  const pp = $('#pp'), bar = $('#bar'), fill = $('#fill');
+  const tcur = $('#tcur'), tdur = $('#tdur');
+  const iconPlay = '<path d="M8 5v14l11-7z"/>';
+  const iconPause = '<path d="M6 5h4v14H6zm8 0h4v14h-4z"/>';
+  $('#ppIcon').innerHTML = iconPlay;
+
+  if (d.audio){
+    au.src = d.audio; au.playbackRate = RATES[rateIdx];
+    au.onloadedmetadata = () => { tdur.textContent = fmt(au.duration); };
+    au.ontimeupdate = () => {
+      if (au.duration) fill.style.width = (au.currentTime/au.duration*100) + '%';
+      tcur.textContent = fmt(au.currentTime);
+    };
+    au.onplay = () => { $('#ppIcon').innerHTML = iconPause; };
+    au.onpause = () => { $('#ppIcon').innerHTML = iconPlay; };
+    au.onended = () => { $('#ppIcon').innerHTML = iconPlay; if(loop) au.play(); };
+  }
+  pp.onclick = () => {
+    if (!d.audio) return;
+    au.paused ? au.play() : au.pause();
+  };
+  bar.onclick = e => {
+    if (!au.duration) return;
+    const r = bar.getBoundingClientRect();
+    au.currentTime = (e.clientX - r.left) / r.width * au.duration;
+  };
+  $('#loop').onclick = e => { loop = !loop; e.currentTarget.classList.toggle('on', loop); };
+  $('#speed').onclick = e => {
+    rateIdx = (rateIdx + 1) % RATES.length;
+    au.playbackRate = RATES[rateIdx];
+    e.currentTarget.textContent = RATES[rateIdx].toFixed(rateIdx===1?2:1).replace(/0$/,'') + '×';
+    e.currentTarget.textContent = RATES[rateIdx] + '×';
+  };
+}
+
+function bindTools(d){
+  document.querySelectorAll('.tool[data-tg]').forEach(b => {
+    b.onclick = () => {
+      const k = b.dataset.tg;
+      if (k === 'en'){
+        const on = document.body.classList.toggle('hide-zh');
+        b.classList.toggle('on', on);
+        document.querySelector('[data-tg="zh"]').classList.toggle('on', !on);
+      } else {
+        document.body.classList.remove('hide-zh');
+        document.querySelectorAll('.tool[data-tg]').forEach(x => x.classList.remove('on'));
+        document.querySelector('[data-tg="zh"]').classList.add('on');
+      }
+    };
+  });
+  $('#dlPdf').onclick = () => d.pdf && window.open(d.pdf, '_blank');
+  $('#dlPdfOff').onclick = () => d.pdfOfficial && window.open(d.pdfOfficial, '_blank');
+  $('#dlMp3').onclick = () => d.audio && window.open(d.audio, '_blank');
+  $('#srcLink').href = d.url || '#';
+}
+
+/* ---------- 历史 ---------- */
+function renderList(){
+  const el = $('#epList');
+  $('#epCount').textContent = eps.length + ' 期';
+  el.innerHTML = eps.map(e => `
+    <div class="ep ${e.ep===curEp?'cur':''}" data-file="${esc(e.file)}" data-ep="${esc(e.ep)}">
+      ${e.thumb?`<img class="ep-th" src="${esc(e.thumb)}" loading="lazy" alt="">`:`<div class="ep-th"></div>`}
+      <div class="ep-b">
+        <div class="ep-t">${esc(enPart(e.title) || e.title)}</div>
+        <div class="ep-d">
+          ${e.ep?`<span class="badge">${esc(e.ep.replace('Episode ','').trim())}</span>`:''}
+          <span>${fmtDate(e.pub)}</span>
+        </div>
+      </div>
+    </div>`).join('');
+  el.querySelectorAll('.ep').forEach(n => {
+    n.onclick = () => loadEp(n.dataset.file, n.dataset.ep);
+  });
+}
+async function loadEp(file, ep){
+  closeDrawer();
+  window.scrollTo({top:0, behavior:'smooth'});
+  try{
+    const r = await fetch(file + '?t=' + Date.now());
+    const d = await r.json();
+    au.pause();
+    render(d);
+    document.querySelectorAll('.ep').forEach(n => n.classList.toggle('cur', n.dataset.ep === ep));
+    history.replaceState(null,'','#'+encodeURIComponent(ep||''));
+  }catch(err){
+    console.error(err);
+  }
+}
+function openDrawer(){ $('#drawer').classList.add('on'); $('#mask').classList.add('on'); }
+function closeDrawer(){ $('#drawer').classList.remove('on'); $('#mask').classList.remove('on'); }
+$('#openHist').onclick = openDrawer;
+$('#closeHist').onclick = closeDrawer;
+$('#mask').onclick = closeDrawer;
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+
+/* ---------- 启动 ---------- */
+(async function init(){
+  try{
+    const [rl, ri] = await Promise.all([
+      fetch('data/latest.json?t=' + Date.now()),
+      fetch('data/episodes.json?t=' + Date.now()).catch(() => null)
+    ]);
+    const d = await rl.json();
+    render(d);
+    if (ri && ri.ok){
+      const idx = await ri.json();
+      eps = idx.items || [];
+      renderList();
+      // 支持 #Episode261005 直达
+      const h = decodeURIComponent(location.hash.slice(1));
+      if (h && h !== curEp){
+        const hit = eps.find(x => x.ep === h || x.ep.endsWith(h));
+        if (hit) loadEp(hit.file, hit.ep);
+      }
+    }
+  }catch(err){
+    console.error(err);
+    app.innerHTML = `<div class="state"><div class="big">🌿</div>
+      <p>内容还没准备好</p>
+      <p style="font-size:12.5px">请先运行 <code>python3 fetch_daily.py</code> 抓取数据</p></div>`;
+  }
+})();
+</script>
+</body>
+</html>
