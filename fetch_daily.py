@@ -25,6 +25,8 @@ from urllib.request import Request, urlopen
 BASE = "https://cooltv.top"
 SERIES = "take-away-english"          # 随身英语
 UA = "Mozilla/5.0 (TAE-Daily/1.0; +https://cooltv.top)"
+# 这几期 BBC 没提供官方 PDF，保留历史生成的中英对照版作为唯一 PDF
+KEEP_BILINGUAL = {"14iz5ra", "14iz5rh", "14jns7a", "14jns84", "14jns8b"}
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "data")
 ARCHIVE = os.path.join(DATA, "archive")
@@ -161,6 +163,8 @@ def purge_generated_pdfs():
     removed = 0
     for fn in os.listdir(ARCHIVE):
         if fn.endswith(".pdf") and not fn.endswith(".official.pdf"):
+            if fn[:-4] in KEEP_BILINGUAL:      # 这几期无官方 PDF，对照版要留着
+                continue
             try:
                 os.remove(os.path.join(ARCHIVE, fn))
                 removed += 1
@@ -259,14 +263,21 @@ def main():
     # 同时把仍指向 cooltv 代理的官方 PDF 下载到本站（历史归档回填）
     for e in eps:
         changed = False
-        if e.get("pdf"):                 # 不再生成中英对照 PDF，清掉残留引用
-            e["pdf"] = ""
+        eid = e.get("id") or ""
+        if e.get("pdf") and eid not in KEEP_BILINGUAL:
+            e["pdf"] = ""                # 不再生成中英对照 PDF，清掉残留引用
             changed = True
         off = e.get("pdfOfficial") or ""
         if off.startswith("http"):
-            local = download_official_pdf(off, e.get("id") or "")
+            local = download_official_pdf(off, eid)
             if local:
                 e["pdfOfficial"] = local
+                changed = True
+        # 这几期拿不到官方 PDF，改用保留下来的中英对照版
+        if eid in KEEP_BILINGUAL and not (e.get("pdfOfficial") or "").strip():
+            cand = f"data/archive/{eid}.pdf"
+            if os.path.exists(os.path.join(HERE, *cand.split("/"))):
+                e["pdfOfficial"] = cand
                 changed = True
         if changed and e.get("id"):
             with open(os.path.join(ARCHIVE, f"{e.get('id')}.json"), "w", encoding="utf-8") as f:
