@@ -30,7 +30,6 @@ KEEP_BILINGUAL = {"14iz5ra", "14iz5rh", "14jns7a", "14jns84", "14jns8b"}
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "data")
 ARCHIVE = os.path.join(DATA, "archive")
-IMAGES = os.path.join(DATA, "img")
 
 
 def get_json(path, retries=3):
@@ -104,29 +103,6 @@ def slim(article):
         "pdfOfficial": pdf,        # BBC 官方英文 PDF（直链）
         "paragraphs": paras,
     }
-
-
-def download_thumb(thumb_url, ep_id):
-    """把封面图下载到本地（cooltv 的图片代理有防盗链，浏览器直连会 403）。"""
-    if not thumb_url:
-        return ""
-    os.makedirs(IMAGES, exist_ok=True)
-    ext = ".jpg"
-    m = re.search(r"(jpeg|jpg|png|webp|gif)", (thumb_url.split("ctype=")[0] + thumb_url).lower())
-    if m:
-        ext = "." + m.group(1).replace("jpeg", "jpg")
-    fn = f"{(ep_id or 'cover').replace(' ', '_')}{ext}"
-    path = os.path.join(IMAGES, fn)
-    if os.path.exists(path) and os.path.getsize(path) > 500:
-        return f"data/img/{fn}"
-    try:
-        req = Request(thumb_url, headers={"User-Agent": UA})
-        with urlopen(req, timeout=30) as r, open(path, "wb") as f:
-            f.write(r.read())
-        return f"data/img/{fn}"
-    except Exception as e:                          # noqa: BLE001
-        print(f"！封面下载失败 {ep_id}: {e}", file=sys.stderr)
-        return ""
 
 
 def download_official_pdf(pdf_url, key):
@@ -223,8 +199,6 @@ def main():
             continue
         data = slim(art)
         data["id"] = it.get("id") or ""
-        remote_thumb = (BASE + it["thumb"]) if (it.get("thumb") or "").startswith("/") else (it.get("thumb") or "")
-        data["thumb"] = download_thumb(remote_thumb, data.get("ep") or key) or remote_thumb
         data["desc"] = it.get("desc") or ""
         # 官方英文 PDF 落盘到本站，避免浏览器直连 cooltv 代理（403 + 暴露来源）
         data["pdfOfficial"] = (download_official_pdf(data.get("pdfOfficial") or "", key)
@@ -293,7 +267,6 @@ def main():
         "desc": e.get("desc") or "",
         "pub": e.get("pub") or "",
         "level": e.get("level") or "",
-        "thumb": e.get("thumb") or "",
         "file": f"data/archive/{e.get('id')}.json",
     } for e in eps[:60] if e.get("id")]
     with open(os.path.join(DATA, "episodes.json"), "w", encoding="utf-8") as f:
