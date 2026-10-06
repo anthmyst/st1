@@ -1,1 +1,2 @@
-weasyprint
+# 当前无第三方依赖：抓取脚本只使用 Python 标准库。
+# （中英对照 PDF 已停用，只保留官方 PDF，因此不再需要 weasyprint）
