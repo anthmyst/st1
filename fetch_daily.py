@@ -241,6 +241,9 @@ def main():
         if e.get("pdf") and eid not in KEEP_BILINGUAL:
             e["pdf"] = ""                # 不再生成中英对照 PDF，清掉残留引用
             changed = True
+        if e.get("thumb"):
+            e["thumb"] = ""              # 不再抓取封面图，清掉已删除图片的残留路径
+            changed = True
         off = e.get("pdfOfficial") or ""
         if off.startswith("http"):
             local = download_official_pdf(off, eid)
