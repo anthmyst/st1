@@ -214,10 +214,6 @@ body.hide-en .para .en{opacity:.22;filter:blur(.4px)}
 }
 .ep:hover{background:#FBFCF5}
 .ep.cur{background:var(--brand-soft);border-color:#CFDBC5}
-.ep-th{
-  width:52px;height:52px;flex:none;border-radius:10px;overflow:hidden;
-  background:linear-gradient(140deg,#EAF0E1,#D9E2CE);object-fit:cover;
-}
 .ep-b{min-width:0;flex:1}
 .ep-t{font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.45;
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
@@ -499,12 +495,10 @@ function renderList(){
   $('#epCount').textContent = eps.length + ' 期';
   el.innerHTML = eps.map(e => `
     <div class="ep ${e.ep===curEp?'cur':''}" data-file="${esc(e.file)}" data-ep="${esc(e.ep)}">
-      ${e.thumb?`<img class="ep-th" src="${esc(e.thumb)}" loading="lazy" alt="">`:`<div class="ep-th"></div>`}
       <div class="ep-b">
         <div class="ep-t">${esc(enPart(e.title) || e.title)}</div>
         <div class="ep-d">
           ${e.ep?`<span class="badge">${esc(e.ep.replace('Episode ','').trim())}</span>`:''}
-          <span>${fmtDate(e.pub)}</span>
         </div>
       </div>
     </div>`).join('');
