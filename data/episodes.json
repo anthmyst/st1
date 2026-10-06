@@ -1,7 +1,7 @@
 {
  "series": "随身英语",
  "slug": "take-away-english",
- "updatedAt": "2026-10-06T21:30:14+0800",
+ "updatedAt": "2026-10-06T15:16:52+0000",
  "latest": {
   "ep": "Episode 261005",
   "title": "Why we like collecting things 我们为什么喜欢收藏东西",
@@ -119,6 +119,438 @@
    "level": "中级",
    "thumb": "data/img/Episode_260720.jpg",
    "file": "data/archive/14jnxah.json"
+  },
+  {
+   "ep": "Episode 260713",
+   "title": "How high temperatures affect sleep 高温对睡眠的影响",
+   "desc": "Why is it hard to sleep in the heat?",
+   "pub": "2026-07-12T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260713.jpg",
+   "file": "data/archive/14jnx9n.json"
+  },
+  {
+   "ep": "Episode 260706",
+   "title": "Heat, humidity and the World Cup 世界杯面临高温高湿考验",
+   "desc": "Is it too hot at the World Cup?",
+   "pub": "2026-07-05T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260706.jpg",
+   "file": "data/archive/14jnx8t.json"
+  },
+  {
+   "ep": "Episode 260629",
+   "title": "Does planning the perfect summer cause problems? 计划一场 “完美夏日”，真的能让假期更完美吗？",
+   "desc": "Do your summer holidasy reach the expectations set out by social media?",
+   "pub": "2026-06-28T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260629.jpg",
+   "file": "data/archive/14jnwgh.json"
+  },
+  {
+   "ep": "Episode 260622",
+   "title": "Choosing the right yoghurt 如何选择健康的酸奶",
+   "desc": "What makes yoghurt healthy",
+   "pub": "2026-06-21T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260622.jpg",
+   "file": "data/archive/14jnwga.json"
+  },
+  {
+   "ep": "Episode 260615",
+   "title": "Breathwork techniques to reduce stress 能缓解压力的呼吸法技巧",
+   "desc": "Breathing keeps us alive, but could it also make us feel better?",
+   "pub": "2026-06-14T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260615.jpg",
+   "file": "data/archive/14jnwfg.json"
+  },
+  {
+   "ep": "Episode 260608",
+   "title": "The calming effects of rain 雨舒缓身心的作用",
+   "desc": "How do we enjoy a rainy day?",
+   "pub": "2026-06-07T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260608.jpg",
+   "file": "data/archive/14jnwem.json"
+  },
+  {
+   "ep": "Episode 260601",
+   "title": "How exercise could boost your exam grades 为什么运动能助你的考试成绩 “一臂之力”",
+   "desc": "Sweat your way to exam success",
+   "pub": "2026-05-31T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260601.jpg",
+   "file": "data/archive/14jnwef.json"
+  },
+  {
+   "ep": "Episode 260525",
+   "title": "Can language influence how we see time? 语言会影响我们对时间的理解吗？",
+   "desc": "Do you 'look forward' to the future?",
+   "pub": "2026-05-24T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260525.jpg",
+   "file": "data/archive/14jnvm4.json"
+  },
+  {
+   "ep": "Episode 260518",
+   "title": "The tiny creatures that clean your face 在你脸上 “做保洁” 的小虫子",
+   "desc": "Why isn't it a problem that your face is covered in mites?",
+   "pub": "2026-05-17T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260518.jpg",
+   "file": "data/archive/14jnvla.json"
+  },
+  {
+   "ep": "Episode 260511",
+   "title": "The culture of giving cards 赠送贺卡的文化",
+   "desc": "Why do we send cards to loved ones?",
+   "pub": "2026-05-10T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260511.jpg",
+   "file": "data/archive/14jnvl3.json"
+  },
+  {
+   "ep": "Episode 260504",
+   "title": "Keeping leftovers safe 剩饭剩菜的保存与食用安全",
+   "desc": "How safe are your leftovers?",
+   "pub": "2026-05-03T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260504.jpg",
+   "file": "data/archive/14jnvk9.json"
+  },
+  {
+   "ep": "Episode 260427",
+   "title": "Does where you grow up shape your personality? 成长环境会影响人的性格吗？",
+   "desc": "Are certain regions more likely to have higher levels of a certain personality trait?",
+   "pub": "2026-04-26T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260427.jpg",
+   "file": "data/archive/14jnurx.json"
+  },
+  {
+   "ep": "Episode 260420",
+   "title": "Do birds build their homes like humans? 鸟类筑巢是否与人类的建筑方式相似？",
+   "desc": "Birds teach each other how to build a home",
+   "pub": "2026-04-19T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260420.jpg",
+   "file": "data/archive/14jnurq.json"
+  },
+  {
+   "ep": "Episode 260413",
+   "title": "How micro-dramas could revolutionise our viewing habits 微短剧如何重塑我们的观影习惯",
+   "desc": "How much drama can fit into one minute?",
+   "pub": "2026-04-12T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260413.jpg",
+   "file": "data/archive/14jnuqw.json"
+  },
+  {
+   "ep": "Episode 260406",
+   "title": "Friction-maxxing: Is convenience weakening our brains? “阻力最大化”：便捷的生活是否正在削弱我们的思考能力？",
+   "desc": "What is friction-maxxing and how can it help us protect our brains?",
+   "pub": "2026-04-05T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260406.jpg",
+   "file": "data/archive/14jnuq2.json"
+  },
+  {
+   "ep": "Episode 260330",
+   "title": "Is fibre the new fad? “膳食纤维热”：这只是一时的流行吗？",
+   "desc": "Why is fibre gaining popularity?",
+   "pub": "2026-03-29T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260330.jpg",
+   "file": "data/archive/14jntye.json"
+  },
+  {
+   "ep": "Episode 260323",
+   "title": "Is there life on Venus? 金星上有生命吗？",
+   "desc": "Could we live on Venus?",
+   "pub": "2026-03-22T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260323.jpg",
+   "file": "data/archive/14jntxk.json"
+  },
+  {
+   "ep": "Episode 260316",
+   "title": "The healing power of singing 歌唱的疗愈功效",
+   "desc": "Can singing provide a physical workout?",
+   "pub": "2026-03-15T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260316.jpg",
+   "file": "data/archive/14jntwq.json"
+  },
+  {
+   "ep": "Episode 260309",
+   "title": "Programmes for those not watching 给不看屏幕的人设计的电视节目",
+   "desc": "Are your phone habits changing TV?",
+   "pub": "2026-03-08T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260309.jpg",
+   "file": "data/archive/14jntvw.json"
+  },
+  {
+   "ep": "Episode 260302",
+   "title": "Shapes and colours of the Moon 月亮的万千色相",
+   "desc": "A red Moon in June?",
+   "pub": "2026-03-01T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260302.jpg",
+   "file": "data/archive/14jntvp.json"
+  },
+  {
+   "ep": "Episode 260223",
+   "title": "Could humans have 33 senses? 人类可能拥有 33 种感官吗？",
+   "desc": "Are balance and body awareness senses too?",
+   "pub": "2026-02-22T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260223.jpg",
+   "file": "data/archive/14jnt3b.json"
+  },
+  {
+   "ep": "Episode 260216",
+   "title": "Why can we see faces everywhere? 我们为什么总能随处看到一张脸？",
+   "desc": "Seeing faces in objects?",
+   "pub": "2026-02-15T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260216.jpg",
+   "file": "data/archive/14jnt2h.json"
+  },
+  {
+   "ep": "Episode 260209",
+   "title": "Why we procrastinate 我们为什么会拖延",
+   "desc": "Do you often procrastinate?",
+   "pub": "2026-02-08T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260209.jpg",
+   "file": "data/archive/14jnt1n.json"
+  },
+  {
+   "ep": "Episode 260202",
+   "title": "Protecting your photos in a digital age 如何在数字时代保管你的照片",
+   "desc": "What’s the best way to avoid losing all your photos?",
+   "pub": "2026-02-01T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260202.jpg",
+   "file": "data/archive/14jnt1g.json"
+  },
+  {
+   "ep": "Episode 260126",
+   "title": "A new sport debuts at the Winter Olympics 冬季奥林匹克运动会迎来新项目",
+   "desc": "What's the newest winter sport at the 2026 Olympics?",
+   "pub": "2026-01-25T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260126.jpg",
+   "file": "data/archive/14jns95.json"
+  },
+  {
+   "ep": "Episode 260119",
+   "title": "The cost of car dependency 汽车依赖的代价",
+   "desc": "Are we too dependent on our cars?",
+   "pub": "2026-01-18T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260119.jpg",
+   "file": "data/archive/14jns8b.json"
+  },
+  {
+   "ep": "Episode 260112",
+   "title": "The city streets beneath our feet 我们脚下深处的城市街道",
+   "desc": "What historic worlds can you find underground in the UK?",
+   "pub": "2026-01-11T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260112.jpg",
+   "file": "data/archive/14jns84.json"
+  },
+  {
+   "ep": "Episode 260105",
+   "title": "How AI could change the skills you need 人工智能将如何改变你所需掌握的技能",
+   "desc": "AI probably won't take your job, but how will it change it?",
+   "pub": "2026-01-04T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_260105.jpg",
+   "file": "data/archive/14jns7a.json"
+  },
+  {
+   "ep": "Episode 251229",
+   "title": "Can trees remember? 树有记忆吗？",
+   "desc": "Trees may be wiser than we thought",
+   "pub": "2025-12-28T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_251229.jpg",
+   "file": "data/archive/14iz5rh.json"
+  },
+  {
+   "ep": "Episode 251222",
+   "title": "What makes good wildlife photography 优秀的野生动物摄影有什么特征",
+   "desc": "What makes a good wildlife photographer?",
+   "pub": "2025-12-21T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_251222.jpg",
+   "file": "data/archive/14iz5ra.json"
+  },
+  {
+   "ep": "Episode 251215",
+   "title": "What can our ancestors teach us about sleep? 我们的祖先能教给我们哪些睡眠知识？",
+   "desc": "What could you do before your second sleep?",
+   "pub": "2025-12-14T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_251215.jpg",
+   "file": "data/archive/14iz5qg.json"
+  },
+  {
+   "ep": "Episode 251208",
+   "title": "The power of friendship to keep you young 友谊何以使人保持年轻",
+   "desc": "Is friendship nature's anti-ageing secret?",
+   "pub": "2025-12-07T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_251208.jpg",
+   "file": "data/archive/14iz5pm.json"
+  },
+  {
+   "ep": "Episode 251201",
+   "title": "Is your showerhead as clean as you think? 你用的淋浴头如你想象得那么干净吗？",
+   "desc": "The inside of your showerhead is more active than you think!",
+   "pub": "2025-11-30T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_251201.jpg",
+   "file": "data/archive/14iz5pf.json"
+  },
+  {
+   "ep": "Episode 251124",
+   "title": "Do we give weight too much weight? 我们是否高估了体重对健康的意义？",
+   "desc": "Is BMI really the best way to check our health?",
+   "pub": "2025-11-23T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_251124.jpg",
+   "file": "data/archive/14iz4x3.json"
+  },
+  {
+   "ep": "Episode 251117",
+   "title": "Zone zero: Does no-effort exercise have benefits? 毫不费力的 “零区” 锻炼真的有好处吗？",
+   "desc": "A fitness routine for people who don't like exercise",
+   "pub": "2025-11-16T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_251117.jpg",
+   "file": "data/archive/14iz4w9.json"
+  },
+  {
+   "ep": "Episode 251110",
+   "title": "The meat eaters 只吃肉的人",
+   "desc": "Want to eat just like a lion?",
+   "pub": "2025-11-09T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_251110.jpg",
+   "file": "data/archive/14iz4w2.json"
+  },
+  {
+   "ep": "Episode 251103",
+   "title": "Why some people believe AI is human 为什么有的人会把人工智能看作人类",
+   "desc": "What makes AI seem human?",
+   "pub": "2025-11-02T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_251103.jpg",
+   "file": "data/archive/14iz4v8.json"
+  },
+  {
+   "ep": "Episode 251027",
+   "title": "The way you move may be as unique as your fingerprint 我们身体移动的方式可能像指纹一样独特",
+   "desc": "Can you recognise others by the way they move?",
+   "pub": "2025-10-26T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_251027.jpg",
+   "file": "data/archive/14iz42x.json"
+  },
+  {
+   "ep": "Episode 251020",
+   "title": "What are the chances of an asteroid hitting you? 你被一颗小行星撞击的概率有多大？",
+   "desc": "Could an asteroid hit Earth soon?",
+   "pub": "2025-10-19T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_251020.jpg",
+   "file": "data/archive/14iz42q.json"
+  },
+  {
+   "ep": "Episode 251013",
+   "title": "Is your dog reading your mind? 你的狗狗能读懂你的心思吗？",
+   "desc": "Is your pet reading your thoughts?",
+   "pub": "2025-10-12T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_251013.jpg",
+   "file": "data/archive/14iz41w.json"
+  },
+  {
+   "ep": "Episode 251006",
+   "title": "Life lessons learnt from pocket money 从零花钱中学到的人生课程",
+   "desc": "Should children be paid for doing household chores?",
+   "pub": "2025-10-05T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_251006.jpg",
+   "file": "data/archive/14iz412.json"
+  },
+  {
+   "ep": "Episode 250929",
+   "title": "How is ginger good for us? 生姜对健康有哪些益处？",
+   "desc": "Grate it, chop it, stick it in tea!",
+   "pub": "2025-09-28T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_250929.jpg",
+   "file": "data/archive/14iyjwz.json"
+  },
+  {
+   "ep": "Episode 250922",
+   "title": "What happens when your job is just too boring? 工作太无聊怎么办？",
+   "desc": "Are you suffering from rust out?",
+   "pub": "2025-09-21T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_250922.jpg",
+   "file": "data/archive/14iyjws.json"
+  },
+  {
+   "ep": "Episode 250915",
+   "title": "Britain celebrates 200-year anniversary of passenger trains 英国庆祝第一列旅客列车通车 200 周年",
+   "desc": "What are some of the most beautiful slow train routes in the UK?",
+   "pub": "2025-09-14T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_250915.jpg",
+   "file": "data/archive/14iyjvy.json"
+  },
+  {
+   "ep": "Episode 250908",
+   "title": "Is food colouring bad for you? 食用色素对人体有害吗？",
+   "desc": "Is it bad to eat too much food colouring?",
+   "pub": "2025-09-07T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_250908.jpg",
+   "file": "data/archive/14iyjv4.json"
+  },
+  {
+   "ep": "Episode 250901",
+   "title": "The dangers of buffets 自助餐的安全隐患",
+   "desc": "Why should you be careful at the buffet?",
+   "pub": "2025-08-31T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_250901.jpg",
+   "file": "data/archive/14iyjux.json"
+  },
+  {
+   "ep": "Episode 250825",
+   "title": "How can restaurants earn a Michelin star? 餐厅怎样获得米其林星级？",
+   "desc": "What makes a restaurant outstanding?",
+   "pub": "2025-08-24T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_250825.jpg",
+   "file": "data/archive/14iyj2m.json"
+  },
+  {
+   "ep": "Episode 250818",
+   "title": "Can we trust technology in sport? 体育竞赛中应用的科技可靠吗？",
+   "desc": "Technology and humans can make mistakes, so who should we trust?",
+   "pub": "2025-08-17T16:00:00.000Z",
+   "level": "中级",
+   "thumb": "data/img/Episode_250818.jpg",
+   "file": "data/archive/14iyj1s.json"
   }
  ]
 }
