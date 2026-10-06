@@ -218,7 +218,9 @@ body.hide-en .para .en{opacity:.22;filter:blur(.4px)}
 .ep-t{font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.45;
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .ep-d{font-size:12px;color:var(--ink-3);margin-top:3px;display:flex;gap:7px;align-items:center;flex-wrap:wrap}
-.ep-d .badge{background:var(--brand-soft);color:var(--brand);padding:1px 7px;border-radius:99px;font-weight:700;font-size:10.5px}
+.ep-d .badge{background:var(--brand-soft);color:var(--brand);padding:1px 7px;border-radius:99px;font-weight:700;font-size:10.5px;flex:none}
+.ep-d .ep-zh{color:var(--zh);font-weight:600;min-width:0;flex:1;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
 /* ---------- 加载/空态 ---------- */
 .state{
@@ -501,6 +503,7 @@ function renderList(){
         <div class="ep-t">${esc(enPart(e.title) || e.title)}</div>
         <div class="ep-d">
           ${e.ep?`<span class="badge">${esc(e.ep.replace('Episode ','').trim())}</span>`:''}
+          ${zhPart(e.title)?`<span class="ep-zh">${esc(zhPart(e.title))}</span>`:''}
         </div>
       </div>
     </div>`).join('');
