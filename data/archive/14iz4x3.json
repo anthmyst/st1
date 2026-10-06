@@ -7,7 +7,7 @@
  "url": "https://www.bbc.co.uk/learningenglish/chinese/features/take-away-english/ep-251124",
  "audio": "https://cooltv.top/api/bbc-media?u=http%3A%2F%2Fdownloads.bbc.co.uk%2Flearningenglish%2Ffeatures%2Ftae%2Fbbc_tae_do_we_give_weight_too_much_weight.mp3",
  "pdf": "data/archive/14iz4x3.pdf",
- "pdfOfficial": "https://cooltv.top/api/bbc-media?u=https%3A%2F%2Fdownloads.bbc.co.uk%2Flearningenglish%2Ffeatures%2Ftae%2Fbbc_tae_do_we_give_weight_too_much_weight.pdf",
+ "pdfOfficial": "data/archive/14iz4x3.official.pdf",
  "paragraphs": [
   {
    "t": "note",

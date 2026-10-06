@@ -7,7 +7,7 @@
  "url": "https://www.bbc.co.uk/learningenglish/chinese/features/take-away-english/ep-251013",
  "audio": "https://cooltv.top/api/bbc-media?u=http%3A%2F%2Fdownloads.bbc.co.uk%2Flearningenglish%2Ffeatures%2Ftae%2Fbbc_tae_is_your_dog_reading_your_mind_download.mp3",
  "pdf": "data/archive/14iz41w.pdf",
- "pdfOfficial": "https://cooltv.top/api/bbc-media?u=https%3A%2F%2Fdownloads.bbc.co.uk%2Flearningenglish%2Ffeatures%2Ftae%2Fbbc_tae_is_your_dog_reading_your_mind.pdf",
+ "pdfOfficial": "data/archive/14iz41w.official.pdf",
  "paragraphs": [
   {
    "t": "note",

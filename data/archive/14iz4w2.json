@@ -7,7 +7,7 @@
  "url": "https://www.bbc.co.uk/learningenglish/chinese/features/take-away-english/ep-251110",
  "audio": "https://cooltv.top/api/bbc-media?u=http%3A%2F%2Fdownloads.bbc.co.uk%2Flearningenglish%2Ffeatures%2Ftae%2Fbbc_tae_the_meat_eaters.mp3",
  "pdf": "data/archive/14iz4w2.pdf",
- "pdfOfficial": "https://cooltv.top/api/bbc-media?u=https%3A%2F%2Fdownloads.bbc.co.uk%2Flearningenglish%2Ffeatures%2Ftae%2Fbbc_tae_the_meat_eaters.pdf",
+ "pdfOfficial": "data/archive/14iz4w2.official.pdf",
  "paragraphs": [
   {
    "t": "note",

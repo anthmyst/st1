@@ -7,7 +7,7 @@
  "url": "https://www.bbc.co.uk/learningenglish/chinese/features/take-away-english/ep-251006",
  "audio": "https://cooltv.top/api/bbc-media?u=http%3A%2F%2Fdownloads.bbc.co.uk%2Flearningenglish%2Ffeatures%2Ftae%2Fbbc_tae_life_lessons_learnt_from_pocket_money_download.mp3",
  "pdf": "data/archive/14iz412.pdf",
- "pdfOfficial": "https://cooltv.top/api/bbc-media?u=https%3A%2F%2Fdownloads.bbc.co.uk%2Flearningenglish%2Ffeatures%2Ftae%2Fbbc_tae_life_lessons_learnt_from_pocket_money.pdf",
+ "pdfOfficial": "data/archive/14iz412.official.pdf",
  "paragraphs": [
   {
    "t": "note",

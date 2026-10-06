@@ -7,7 +7,7 @@
  "url": "https://www.bbc.co.uk/learningenglish/chinese/features/take-away-english/ep-250929",
  "audio": "https://cooltv.top/api/bbc-media?u=http%3A%2F%2Fdownloads.bbc.co.uk%2Flearningenglish%2Ffeatures%2Ftae%2Fbbc_tae_how_is_ginger_good%20for_us_download.mp3",
  "pdf": "data/archive/14iyjwz.pdf",
- "pdfOfficial": "https://cooltv.top/api/bbc-media?u=https%3A%2F%2Fdownloads.bbc.co.uk%2Flearningenglish%2Ffeatures%2Ftae%2Fbbc_tae_how_is_ginger_good%20for_us.pdf",
+ "pdfOfficial": "data/archive/14iyjwz.official.pdf",
  "paragraphs": [
   {
    "t": "note",

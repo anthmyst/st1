@@ -7,7 +7,7 @@
  "url": "https://www.bbc.co.uk/learningenglish/chinese/features/take-away-english/ep-251215",
  "audio": "https://cooltv.top/api/bbc-media?u=https%3A%2F%2Fdownloads.bbc.co.uk%2Flearningenglish%2Ffeatures%2Ftae%2Fbbc_tae_what_can_our_ancestors_teach_us_about_sleep.mp3",
  "pdf": "data/archive/14iz5qg.pdf",
- "pdfOfficial": "https://cooltv.top/api/bbc-media?u=https%3A%2F%2Fdownloads.bbc.co.uk%2Flearningenglish%2Ffeatures%2Ftae%2Fbbc_tae_what_can_our_ancestors_teach_us_about_sleep.pdf",
+ "pdfOfficial": "data/archive/14iz5qg.official.pdf",
  "paragraphs": [
   {
    "t": "note",
