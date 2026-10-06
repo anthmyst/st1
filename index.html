@@ -280,8 +280,7 @@ body.hide-en .para .en{opacity:.22;filter:blur(.4px)}
     <div class="state"><div class="spin"></div><p>正在载入最新一期…</p></div>
   </div>
   <div class="foot">
-    内容版权归 <a href="https://www.bbc.co.uk/learningenglish/chinese/features/take-away-english" target="_blank" rel="noopener">BBC Learning English</a> 所有 ·
-    数据来源 <a href="https://cooltv.top" target="_blank" rel="noopener">cooltv.top</a> · 仅供个人学习使用
+    内容版权归 <a href="https://www.bbc.co.uk/learningenglish/chinese/features/take-away-english" target="_blank" rel="noopener">BBC Learning English</a> 所有 · 仅供个人学习使用
   </div>
 </main>
 
@@ -431,12 +430,7 @@ function render(d){
     </section>
 
     <div class="tools">
-      <button class="tool on" data-tg="zh"><svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.7 7.6 1 12c1.7 4.4 6 7.5 11 7.5s9.3-3.1 11-7.5c-1.7-4.4-6-7.5-11-7.5zm0 12.5a5 5 0 110-10 5 5 0 010 10z"/></svg>中文</button>
-      <button class="tool" data-tg="en"><svg viewBox="0 0 24 24"><path d="M3 5h18v14H3z" opacity=".25"/><path d="M9.5 9l4.5 3-4.5 3z"/></svg>只看英文</button>
-      <button class="tool dl" id="dlPdf">下载 PDF</button>
       <button class="tool dl" id="dlPdfOff">官方PDF</button>
-      <button class="tool dl" id="dlMp3">下载 MP3</button>
-      <a class="tool dl" id="srcLink" href="#" target="_blank" rel="noopener">BBC 原文</a>
     </div>
 
     <article class="article" id="article">${body}</article>
@@ -495,24 +489,7 @@ function bindPlayer(d){
 }
 
 function bindTools(d){
-  document.querySelectorAll('.tool[data-tg]').forEach(b => {
-    b.onclick = () => {
-      const k = b.dataset.tg;
-      if (k === 'en'){
-        const on = document.body.classList.toggle('hide-zh');
-        b.classList.toggle('on', on);
-        document.querySelector('[data-tg="zh"]').classList.toggle('on', !on);
-      } else {
-        document.body.classList.remove('hide-zh');
-        document.querySelectorAll('.tool[data-tg]').forEach(x => x.classList.remove('on'));
-        document.querySelector('[data-tg="zh"]').classList.add('on');
-      }
-    };
-  });
-  $('#dlPdf').onclick = () => d.pdf && window.open(d.pdf, '_blank');
   $('#dlPdfOff').onclick = () => d.pdfOfficial && window.open(d.pdfOfficial, '_blank');
-  $('#dlMp3').onclick = () => d.audio && window.open(d.audio, '_blank');
-  $('#srcLink').href = d.url || '#';
 }
 
 /* ---------- 历史 ---------- */
