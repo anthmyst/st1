@@ -152,18 +152,29 @@ def download_official_pdf(pdf_url, key):
     return ""
 
 
-def ensure_pdf(data, key):
-    """为某期生成中英对照 PDF（依赖 weasyprint）。失败则静默跳过。"""
-    out = os.path.join(ARCHIVE, f"{key}.pdf")
-    if os.path.exists(out) and os.path.getsize(out) > 1000:
-        data["pdf"] = f"data/archive/{key}.pdf"
-        return
-    try:
-        from gen_pdf import build_pdf
-        build_pdf(data, out)
-        data["pdf"] = f"data/archive/{key}.pdf"
-    except Exception as e:                      # noqa: BLE001
-        print(f"！PDF 生成失败 {key}: {e}", file=sys.stderr)
+def purge_generated_pdfs():
+    """清理已生成的中英对照 PDF：用户只要官方版，不再生成/保留对照版。
+
+    删除 data/archive/*.pdf（排除 *.official.pdf）与 data/latest.pdf。
+    工作流随后会把这些删除提交上去，仓库里就只剩官方版。
+    """
+    removed = 0
+    for fn in os.listdir(ARCHIVE):
+        if fn.endswith(".pdf") and not fn.endswith(".official.pdf"):
+            try:
+                os.remove(os.path.join(ARCHIVE, fn))
+                removed += 1
+            except OSError:
+                pass
+    lp = os.path.join(DATA, "latest.pdf")
+    if os.path.exists(lp):
+        try:
+            os.remove(lp)
+            removed += 1
+        except OSError:
+            pass
+    if removed:
+        print(f"已清理 {removed} 个中英对照 PDF（仅保留官方版）")
 
 
 def main():
@@ -175,6 +186,7 @@ def main():
     args = ap.parse_args()
 
     os.makedirs(ARCHIVE, exist_ok=True)
+    purge_generated_pdfs()          # 只要官方版：清掉历史生成的中英对照 PDF
 
     series = fetch_series_index()
     items = fetch_episode_list()
@@ -213,7 +225,6 @@ def main():
         # 官方英文 PDF 落盘到本站，避免浏览器直连 cooltv 代理（403 + 暴露来源）
         data["pdfOfficial"] = (download_official_pdf(data.get("pdfOfficial") or "", key)
                                or data.get("pdfOfficial") or "")
-        ensure_pdf(data, key)                      # 生成中英对照 PDF（若有 weasyprint）
         with open(os.path.join(ARCHIVE, f"{key}.json"), "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=1)
         have.add(key)
@@ -248,10 +259,9 @@ def main():
     # 同时把仍指向 cooltv 代理的官方 PDF 下载到本站（历史归档回填）
     for e in eps:
         changed = False
-        if not e.get("pdf"):
-            ensure_pdf(e, e.get("id") or "")
-            if e.get("pdf"):
-                changed = True
+        if e.get("pdf"):                 # 不再生成中英对照 PDF，清掉残留引用
+            e["pdf"] = ""
+            changed = True
         off = e.get("pdfOfficial") or ""
         if off.startswith("http"):
             local = download_official_pdf(off, e.get("id") or "")
@@ -263,11 +273,6 @@ def main():
                 json.dump(e, f, ensure_ascii=False, indent=1)
 
     latest = eps[0]
-    # latest.pdf：始终指向最新一期的本地 PDF
-    if latest.get("id"):
-        ensure_pdf(latest, latest.get("id"))
-    with open(os.path.join(DATA, "latest.pdf"), "wb") as f:
-        f.write(open(os.path.join(ARCHIVE, f"{latest.get('id')}.pdf"), "rb").read())
     with open(os.path.join(DATA, "latest.json"), "w", encoding="utf-8") as f:
         json.dump(latest, f, ensure_ascii=False, indent=1)
 
