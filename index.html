@@ -577,6 +577,7 @@ function render(d){
   app.innerHTML = html;
   bindPlayer(d);
   bindTools(d);
+  const b2 = $('#openHist2'); if (b2) b2.onclick = openDrawer;  // 每次重渲染都重新绑定，避免 loadEp 后失效
 }
 
 function enPart(t){ // 英文标题取前半段
@@ -680,7 +681,6 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(
     ]);
     const d = await rl.json();
     render(d);
-    const b2 = $('#openHist2'); if (b2) b2.onclick = openDrawer;
     if (ri && ri.ok){
       const idx = await ri.json();
       eps = idx.items || [];
