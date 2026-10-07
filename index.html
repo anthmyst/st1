@@ -185,6 +185,7 @@ body.hide-en .para .en{opacity:.22;filter:blur(.4px)}
   background:var(--brand-soft);border-radius:14px;padding:13px 16px;
   margin:0 0 16px;font-size:14px;color:var(--ink-2);line-height:1.7;
 }
+.note.lead{background:#eef2e7;border:1px solid #dce6cf}
 .note .en{font-size:14.5px;color:var(--ink);margin-bottom:5px}
 .note.vocab{padding:9px 16px;background:#eef2e7;border:1px solid #dce6cf}
 .note.vocab .vrow{
@@ -429,7 +430,7 @@ function parseVocab(en, zh){
 function render(d){
   DATA = d; curEp = d.ep || d.id || '';
   const paras = d.paragraphs || [];
-  let body = '', openSec = false, pn = 0;
+  let body = '', openSec = false, pn = 0, leadDone = false;
   for (const p of paras){
     const t = p.t, zh = p.zh || '';
     let en = p.en || '';
@@ -452,7 +453,8 @@ function render(d){
       if (/^[一二三四五六七八九十]+、/.test(zh)){
         body += `<div class="para quiz"><div class="zh">${esc(zh)}</div></div>`;
       } else {
-        body += `<div class="note"><div>${esc(zh)}</div></div>`;
+        const lead = leadDone ? '' : ' lead'; leadDone = true;
+        body += `<div class="note${lead}"><div>${esc(zh)}</div></div>`;
       }
       continue;
     }
