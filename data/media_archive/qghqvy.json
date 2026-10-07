@@ -1,0 +1,140 @@
+{
+ "title": "AI to predict your health in the future 未来人工智能可以预测你的健康状况",
+ "seriesName": "媒体英语",
+ "level": "中级",
+ "ep": "Episode 251020",
+ "pub": "2025-10-19T16:00:00.000Z",
+ "url": "https://www.bbc.co.uk/learningenglish/chinese/features/media-english/ep-251020",
+ "audio": "https://cooltv.top/api/bbc-media?u=http%3A%2F%2Fdownloads.bbc.co.uk%2Flearningenglish%2Ffeatures%2Fme%2Fbbc_me_ai_to_predict_your_health_download.mp3",
+ "pdf": "",
+ "pdfOfficial": "data/media_archive/qghqvy.official.pdf",
+ "paragraphs": [
+  {
+   "t": "note",
+   "en": "",
+   "zh": "科学家认为，人工智能可以预测人们未来十年后的健康问题。目前，人工智能模型已经学会了通过发现人们医疗记录中疾病的发展模式来计算人们患一千多种疾病的风险。"
+  },
+  {
+   "t": "p",
+   "en": "The researchers describe this artificial intelligence model as like a weather forecast for your health. But instead of warning of a 70% chance of rain, it tells you the risk of more than a thousand diseases. The AI has learned to spot patterns hidden in the types and timings of different medical diagnoses , so now it can look at a patient and predict what is likely to come next.",
+   "zh": "研究人员称，这个人工智能模型就好像一个对我们健康状况发出的 “天气预报”。只不过它并不是对 70% 的降水概率做出预警，而是告诉人们一千多种疾病的患病风险。这个人工智能模型已经学会了如何发现隐藏在不同医学诊断类型和时间中的模式，因此现在它可以通过观察一个病人来预测接下来很可能会发生什么。"
+  },
+  {
+   "t": "p",
+   "en": "The AI was trained using more than 400,000 people's anonymous medical records from the UK and tested on nearly two million people's records in Denmark.",
+   "zh": "这个人工智能模型使用了来自英国 40 多万人的匿名医疗记录进行训练，然后在丹麦接近两百万人的医疗记录上进行了测试。"
+  },
+  {
+   "t": "p",
+   "en": "But what can we do with such predictions? People are already offered a cholesterol - lowering statin based on a calculation of their risk of a heart attack or stroke . Understanding how diseases unfold could lead to new ways of intervening early. The AI could also help inform screening programmes or help hospitals plan for future demand, like estimating how many heart attacks might happen in Norwich in 2030. The researchers say there is work to do, but that they are at the beginning of a new way of understanding health and disease.",
+   "zh": "但我们能用这种预测做些什么呢？已经有人因被计算出具有患心脏病或中风的风险而被提供了降胆固醇的他汀类药物。了解疾病如何发展能为我们带来早期干预的新方法。这个人工智能模型也能为筛查项目提供信息，或帮助医院规划未来的就诊需求，比如估计 2030 年时诺里奇可能会出现多少例心脏病发作。研究人员表示，目前还有工作要做，但他们已经处在一个理解健康和疾病的新方式的开端。"
+  },
+  {
+   "t": "h",
+   "en": "",
+   "zh": "词汇表"
+  },
+  {
+   "t": "vocab",
+   "en": "forecast",
+   "zh": "预测，预报 risk 风险 spot 发现，看到 diagnoses 诊断 anonymous 匿名的 cholesterol-lowering 降胆固醇的 statin 他汀类药物 unfold 发展 intervening 干预 screening 筛查 estimating 估计，预估"
+  },
+  {
+   "t": "h",
+   "en": "",
+   "zh": "听力练习"
+  },
+  {
+   "t": "note",
+   "en": "",
+   "zh": "一、听第一遍音频，回答问题。"
+  },
+  {
+   "t": "p",
+   "en": "1. What do researchers hope to use this AI model for? a. curing the illnesses people suffer from b. predicting the illnesses people will suffer from",
+   "zh": "二、用一分钟阅读下列问题，然后听第二遍音频并回答问题。"
+  },
+  {
+   "t": "p",
+   "en": "1. The model is designed to predict how likely someone is to get certain illnesses. a. True b. False c. Not given",
+   "zh": ""
+  },
+  {
+   "t": "p",
+   "en": "2. The model has made predictions for over 400,000 people in the UK. a. True b. False c. Not given",
+   "zh": ""
+  },
+  {
+   "t": "p",
+   "en": "3. Statins for lower cholesterol _______ introduced to reduce the risk of strokes and heart attacks. a. will soon be b. in future could be c. have been",
+   "zh": ""
+  },
+  {
+   "t": "p",
+   "en": "4. Knowing how illnesses develop could make earlier treatment possible. a. True b. False c. Not given",
+   "zh": "三、听第三遍音频，将句子补充完整。（提示：可以反复听，直到听清楚每一个词）"
+  },
+  {
+   "t": "p",
+   "en": "1. The AI has learned to spot patterns hidden in the types and timings of different medical diagnoses, so now it can ________________ patient and predict what is likely to come next.",
+   "zh": ""
+  },
+  {
+   "t": "p",
+   "en": "2. People are already offered a cholesterol-lowering statin based on a calculation of their ________________ heart attack or stroke.",
+   "zh": ""
+  },
+  {
+   "t": "h",
+   "en": "",
+   "zh": "答案"
+  },
+  {
+   "t": "note",
+   "en": "",
+   "zh": "一、听第一遍音频，回答问题。"
+  },
+  {
+   "t": "p",
+   "en": "1. What do researchers hope to use this AI model for?",
+   "zh": ""
+  },
+  {
+   "t": "p",
+   "en": "b. predicting the illnesses people will suffer from",
+   "zh": "二、用一分钟阅读下列问题，然后听第二遍音频并回答问题。"
+  },
+  {
+   "t": "p",
+   "en": "1. a. True. But instead of warning of a 70% chance of rain, it tells you the risk of more than a thousand diseases .",
+   "zh": ""
+  },
+  {
+   "t": "p",
+   "en": "2. b. False. The AI was trained using more than 400,000 people's anonymous medical records from the UK .",
+   "zh": ""
+  },
+  {
+   "t": "p",
+   "en": "3. c. People are already offered a cholesterol-lowering statin based on a calculation of their risk of a heart attack or stroke.",
+   "zh": ""
+  },
+  {
+   "t": "p",
+   "en": "4. a. True. Understanding how diseases unfold could lead to new ways of intervening early .",
+   "zh": "三、听第三遍音频，将句子补充完整。（提示：可以反复听，直到听清楚每一个词）"
+  },
+  {
+   "t": "p",
+   "en": "1. The AI has learned to spot patterns hidden in the types and timings of different medical diagnoses, so now it can look at a patient and predict what is likely to come next.",
+   "zh": ""
+  },
+  {
+   "t": "p",
+   "en": "2. People are already offered a cholesterol-lowering statin based on a calculation of their risk of a heart attack or stroke.",
+   "zh": ""
+  }
+ ],
+ "id": "qghqvy",
+ "desc": "AI could predict your future health"
+}

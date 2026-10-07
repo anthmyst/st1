@@ -1,0 +1,495 @@
+{
+ "series": "媒体英语",
+ "slug": "media-english",
+ "updatedAt": "2026-10-07T06:54:03+0000",
+ "latest": {
+  "ep": "Episode 261012",
+  "title": "Developing El Niño becomes strongest on record weeks before expected peak 厄尔尼诺现象持续发展，距预估峰值仍有数周便创下历史最强记录",
+  "desc": "",
+  "pub": "2026-10-11T16:00:00.000Z",
+  "level": "中级",
+  "file": "data/media_archive/qh75xc.json"
+ },
+ "items": [
+  {
+   "ep": "Episode 261012",
+   "title": "Developing El Niño becomes strongest on record weeks before expected peak 厄尔尼诺现象持续发展，距预估峰值仍有数周便创下历史最强记录",
+   "desc": "",
+   "pub": "2026-10-11T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh75xc.json"
+  },
+  {
+   "ep": "Episode 261005",
+   "title": "Part-human part-mouse brain developed in science breakthrough 新科研突破：科学家培育出 “半人半鼠” 大脑",
+   "desc": "Find out why human cells have been put into mice brains",
+   "pub": "2026-10-04T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh75wi.json"
+  },
+  {
+   "ep": "Episode 260928",
+   "title": "Very hot drinks may increase cancer risk, study says 研究表明：饮用过烫饮品或增加患癌风险",
+   "desc": "Are you a fan of very hot beverages?",
+   "pub": "2026-09-27T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6lsf.json"
+  },
+  {
+   "ep": "Episode 260921",
+   "title": "World's first patient to undergo live AI-assisted brain surgery has tumour removed 全球首例：患者接受人工智能实时辅助脑部手术，肿瘤已被成功切除",
+   "desc": "First AI surgery performed",
+   "pub": "2026-09-20T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6ls8.json"
+  },
+  {
+   "ep": "Episode 260914",
+   "title": "Workplace accent discrimination in the UK 英国职场口音歧视",
+   "desc": "Are regional UK accents causing people problems at work?",
+   "pub": "2026-09-13T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6lre.json"
+  },
+  {
+   "ep": "Episode 260907",
+   "title": "Melting Arctic ice allows large whales to move in 北极海冰融化，大型鲸类得以进入新海域",
+   "desc": "Find out what happens when humpback whales move into new waters",
+   "pub": "2026-09-06T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6lqk.json"
+  },
+  {
+   "ep": "Episode 260831",
+   "title": "Huge Roman villa found under popular park dubbed town's 'Pompeii' 小镇热门公园地下发现罗马别墅遗址，被誉为当地的 “庞贝古城”",
+   "desc": "A huge discovery in Wales",
+   "pub": "2026-08-30T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6kyw.json"
+  },
+  {
+   "ep": "Episode 260824",
+   "title": "Spider monkeys sharing fruit knowledge 蜘蛛猴分享果树情报",
+   "desc": "Learn how spider monkeys get the best fruit",
+   "pub": "2026-08-23T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6ky2.json"
+  },
+  {
+   "ep": "Episode 260817",
+   "title": "Near-extinct snails rescued from rock 濒临灭绝的蜗牛从岩缝中获救",
+   "desc": "Hope for this tiny, near-extinct species of snail",
+   "pub": "2026-08-16T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6kx8.json"
+  },
+  {
+   "ep": "Episode 260810",
+   "title": "Chimpanzees build trust through touch 黑猩猩通过肢体接触建立信任",
+   "desc": "Chimpanzees hug to build social relationships",
+   "pub": "2026-08-09T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6kx1.json"
+  },
+  {
+   "ep": "Episode 260803",
+   "title": "World's most expensive dinosaur 世界上成交价最高的恐龙化石",
+   "desc": "Learn about the $50m dinosaur",
+   "pub": "2026-08-02T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6kw7.json"
+  },
+  {
+   "ep": "Episode 260727",
+   "title": "First dinosaur bone from Antarctica found in a drawer 来自南极的首块恐龙骨骼在抽屉中被发现",
+   "desc": "How did a precious fossil escaped the eyes?",
+   "pub": "2026-07-26T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6k3w.json"
+  },
+  {
+   "ep": "Episode 260720",
+   "title": "Famous 11th century tapestry to be housed at the British museum 著名的 11 世纪贝叶挂毯将在大英博物馆展出",
+   "desc": "The 11th century embroidery depicts when Anglo-Saxon England was taken over by the Normans in 1066",
+   "pub": "2026-07-19T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6k3p.json"
+  },
+  {
+   "ep": "Episode 260713",
+   "title": "Simpler version of Stonehenge discovered 考古学家发现结构更简单的 “巨石阵”",
+   "desc": "A simpler structure near Stonehenge has been examined",
+   "pub": "2026-07-12T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6k2v.json"
+  },
+  {
+   "ep": "Episode 260706",
+   "title": "What happens when octopuses take over 章鱼 “入侵” 给英国渔民带来新问题",
+   "desc": "Climate change is blamed for a migration of around 200,000 octopuses to southwest England",
+   "pub": "2026-07-05T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6k21.json"
+  },
+  {
+   "ep": "Episode 260629",
+   "title": "Why temperature records are being not only broken but smashed 为何极端高温纪录不仅被打破，而且被大幅刷新",
+   "desc": "Hundreds of heat records are expected to be broken in Europe",
+   "pub": "2026-06-28T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6j9p.json"
+  },
+  {
+   "ep": "Episode 260622",
+   "title": "World record: Oldest person to perform a wing walk 世界纪录：最高龄挑战 “机翼行走” 的长者",
+   "desc": "A 98-year-old man completed a 9-minute wing walk, setting a new world record",
+   "pub": "2026-06-21T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6j9i.json"
+  },
+  {
+   "ep": "Episode 260615",
+   "title": "Prestigious flower show lifts gnome ban 知名花展取消花园小矮人装饰禁令",
+   "desc": "Celebrity-painted gnomes to be sold for charity",
+   "pub": "2026-06-14T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6j8o.json"
+  },
+  {
+   "ep": "Episode 260608",
+   "title": "Instant AI answers can trivialise human intelligence, warns Royal Observatory 皇家天文台发出警告：人工智能的即时解答可能弱化人类智能",
+   "desc": "Lots of people now use AI tools, but they could be making us less intelligent",
+   "pub": "2026-06-07T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6j7u.json"
+  },
+  {
+   "ep": "Episode 260601",
+   "title": "Most popular race: London marathon breaks records 最火赛事：伦敦马拉松连破纪录",
+   "desc": "The 2026 London Marathon was the biggest and fastest so far",
+   "pub": "2026-05-31T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6j7n.json"
+  },
+  {
+   "ep": "Episode 260525",
+   "title": "New wildlife medical centre to celebrate zoological society's 200th anniversary 伦敦动物学会将建新野生动物医疗中心，庆祝成立两百周年",
+   "desc": "New medical centre for London Zoo",
+   "pub": "2026-05-24T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6ifc.json"
+  },
+  {
+   "ep": "Episode 260518",
+   "title": "Sustainable tourism partnership encourages visits to protected sites following Unesco report 联合国教科文组织报告促成新合作，鼓励可持续游览英国受保护遗址",
+   "desc": "How can you see some the UK’s most beautiful Unesco sites sustainably?",
+   "pub": "2026-05-17T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6iei.json"
+  },
+  {
+   "ep": "Episode 260511",
+   "title": "The best time to exercise depends on your body clock, study finds 研究发现：最佳锻炼时间取决于你的生物钟",
+   "desc": "When do you prefer to exercise, if at all?",
+   "pub": "2026-05-10T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6ieb.json"
+  },
+  {
+   "ep": "Episode 260504",
+   "title": "Exhibition will explore the late Queen's fashion 已故女王服饰展即将开幕",
+   "desc": "Want to see some Queen Elizabeth II's famous fashion looks?",
+   "pub": "2026-05-03T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6idh.json"
+  },
+  {
+   "ep": "Episode 260427",
+   "title": "Data shows decline in migratory fish populations 数据显示洄游鱼类种群数量下降",
+   "desc": "Why is there fewer fish?",
+   "pub": "2026-04-26T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6hl5.json"
+  },
+  {
+   "ep": "Episode 260420",
+   "title": "Mixed-breed dogs more badly behaved, vets warn 兽医警告：杂交犬更易出现不良行为",
+   "desc": "Dogs that are part poodle might be naughtier than their pure-bred parents",
+   "pub": "2026-04-19T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6hky.json"
+  },
+  {
+   "ep": "Episode 260413",
+   "title": "World's longest coastal path opened by King Charles 英国国王查尔斯为全球最长沿海步道揭幕剪彩",
+   "desc": "2,689 mile-long path opened after 18 years",
+   "pub": "2026-04-12T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6hk4.json"
+  },
+  {
+   "ep": "Episode 260406",
+   "title": "Hedgehog secret discovered – they hear at a range far beyond humans 刺猬听觉奥秘被揭开：远超人类听觉上限",
+   "desc": "How do hedgehogs communicate?",
+   "pub": "2026-04-05T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6hja.json"
+  },
+  {
+   "ep": "Episode 260330",
+   "title": "Collagen supplements improve skin but won't stop wrinkles, research says 研究称胶原蛋白补充剂能改善肤质，却难挡皱纹",
+   "desc": "Do collagen supplements really work?",
+   "pub": "2026-03-29T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6grm.json"
+  },
+  {
+   "ep": "Episode 260323",
+   "title": "Brown spots reveal Antarctic penguin problem 棕色斑块揭示南极企鹅的生存困境",
+   "desc": "Why are piles of penguin feathers problematic?",
+   "pub": "2026-03-22T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6gqs.json"
+  },
+  {
+   "ep": "Episode 260316",
+   "title": "Polar bears getting \"fatter and healthier\" amid ice loss 海冰少了，北极熊却 “更胖、更健康”",
+   "desc": "Why are polar bears getting fatter?",
+   "pub": "2026-03-15T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6gpy.json"
+  },
+  {
+   "ep": "Episode 260309",
+   "title": "Pendant linked to King Henry VIII to stay in the British Museum 与亨利八世有关的吊坠将留在大英博物馆",
+   "desc": "What makes this gold pendant so special?",
+   "pub": "2026-03-08T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6gp4.json"
+  },
+  {
+   "ep": "Episode 260302",
+   "title": "Rome to charge tourists 罗马将向游客收费",
+   "desc": "Rome to charge for some attractions",
+   "pub": "2026-03-01T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6gox.json"
+  },
+  {
+   "ep": "Episode 260223",
+   "title": "Oldest cave art painting 已知最古老的洞穴艺术壁画",
+   "desc": "What can we learn from this cave painting?",
+   "pub": "2026-02-22T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6fwj.json"
+  },
+  {
+   "ep": "Episode 260216",
+   "title": "Landscape beneath Antarctica's icy surface revealed in unprecedented detail 新地图呈现了南极洲冰层下地貌前所未有的细节",
+   "desc": "What do these new maps of Antarctica show us?",
+   "pub": "2026-02-15T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6fvp.json"
+  },
+  {
+   "ep": "Episode 260209",
+   "title": "What are the evolutionary origins of kissing? 接吻在进化史上的起源是什么？",
+   "desc": "Why do so many animals 'kiss' and when did kissing begin?",
+   "pub": "2026-02-08T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6fuv.json"
+  },
+  {
+   "ep": "Episode 260202",
+   "title": "Global temperatures down in 2025 2025 年全球气温有所下降",
+   "desc": "2025 was cooler than 2024, but is that the whole story?",
+   "pub": "2026-02-01T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6fuo.json"
+  },
+  {
+   "ep": "Episode 260126",
+   "title": "The 'superhero' oyster species helping to clean water 一种能帮助清洁水质的 “超级英雄” 牡蛎",
+   "desc": "What's special about these oysters?",
+   "pub": "2026-01-25T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6f2d.json"
+  },
+  {
+   "ep": "Episode 260119",
+   "title": "UK charity put 10 endangered species on priority list to help in 2026 英国慈善组织将十个濒危物种列入其2026年优先救助名单",
+   "desc": "Which animals are most endangered this year?",
+   "pub": "2026-01-18T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6f1j.json"
+  },
+  {
+   "ep": "Episode 260112",
+   "title": "Deep sea mining could pose wildlife risk 深海采矿可能威胁野生动物生存",
+   "desc": "What risks are there from deep sea mining?",
+   "pub": "2026-01-11T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6f1c.json"
+  },
+  {
+   "ep": "Episode 260105",
+   "title": "The year of rage bait “Rage bait（愤怒诱饵）”之年",
+   "desc": "Do you often see rage bait?",
+   "pub": "2026-01-04T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qh6f0i.json"
+  },
+  {
+   "ep": "Episode 251229",
+   "title": "New study shows four pivotal ages for your brain 新研究揭示人类大脑的四个关键年龄点",
+   "desc": "What are scientists surprised about?",
+   "pub": "2025-12-28T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qghskp.json"
+  },
+  {
+   "ep": "Episode 251222",
+   "title": "Ultra-processed food is a global health threat, experts warn 专家警告称超加工食品威胁全球健康",
+   "desc": "International experts want action to be taken against ultra-processed food",
+   "pub": "2025-12-21T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qghski.json"
+  },
+  {
+   "ep": "Episode 251215",
+   "title": "Child diabetes discovery could lead to future drug breakthrough 有关儿童糖尿病的新发现可能带来未来的药物突破",
+   "desc": "Researchers have found why diabetes can be severe in children",
+   "pub": "2025-12-14T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qghsjo.json"
+  },
+  {
+   "ep": "Episode 251208",
+   "title": "A longer daily walk could be better for your heart than short strolls 每天一次长距离步行可能比多次短距离步行更有益心脏健康",
+   "desc": "Why is one longer walk better than lots of shorter ones?",
+   "pub": "2025-12-07T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qghsiu.json"
+  },
+  {
+   "ep": "Episode 251201",
+   "title": "'Lost' spider found after 40 years “失踪”的蜘蛛物种时隔 40 年被重新发现",
+   "desc": "Wolf spider species not extinct",
+   "pub": "2025-11-30T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qghsin.json"
+  },
+  {
+   "ep": "Episode 251124",
+   "title": "New UK award for children's fiction open to global authors 新英国儿童小说奖项将向全球作家开放",
+   "desc": "The new award has a panel of child and adult judges",
+   "pub": "2025-11-23T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qghrqb.json"
+  },
+  {
+   "ep": "Episode 251117",
+   "title": "Mosquitoes found in Iceland for first time after record heat 在经历了创纪录的高温后，冰岛首次发现蚊子",
+   "desc": "Why are mosquitoes now in this cold country?",
+   "pub": "2025-11-16T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qghrph.json"
+  },
+  {
+   "ep": "Episode 251110",
+   "title": "What insects can teach surgeons 昆虫能给外科医生带来哪些启示",
+   "desc": "What can surgeons learn from sawflies?",
+   "pub": "2025-11-09T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qghrpa.json"
+  },
+  {
+   "ep": "Episode 251103",
+   "title": "Rat populations rise in cities 城市中老鼠的数量越来越多",
+   "desc": "Why are rat populations increasing in cities?",
+   "pub": "2025-11-02T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qghrog.json"
+  },
+  {
+   "ep": "Episode 251027",
+   "title": "Huntington's disease successfully treated for first time 针对亨廷顿病的疗法首次取得成功",
+   "desc": "Hope for patients and their families",
+   "pub": "2025-10-26T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qghqw5.json"
+  },
+  {
+   "ep": "Episode 251020",
+   "title": "AI to predict your health in the future 未来人工智能可以预测你的健康状况",
+   "desc": "AI could predict your future health",
+   "pub": "2025-10-19T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qghqvy.json"
+  },
+  {
+   "ep": "Episode 251013",
+   "title": "Are rocks discovered on Mars a sign of potential past life? 科学家在火星上发现的岩石会是生命存在过的迹象吗？",
+   "desc": "Do these newly discovered rocks mean there was once life on Mars?",
+   "pub": "2025-10-12T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qghqv4.json"
+  },
+  {
+   "ep": "Episode 251006",
+   "title": "Energy drinks to be banned for under-16s in England 英格兰或将禁止向 16 岁以下未成年人出售能量饮料",
+   "desc": "Why are energy drinks being banned?",
+   "pub": "2025-10-05T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qghqua.json"
+  },
+  {
+   "ep": "Episode 250929",
+   "title": "Spiky dinosaur discovery 科学家发现了长有尖刺的新恐龙品种",
+   "desc": "Dinosaur with metre-long spikes found in Morocco",
+   "pub": "2025-09-28T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qgh6q7.json"
+  },
+  {
+   "ep": "Episode 250922",
+   "title": "AI could fill gaps in our knowledge of Ancient Rome 人工智能或能帮助人类填补对古罗马认识中的空缺",
+   "desc": "Can an AI tool fill in the gaps in our knowledge of human history?",
+   "pub": "2025-09-21T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qgh6q0.json"
+  },
+  {
+   "ep": "Episode 250915",
+   "title": "Record warm seas help to bring extraordinary new species to UK waters 有记录以来最温暖的海水令非同寻常的新物种来到英国海域",
+   "desc": "Which new species are appearing in UK waters?",
+   "pub": "2025-09-14T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qgh6p6.json"
+  },
+  {
+   "ep": "Episode 250908",
+   "title": "Female friendship important to gorillas 研究发现雌性之间的友谊对大猩猩种群意义重大",
+   "desc": "Why friendship is important to gorilla society",
+   "pub": "2025-09-07T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qgh6oc.json"
+  },
+  {
+   "ep": "Episode 250901",
+   "title": "Ancient Siberian 'ice mummy' had intricate tattoos, imaging reveals 图像揭示古代西伯利亚 “冰封木乃伊” 身上复杂精细的纹身",
+   "desc": "Ancient mummies from Siberia found with tattoos",
+   "pub": "2025-08-31T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qgh6o5.json"
+  },
+  {
+   "ep": "Episode 250825",
+   "title": "Just 7,000 steps a day cuts health risks, study says 研究表明每天仅走 7000 步就可能降低患病风险",
+   "desc": "How many steps should you walk a day for your health?",
+   "pub": "2025-08-24T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/media_archive/qgh5vu.json"
+  }
+ ]
+}
