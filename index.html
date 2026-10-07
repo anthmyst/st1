@@ -188,9 +188,10 @@ h1.title{
 
 /* ---------- 正文 ---------- */
 .article{
-  background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);
-  box-shadow:var(--shadow);padding:8px 22px 24px;
+  position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);
+  box-shadow:var(--shadow);padding:8px 22px 52px;
 }
+.art-dl{position:absolute;right:18px;bottom:14px}
 .desc-pill{
   display:block;background:#eef2e7;color:var(--ink-2);
   border:1px solid #dce6cf;border-radius:16px;padding:11px 16px;font-size:13.5px;line-height:1.62;
@@ -553,7 +554,6 @@ function render(d){
         </div>
         <div class="title-row">
           <h1 class="title">${esc(enPart(d.title))}</h1>
-          <button class="tool dl" id="dlPdfOff" title="官方 PDF" aria-label="官方 PDF"><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg></button>
         </div>
         <p class="title-sub">${esc(zhPart(d.title))}</p>
         <div class="player">
@@ -572,7 +572,7 @@ function render(d){
       </div>
     </section>
 
-    <article class="article" id="article">${d.desc?`<div class="desc-pill">${esc(d.desc)}</div>`:''}${body}</article>
+    <article class="article" id="article">${d.desc?`<div class="desc-pill">${esc(d.desc)}</div>`:''}${body}<div class="art-dl"><button class="tool dl" id="dlPdfOff" title="官方 PDF" aria-label="官方 PDF"><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg></button></div></article>
   `;
   app.innerHTML = html;
   bindPlayer(d);
