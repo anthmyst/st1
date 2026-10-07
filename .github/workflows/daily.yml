@@ -53,7 +53,10 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html _site/
+          cp manifest.webmanifest _site/
+          cp sw.js _site/
           cp -r data _site/data
+          cp -r icons _site/icons
           cp README.md _site/ 2>/dev/null || true
 
       - uses: actions/configure-pages@v5
