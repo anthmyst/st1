@@ -668,24 +668,17 @@ $('#dlMask').onclick = closeDlCard;
 async function doDownload(d){
   if (!d || !d.audio) return;
   const name = (d.ep || d.id || 'audio').replace(/\s+/g, '_') + '.mp3';
-  // 1) 能取到文件内容（同源或对方允许跨域）时：转成本地文件静默下载，最稳
   try{
-    const r = await fetch(d.audio, { mode: 'cors' });
-    if (r.ok){
-      const url = URL.createObjectURL(await r.blob());
-      const a = document.createElement('a');
-      a.href = url; a.download = name; a.style.display = 'none';
-      document.body.appendChild(a); a.click(); a.remove();
-      setTimeout(() => URL.revokeObjectURL(url), 3000);
-      return;
-    }
-  }catch(err){}
-  // 2) 跨域取不到时：用隐藏 iframe 触发下载——不新开窗口，也不离开当前页
-  const f = document.createElement('iframe');
-  f.style.display = 'none';
-  f.src = d.audio;
-  document.body.appendChild(f);
-  setTimeout(() => f.remove(), 10000);
+    const r = await fetch(d.audio);
+    if (!r.ok) throw new Error('bad');
+    const url = URL.createObjectURL(await r.blob());
+    const a = document.createElement('a');
+    a.href = url; a.download = name;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 3000);
+  }catch(err){
+    window.open(d.audio, '_blank');                // 跨域取不到时回退为打开音频
+  }
 }
 
 function bindPlayer(d){
