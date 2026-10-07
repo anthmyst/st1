@@ -76,15 +76,15 @@ a{color:inherit;text-decoration:none}
   color:var(--brand-2);font-weight:700;margin-bottom:10px;
 }
 .kicker .dot{width:4px;height:4px;border-radius:50%;background:var(--accent)}
-.kicker .tool{
+.kicker .tool,.title-row .tool{
   margin-left:auto;text-transform:none;letter-spacing:.3px;
   width:30px;height:30px;padding:0;flex:none;
   border-radius:50%;justify-content:center;
   background:var(--brand-soft);color:var(--brand);border:1px solid var(--line);
   transition:background .3s ease,color .3s ease,transform .3s ease;
 }
-.kicker .tool:hover{background:var(--bg-2);color:var(--brand-2)}
-.kicker .tool:active{transform:scale(.94)}
+.kicker .tool:hover,.title-row .tool:hover{background:var(--bg-2);color:var(--brand-2)}
+.kicker .tool:active,.title-row .tool:active{transform:scale(.94)}
 .pill{
   background:var(--brand-soft);color:var(--brand);
   padding:2px 10px;border-radius:999px;font-size:11px;
@@ -95,6 +95,8 @@ h1.title{
   letter-spacing:.2px;font-weight:700;
 }
 .title-sub{font-size:15.5px;color:var(--zh);font-weight:600;margin:0 0 4px;font-family:var(--sans)}
+.title-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 5px}
+.title-row .title{margin:0;flex:1;min-width:0}
 .meta-line{
   display:flex;align-items:center;gap:7px;flex-wrap:wrap;
   margin-top:11px;font-size:12.5px;color:var(--ink-3);
@@ -481,9 +483,11 @@ function render(d){
           <span>${esc(d.ep || '')}</span>
           <span class="dot"></span>
           <span>随身英语</span>
+        </div>
+        <div class="title-row">
+          <h1 class="title">${esc(enPart(d.title))}</h1>
           <button class="tool dl" id="dlPdfOff" title="官方 PDF" aria-label="官方 PDF"><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg></button>
         </div>
-        <h1 class="title">${esc(enPart(d.title))}</h1>
         <p class="title-sub">${esc(zhPart(d.title))}</p>
         <div class="player">
           <button class="pp" id="pp" aria-label="播放">
