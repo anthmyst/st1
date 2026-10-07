@@ -587,6 +587,7 @@ function render(d){
           <div class="pctl">
             <button class="pib" id="loop" title="单句循环"><svg viewBox="0 0 24 24"><path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z"/></svg></button>
             <button class="speed" id="speed">1.0×</button>
+            <button class="pib" id="dlAudio" title="下载音频" aria-label="下载音频"><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg></button>
           </div>
         </div>
       </div>
@@ -640,6 +641,24 @@ function bindPlayer(d){
     au.currentTime = (e.clientX - r.left) / r.width * au.duration;
   };
   $('#loop').onclick = e => { loop = !loop; e.currentTarget.classList.toggle('on', loop); };
+
+  const dlA = $('#dlAudio');
+  dlA.style.display = d.audio ? '' : 'none';       // 没有音频时不显示
+  dlA.onclick = async () => {
+    if (!d.audio) return;
+    const name = (d.ep || d.id || 'audio').replace(/\s+/g, '_') + '.mp3';
+    try{
+      const r = await fetch(d.audio);
+      if (!r.ok) throw new Error('bad');
+      const url = URL.createObjectURL(await r.blob());
+      const a = document.createElement('a');
+      a.href = url; a.download = name;
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 3000);
+    }catch(err){
+      window.open(d.audio, '_blank');              // 跨域取不到时回退为打开音频
+    }
+  };
   $('#speed').onclick = e => {
     rateIdx = (rateIdx + 1) % RATES.length;
     au.playbackRate = RATES[rateIdx];
