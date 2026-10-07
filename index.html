@@ -725,7 +725,7 @@ function bindPlayer(d){
       try{ navigator.vibrate && navigator.vibrate(15); }catch(e){}
     }, 500);
   };
-  dlA.onpointerup = () => { clearLp(); if (!lpFired) openDlCard(dlName); };
+  dlA.onpointerup = clearLp;                       // 轻点不触发，只有长按满 500ms 才弹
   dlA.onpointercancel = clearLp;
   dlA.onpointerleave = clearLp;
   dlA.onclick = e => e.preventDefault();           // 拦截原生点击，统一走确认卡
