@@ -53,10 +53,11 @@ a{color:inherit;text-decoration:none}
 .brand{font-size:16px;letter-spacing:.3px;color:var(--ink)}
 .brand small{display:block;font-size:10.5px;color:var(--ink-3);letter-spacing:.7px;margin-top:-2px}
 .btn-hist{
-  display:inline-flex;align-items:center;gap:5px;
-  font-size:13px;font-weight:700;color:var(--brand);
-  background:var(--brand-soft);border:1px solid transparent;border-radius:999px;
-  padding:7px 15px;cursor:pointer;transition:background .3s ease,color .3s ease;
+  display:inline-flex;align-items:center;justify-content:center;
+  width:30px;height:30px;padding:0;flex:none;
+  color:var(--brand);
+  background:var(--brand-soft);border:1px solid transparent;border-radius:50%;
+  cursor:pointer;transition:background .3s ease,color .3s ease;
 }
 .btn-hist:hover{background:var(--bg-2);color:var(--brand-2)}
 
@@ -184,7 +185,7 @@ h1.title{
 .tool:hover{border-color:var(--brand-2);color:var(--brand-2)}
 .tool.on{background:var(--brand);border-color:var(--brand);color:#faf6f1}
 .tool svg{width:13px;height:13px;fill:currentColor}
-.tool.dl{color:var(--brand);border-color:var(--brand-soft);background:var(--brand-soft)}
+.tool.dl{color:var(--brand);border-color:var(--brand-soft);background:var(--brand-soft);width:30px;height:30px;padding:0;justify-content:center;border-radius:50%}
 
 /* ---------- 正文 ---------- */
 .article{
@@ -352,7 +353,7 @@ body.hide-en .para .en{opacity:.22;filter:blur(.4px)}
 <nav class="tabbar" aria-label="底部导航">
   <button type="button" class="on" data-go="today">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/></svg>
-    <span>今日</span>
+    <span>T</span>
   </button>
   <button type="button" data-go="vocab">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 2 2 0 0 0-2 2 1 1 0 0 1-1-1z"/></svg>
@@ -553,9 +554,8 @@ function render(d){
           <span>${esc(d.ep || '')}</span>
           <span class="dot"></span>
           <span>${esc(d.seriesName || '随身英语')}</span>
-          <button class="btn-hist" id="openHist2">
-            <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 11h-4v-2h2V6h2v7z"/></svg>
-            往期
+          <button class="btn-hist" id="openHist2" title="往期" aria-label="往期">
+            <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3.5 2"/></svg>
           </button>
         </div>
         <div class="title-row">
