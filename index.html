@@ -162,6 +162,8 @@ h1.title{
   text-transform:uppercase;margin:24px 0 11px;display:flex;align-items:center;gap:9px;
 }
 .sec-h::after{content:"";flex:1;height:1px;background:var(--line)}
+.sec-h.ct{justify-content:center;text-align:center;letter-spacing:1.2px}
+.sec-h.ct::after{display:none}
 .para{margin:0 0 17px}
 .para .en{
   font-size:16.5px;line-height:1.78;color:var(--ink);
@@ -178,10 +180,10 @@ body.hide-en .para .en{opacity:.22;filter:blur(.4px)}
   margin:0 0 16px;font-size:14px;color:var(--ink-2);line-height:1.7;
 }
 .note .en{font-size:14.5px;color:var(--ink);margin-bottom:5px}
-.note.vocab{padding:9px 16px}
+.note.vocab{padding:9px 16px;background:#eef2e7;border:1px solid #dce6cf}
 .note.vocab .vrow{
   display:flex;gap:10px;align-items:baseline;
-  padding:6px 0;border-bottom:1px dashed rgba(92,64,51,.18);
+  padding:6px 0;border-bottom:1px dashed rgba(95,120,70,.22);
 }
 .note.vocab .vrow:last-child{border-bottom:0}
 .note.vocab .ven{
@@ -426,7 +428,9 @@ function render(d){
     const t = p.t, zh = p.zh || '';
     let en = p.en || '';
     if (t === 'h'){
-      body += `</div><div class="sec-blk"><div class="sec-h">${esc(zh || en)}</div>`;
+      const htxt = zh || en;
+      const hcls = htxt === '测验与练习' ? 'sec-h ct' : 'sec-h';
+      body += `</div><div class="sec-blk"><div class="${hcls}">${esc(htxt)}</div>`;
       openSec = true; pn = 0; continue;
     }
     if (t === 'vocab'){
@@ -438,7 +442,12 @@ function render(d){
       continue;
     }
     if (!en && zh){
-      body += `<div class="note"><div>${esc(zh)}</div></div>`;
+      // 以中文序号（一、二、…）开头的子标题，与测验里“二/三”的 .zh 小字样式统一
+      if (/^[一二三四五六七八九十]+、/.test(zh)){
+        body += `<div class="para quiz"><div class="zh">${esc(zh)}</div></div>`;
+      } else {
+        body += `<div class="note"><div>${esc(zh)}</div></div>`;
+      }
       continue;
     }
     if (t === 'note'){
@@ -468,12 +477,7 @@ function render(d){
         </div>
         <h1 class="title">${esc(enPart(d.title))}</h1>
         <p class="title-sub">${esc(zhPart(d.title))}</p>
-        <div class="meta-line">
-          <span>${fmtDate(d.pub)}</span>
-          <span class="sep">·</span>
-          <span>官方中文导读 + 词汇表 + 测验解析</span>
-          ${d.desc?`<span class="sep">·</span><span>${esc(d.desc)}</span>`:''}
-        </div>
+        ${d.desc?`<div class="meta-line"><span>${esc(d.desc)}</span></div>`:''}
         <div class="player">
           <button class="pp" id="pp" aria-label="播放">
             <svg viewBox="0 0 24 24" id="ppIcon"><path d="M8 5v14l11-7z"/></svg>
