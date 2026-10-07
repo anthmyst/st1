@@ -684,9 +684,22 @@ function bindPlayer(d){
 }
 
 function bindTools(d){
+  // 右下角 PDF：与音频一致，长按满 500ms 才触发，轻点不响应（防误触）
   const pdfBtn = $('#dlPdfOff');
   pdfBtn.style.display = d.pdfOfficial ? '' : 'none';   // 该期没有可用 PDF 时不显示按钮
-  pdfBtn.onclick = () => d.pdfOfficial && window.open(d.pdfOfficial, '_blank');
+  let pdTimer = null;
+  const clearPd = () => { if (pdTimer){ clearTimeout(pdTimer); pdTimer = null; } };
+  pdfBtn.oncontextmenu = e => e.preventDefault();       // 长按不弹系统菜单
+  pdfBtn.onpointerdown = () => {
+    pdTimer = setTimeout(() => {
+      if (d.pdfOfficial) window.open(d.pdfOfficial, '_blank');
+      try{ navigator.vibrate && navigator.vibrate(15); }catch(e){}
+    }, 500);
+  };
+  pdfBtn.onpointerup = clearPd;                         // 轻点不触发
+  pdfBtn.onpointercancel = clearPd;
+  pdfBtn.onpointerleave = clearPd;
+  pdfBtn.onclick = e => e.preventDefault();
 
   const srcBtn = $('#openSrc');
   if (srcBtn){
