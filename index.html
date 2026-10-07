@@ -164,6 +164,8 @@ h1.title{
 .sec-h::after{content:"";flex:1;height:1px;background:var(--line)}
 .sec-h.ct{justify-content:center;text-align:center;letter-spacing:1.2px}
 .sec-h.ct::after{display:none}
+.sec-h.cm{justify-content:center;text-align:center;letter-spacing:1.2px}
+.sec-h.cm::before{content:"";flex:1;height:1px;background:var(--line)}
 .para{margin:0 0 17px}
 .para .en{
   font-size:16.5px;line-height:1.78;color:var(--ink);
@@ -429,7 +431,9 @@ function render(d){
     let en = p.en || '';
     if (t === 'h'){
       const htxt = zh || en;
-      const hcls = htxt === '测验与练习' ? 'sec-h ct' : 'sec-h';
+      let hcls = 'sec-h';
+      if (htxt === '测验与练习') hcls = 'sec-h ct';
+      else if (htxt === '词汇表') hcls = 'sec-h cm';
       body += `</div><div class="sec-blk"><div class="${hcls}">${esc(htxt)}</div>`;
       openSec = true; pn = 0; continue;
     }
