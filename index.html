@@ -157,6 +157,11 @@ h1.title{
   background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);
   box-shadow:var(--shadow);padding:8px 22px 24px;
 }
+.desc-pill{
+  display:block;background:var(--brand-soft);color:var(--ink-2);
+  border-radius:16px;padding:11px 16px;font-size:13.5px;line-height:1.62;
+  margin:18px 0 6px;font-family:var(--sans);
+}
 .sec-h{
   font-size:13px;font-weight:800;letter-spacing:.6px;color:var(--brand);
   text-transform:uppercase;margin:24px 0 11px;display:flex;align-items:center;gap:9px;
@@ -478,7 +483,6 @@ function render(d){
         </div>
         <h1 class="title">${esc(enPart(d.title))}</h1>
         <p class="title-sub">${esc(zhPart(d.title))}</p>
-        ${d.desc?`<div class="meta-line"><span>${esc(d.desc)}</span></div>`:''}
         <div class="player">
           <button class="pp" id="pp" aria-label="播放">
             <svg viewBox="0 0 24 24" id="ppIcon"><path d="M8 5v14l11-7z"/></svg>
@@ -495,7 +499,7 @@ function render(d){
       </div>
     </section>
 
-    <article class="article" id="article">${body}</article>
+    <article class="article" id="article">${d.desc?`<div class="desc-pill">${esc(d.desc)}</div>`:''}${body}</article>
   `;
   app.innerHTML = html;
   bindPlayer(d);
