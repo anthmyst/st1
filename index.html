@@ -324,6 +324,34 @@ body.hide-en .para .en{opacity:.22;filter:blur(.4px)}
 .pop.on{opacity:1;pointer-events:auto;transform:none}
 .pop .py{color:var(--brand-2);font-size:12px;font-weight:700;display:block;margin-top:1px}
 
+/* ---------- 下载确认卡 ---------- */
+.mask2{
+  position:fixed;inset:0;background:rgba(60,47,38,.30);
+  backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:.25s ease;z-index:70;
+}
+.mask2.on{opacity:1;pointer-events:auto}
+.dlcard{
+  position:fixed;z-index:71;left:50%;top:50%;
+  transform:translate(-50%,-46%) scale(.96);
+  width:min(320px,86vw);background:var(--card);border:1px solid var(--line);
+  border-radius:20px;box-shadow:0 24px 60px -22px rgba(60,47,38,.5);
+  padding:18px 18px 14px;opacity:0;pointer-events:none;
+  transition:.25s cubic-bezier(.3,.9,.3,1);
+}
+.dlcard.on{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}
+.dlcard-t{font-family:var(--serif);font-size:16px;color:var(--ink);margin-bottom:6px}
+.dlcard-f{font-size:12.5px;color:var(--ink-3);word-break:break-all;margin-bottom:16px}
+.dlcard-b{display:flex;gap:9px}
+.dlcard-b button{
+  flex:1;height:38px;border-radius:12px;border:1px solid var(--line);
+  font-family:var(--sans);font-size:13.5px;font-weight:700;cursor:pointer;
+  transition:background .3s ease,color .3s ease,border-color .3s ease;
+}
+.dlcard-x{background:var(--brand-soft);color:var(--ink-2)}
+.dlcard-x:hover{background:var(--bg-2)}
+.dlcard-ok{background:var(--brand);border-color:var(--brand);color:#faf6f1}
+.dlcard-ok:hover{background:var(--brand-2);border-color:var(--brand-2)}
+
 .foot{
   text-align:center;font-size:11.5px;color:var(--ink-3);
   padding:26px 18px 10px;line-height:1.9;
@@ -393,6 +421,17 @@ body.hide-en .para .en{opacity:.22;filter:blur(.4px)}
 </aside>
 
 <div class="pop" id="pop"></div>
+
+<div class="mask2" id="dlMask"></div>
+<div class="dlcard" id="dlCard" role="dialog" aria-modal="true" aria-labelledby="dlCardF">
+  <div class="dlcard-t">下载音频</div>
+  <div class="dlcard-f" id="dlCardF"></div>
+  <div class="dlcard-b">
+    <button type="button" class="dlcard-x" id="dlCancel">取消</button>
+    <button type="button" class="dlcard-ok" id="dlOk">下载</button>
+  </div>
+</div>
+
 <audio id="au" preload="metadata"></audio>
 
 <script>
@@ -613,6 +652,35 @@ function zhPart(t){
 }
 
 /* ---------- 播放器 ---------- */
+/* ---------- 下载确认卡 ---------- */
+function openDlCard(name){
+  $('#dlCardF').textContent = name || '';
+  $('#dlCard').classList.add('on');
+  $('#dlMask').classList.add('on');
+}
+function closeDlCard(){
+  $('#dlCard').classList.remove('on');
+  $('#dlMask').classList.remove('on');
+}
+$('#dlCancel').onclick = closeDlCard;
+$('#dlMask').onclick = closeDlCard;
+
+async function doDownload(d){
+  if (!d || !d.audio) return;
+  const name = (d.ep || d.id || 'audio').replace(/\s+/g, '_') + '.mp3';
+  try{
+    const r = await fetch(d.audio);
+    if (!r.ok) throw new Error('bad');
+    const url = URL.createObjectURL(await r.blob());
+    const a = document.createElement('a');
+    a.href = url; a.download = name;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 3000);
+  }catch(err){
+    window.open(d.audio, '_blank');                // 跨域取不到时回退为打开音频
+  }
+}
+
 function bindPlayer(d){
   const pp = $('#pp'), bar = $('#bar'), fill = $('#fill');
   const tcur = $('#tcur'), tdur = $('#tdur');
@@ -642,23 +710,26 @@ function bindPlayer(d){
   };
   $('#loop').onclick = e => { loop = !loop; e.currentTarget.classList.toggle('on', loop); };
 
+  // 下载音频：不直接下载，先弹确认卡（长按 500ms 或轻点都会弹）
   const dlA = $('#dlAudio');
   dlA.style.display = d.audio ? '' : 'none';       // 没有音频时不显示
-  dlA.onclick = async () => {
-    if (!d.audio) return;
-    const name = (d.ep || d.id || 'audio').replace(/\s+/g, '_') + '.mp3';
-    try{
-      const r = await fetch(d.audio);
-      if (!r.ok) throw new Error('bad');
-      const url = URL.createObjectURL(await r.blob());
-      const a = document.createElement('a');
-      a.href = url; a.download = name;
-      document.body.appendChild(a); a.click(); a.remove();
-      setTimeout(() => URL.revokeObjectURL(url), 3000);
-    }catch(err){
-      window.open(d.audio, '_blank');              // 跨域取不到时回退为打开音频
-    }
+  const dlName = (d.ep || d.id || 'audio').replace(/\s+/g, '_') + '.mp3';
+  let lpTimer = null, lpFired = false;
+  const fireDl = () => { lpFired = true; openDlCard(dlName); };
+  const clearLp = () => { if (lpTimer){ clearTimeout(lpTimer); lpTimer = null; } };
+  dlA.oncontextmenu = e => e.preventDefault();     // 长按不弹系统菜单
+  dlA.onpointerdown = () => {
+    lpFired = false;
+    lpTimer = setTimeout(() => {
+      fireDl();
+      try{ navigator.vibrate && navigator.vibrate(15); }catch(e){}
+    }, 500);
   };
+  dlA.onpointerup = () => { clearLp(); if (!lpFired) openDlCard(dlName); };
+  dlA.onpointercancel = clearLp;
+  dlA.onpointerleave = clearLp;
+  dlA.onclick = e => e.preventDefault();           // 拦截原生点击，统一走确认卡
+  $('#dlOk').onclick = () => { closeDlCard(); doDownload(d); };
   $('#speed').onclick = e => {
     rateIdx = (rateIdx + 1) % RATES.length;
     au.playbackRate = RATES[rateIdx];
@@ -717,7 +788,7 @@ function openDrawer(){ $('#drawer').classList.add('on'); $('#mask').classList.ad
 function closeDrawer(){ $('#drawer').classList.remove('on'); $('#mask').classList.remove('on'); }
 $('#closeHist').onclick = closeDrawer;
 $('#mask').onclick = closeDrawer;
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape'){ closeDrawer(); closeDlCard(); } });
 
 /* ---------- 系列切换（随身英语 / 媒体英语） ---------- */
 const SERIES = {
