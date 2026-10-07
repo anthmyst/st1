@@ -681,7 +681,6 @@ async function loadEp(file, ep){
 function openDrawer(){ $('#drawer').classList.add('on'); $('#mask').classList.add('on'); }
 function closeDrawer(){ $('#drawer').classList.remove('on'); $('#mask').classList.remove('on'); }
 $('#openHist').onclick = openDrawer;
-$('#openHist2').onclick = openDrawer;
 $('#closeHist').onclick = closeDrawer;
 $('#mask').onclick = closeDrawer;
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
@@ -695,6 +694,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(
     ]);
     const d = await rl.json();
     render(d);
+    const b2 = $('#openHist2'); if (b2) b2.onclick = openDrawer;
     if (ri && ri.ok){
       const idx = await ri.json();
       eps = idx.items || [];
