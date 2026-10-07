@@ -358,6 +358,10 @@ body.hide-en .para .en{opacity:.22;filter:blur(.4px)}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 2 2 0 0 0-2 2 1 1 0 0 1-1-1z"/></svg>
     <span>词汇</span>
   </button>
+  <button type="button" data-go="media">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2z"/><path d="M18 14h-8M15 18h-5M10 6h8v4h-8V6z"/></svg>
+    <span>媒体英语</span>
+  </button>
   <button type="button" data-go="about">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16v-4"/><path d="M12 8h.01"/><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z"/></svg>
     <span>关于</span>
@@ -454,6 +458,8 @@ if (tabbar){
     } else if (go === 'vocab'){
       const h = [...document.querySelectorAll('.sec-h')].find(x => x.textContent.trim() === '词汇表');
       if (h) window.scrollTo({ top: h.getBoundingClientRect().top + window.scrollY - 84, behavior: 'smooth' });
+    } else if (go === 'media'){
+      loadSeries('media');
     } else if (go === 'about'){
       const f = document.querySelector('.foot');
       if (f) window.scrollTo({ top: f.getBoundingClientRect().top + window.scrollY - 84, behavior: 'smooth' });
@@ -546,7 +552,7 @@ function render(d){
         <div class="kicker">
           <span>${esc(d.ep || '')}</span>
           <span class="dot"></span>
-          <span>随身英语</span>
+          <span>${esc(d.seriesName || '随身英语')}</span>
           <button class="btn-hist" id="openHist2">
             <svg viewBox="0 0 24 24" style="width:13px;height:13px;fill:currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 11h-4v-2h2V6h2v7z"/></svg>
             往期
@@ -672,12 +678,20 @@ $('#closeHist').onclick = closeDrawer;
 $('#mask').onclick = closeDrawer;
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
 
-/* ---------- 启动 ---------- */
-(async function init(){
+/* ---------- 系列切换（随身英语 / 媒体英语） ---------- */
+const SERIES = {
+  tae:   { name:'随身英语', latest:'data/latest.json',        episodes:'data/episodes.json' },
+  media: { name:'媒体英语', latest:'data/media_latest.json', episodes:'data/media_episodes.json' },
+};
+let curSeries = 'tae';
+
+async function loadSeries(key){
+  curSeries = key;
+  const s = SERIES[key];
   try{
     const [rl, ri] = await Promise.all([
-      fetch('data/latest.json?t=' + Date.now()),
-      fetch('data/episodes.json?t=' + Date.now()).catch(() => null)
+      fetch(s.latest + '?t=' + Date.now()),
+      fetch(s.episodes + '?t=' + Date.now()).catch(() => null)
     ]);
     const d = await rl.json();
     render(d);
@@ -698,6 +712,11 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(
       <p>内容还没准备好</p>
       <p style="font-size:12.5px">请先运行 <code>python3 fetch_daily.py</code> 抓取数据</p></div>`;
   }
+}
+
+/* ---------- 启动 ---------- */
+(async function init(){
+  await loadSeries('tae');
 })();
 </script>
 </body>
