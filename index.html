@@ -453,7 +453,7 @@ if (tabbar){
     tabbar.querySelectorAll('button').forEach(x => x.classList.remove('on'));
     b.classList.add('on');
     if (go === 'today'){
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.location.href = 'https://anthmyst.github.io/st1/';
     } else if (go === 'archive'){
       const ob = document.querySelector('#openHist2');
       if (ob) ob.click();
