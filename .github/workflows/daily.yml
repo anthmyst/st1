@@ -34,12 +34,14 @@ jobs:
 
       - name: 有更新才提交
         id: diff
+        continue-on-error: true   # 推送被拒(本地落后于远端)时不影响后续部署
         run: |
           git config user.name  "tae-bot"
           git config user.email "actions@users.noreply.github.com"
           if [[ -n "$(git status --porcelain data)" ]]; then
             git add data
             git commit -m "weekly update: $(date -u +%F) 最新一期"
+            git pull --rebase origin main
             git push
             echo "changed=true" >> "$GITHUB_OUTPUT"
           else
