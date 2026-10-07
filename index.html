@@ -132,6 +132,15 @@ h1.title{
 .title-sub{font-size:15.5px;color:var(--zh);font-weight:600;margin:0 0 4px;font-family:var(--sans)}
 .title-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 5px}
 .title-row .title{margin:0;flex:1;min-width:0}
+.src-btn{
+  flex:none;width:30px;height:30px;padding:0;border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;
+  background:var(--brand-soft);color:var(--brand);border:1px solid var(--line);
+  cursor:pointer;transition:background .3s ease,color .3s ease,transform .3s ease;
+}
+.src-btn:hover{background:var(--bg-2);color:var(--brand-2)}
+.src-btn:active{transform:scale(.94)}
+.src-btn svg{width:15px;height:15px}
 .meta-line{
   display:flex;align-items:center;gap:7px;flex-wrap:wrap;
   margin-top:11px;font-size:12.5px;color:var(--ink-3);
@@ -562,6 +571,9 @@ function render(d){
         </div>
         <div class="title-row">
           <h1 class="title">${esc(enPart(d.title))}</h1>
+          <button class="src-btn" id="openSrc" title="官方原文" aria-label="官方原文">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2z"/><path d="M18 14h-8M15 18h-5M10 6h8v4h-8V6z"/></svg>
+          </button>
         </div>
         <p class="title-sub">${esc(zhPart(d.title))}</p>
         <div class="player">
@@ -640,6 +652,12 @@ function bindTools(d){
   const pdfBtn = $('#dlPdfOff');
   pdfBtn.style.display = d.pdfOfficial ? '' : 'none';   // 该期没有可用 PDF 时不显示按钮
   pdfBtn.onclick = () => d.pdfOfficial && window.open(d.pdfOfficial, '_blank');
+
+  const srcBtn = $('#openSrc');
+  if (srcBtn){
+    srcBtn.style.display = d.url ? '' : 'none';         // 没有原文链接时不显示
+    srcBtn.onclick = () => d.url && window.open(d.url, '_blank');
+  }
 }
 
 /* ---------- 历史 ---------- */
