@@ -666,6 +666,8 @@ async function loadEp(file, ep){
     const d = await r.json();
     au.pause();
     render(d);
+    curEp = ep || '';
+    view[curSeries] = { file, ep };   // 记住本系列当前浏览的这期，切换回来时还原
     document.querySelectorAll('.ep').forEach(n => n.classList.toggle('cur', n.dataset.ep === ep));
     history.replaceState(null,'','#'+encodeURIComponent(ep||''));
   }catch(err){
@@ -684,8 +686,9 @@ const SERIES = {
   media: { name:'媒体英语', latest:'data/media_latest.json', episodes:'data/media_episodes.json' },
 };
 let curSeries = 'tae';
+const view = { tae:{file:null, ep:null}, media:{file:null, ep:null} };  // 各系列各自记住上次浏览的那一期
 
-async function loadSeries(key){
+async function loadSeries(key, initial){
   curSeries = key;
   const s = SERIES[key];
   try{
@@ -693,18 +696,27 @@ async function loadSeries(key){
       fetch(s.latest + '?t=' + Date.now()),
       fetch(s.episodes + '?t=' + Date.now()).catch(() => null)
     ]);
-    const d = await rl.json();
-    render(d);
+    const latest = await rl.json();
     if (ri && ri.ok){
       const idx = await ri.json();
       eps = idx.items || [];
       renderList();
-      // 支持 #Episode261005 直达
+    }
+    // 决定渲染哪一期：切换系列时还原本系列上次浏览的那期；仅首次进入支持 #hash 直达
+    let target = null;
+    if (initial){
       const h = decodeURIComponent(location.hash.slice(1));
-      if (h && h !== curEp){
-        const hit = eps.find(x => x.ep === h || x.ep.endsWith(h));
-        if (hit) loadEp(hit.file, hit.ep);
-      }
+      if (h) target = eps.find(x => x.ep === h || x.ep.endsWith(h));
+    } else if (view[key] && view[key].file){
+      target = view[key];
+    }
+    if (target){
+      await loadEp(target.file, target.ep);
+    } else {
+      render(latest);
+      view[key] = { file: s.latest, ep: latest.ep };
+      curEp = latest.ep || '';
+      history.replaceState(null, '', location.pathname);  // 清掉 hash，避免跨系列联动
     }
   }catch(err){
     console.error(err);
@@ -716,7 +728,7 @@ async function loadSeries(key){
 
 /* ---------- 启动 ---------- */
 (async function init(){
-  await loadSeries('tae');
+  await loadSeries('tae', true);
 })();
 </script>
 </body>
