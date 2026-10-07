@@ -2,8 +2,8 @@ name: daily-take-away-english
 
 on:
   schedule:
-    # UTC 22:30 = 北京时间次日 06:30，每天早上自动抓取
-    - cron: "30 22 * * *"
+    # UTC 周一 22:30 = 北京时间周二 06:30，每周自动抓取一次（10/6、10/13…）
+    - cron: "30 22 * * 1"
   workflow_dispatch: {}   # 允许手动触发
 
 permissions:
@@ -39,7 +39,7 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           if [[ -n "$(git status --porcelain data)" ]]; then
             git add data
-            git commit -m "daily update: $(date -u +%F) 最新一期"
+            git commit -m "weekly update: $(date -u +%F) 最新一期"
             git push
             echo "changed=true" >> "$GITHUB_OUTPUT"
           else
