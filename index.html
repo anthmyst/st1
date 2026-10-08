@@ -201,9 +201,8 @@ h1.title{
 /* ---------- 正文 ---------- */
 .article{
   position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);
-  box-shadow:var(--shadow);padding:8px 22px 52px;
+  box-shadow:var(--shadow);padding:8px 22px 24px;
 }
-.art-dl{position:absolute;right:18px;bottom:14px}
 .desc-pill{
   display:block;background:#eef2e7;color:var(--ink-2);
   border:1px solid #dce6cf;border-radius:16px;padding:11px 16px;font-size:13.5px;line-height:1.62;
@@ -572,7 +571,7 @@ function render(d){
         </div>
         <div class="title-row">
           <h1 class="title">${esc(enPart(d.title))}</h1>
-          <button class="src-btn" id="openSrc" title="官方原文" aria-label="官方原文">
+          <button class="src-btn" id="openSrc" title="下载官方 PDF（长按）" aria-label="下载官方 PDF（长按）">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2z"/><path d="M18 14h-8M15 18h-5M10 6h8v4h-8V6z"/></svg>
           </button>
         </div>
@@ -594,7 +593,7 @@ function render(d){
       </div>
     </section>
 
-    <article class="article" id="article">${d.desc?`<div class="desc-pill">${esc(d.desc)}</div>`:''}${body}<div class="art-dl"><button class="tool dl" id="dlPdfOff" title="官方 PDF" aria-label="官方 PDF"><svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg></button></div></article>
+    <article class="article" id="article">${d.desc?`<div class="desc-pill">${esc(d.desc)}</div>`:''}${body}</article>
   `;
   app.innerHTML = html;
   bindPlayer(d);
@@ -684,28 +683,33 @@ function bindPlayer(d){
 }
 
 function bindTools(d){
-  // 右下角 PDF：与音频一致，长按满 500ms 才触发，轻点不响应（防误触）
-  const pdfBtn = $('#dlPdfOff');
-  pdfBtn.style.display = d.pdfOfficial ? '' : 'none';   // 该期没有可用 PDF 时不显示按钮
-  let pdTimer = null;
-  const clearPd = () => { if (pdTimer){ clearTimeout(pdTimer); pdTimer = null; } };
-  pdfBtn.oncontextmenu = e => e.preventDefault();       // 长按不弹系统菜单
-  pdfBtn.onpointerdown = () => {
-    pdTimer = setTimeout(() => {
-      if (d.pdfOfficial) window.open(d.pdfOfficial, '_blank');
-      try{ navigator.vibrate && navigator.vibrate(15); }catch(e){}
-    }, 500);
-  };
-  pdfBtn.onpointerup = clearPd;                         // 轻点不触发
-  pdfBtn.onpointercancel = clearPd;
-  pdfBtn.onpointerleave = clearPd;
-  pdfBtn.onclick = e => e.preventDefault();
-
+  // 标题旁按钮：长按满 500ms 下载官方 PDF，轻点不响应（防误触）
   const srcBtn = $('#openSrc');
   if (srcBtn){
-    srcBtn.style.display = d.url ? '' : 'none';         // 没有原文链接时不显示
-    srcBtn.onclick = () => d.url && window.open(d.url, '_blank');
+    srcBtn.style.display = d.pdfOfficial ? '' : 'none'; // 该期没有可用 PDF 时不显示按钮
+    let srTimer = null;
+    const clearSr = () => { if (srTimer){ clearTimeout(srTimer); srTimer = null; } };
+    srcBtn.oncontextmenu = e => e.preventDefault();     // 长按不弹系统菜单
+    srcBtn.onpointerdown = () => {
+      srTimer = setTimeout(() => {
+        downloadPdf(d);
+        try{ navigator.vibrate && navigator.vibrate(15); }catch(e){}
+      }, 500);
+    };
+    srcBtn.onpointerup = clearSr;                       // 轻点不触发
+    srcBtn.onpointercancel = clearSr;
+    srcBtn.onpointerleave = clearSr;
+    srcBtn.onclick = e => e.preventDefault();
   }
+}
+
+/* 官方 PDF 与页面同源，可直接存成文件，不必新开窗口 */
+function downloadPdf(d){
+  if (!d || !d.pdfOfficial) return;
+  const name = (d.ep || d.id || 'bbc').replace(/\s+/g, '_') + '.pdf';
+  const a = document.createElement('a');
+  a.href = d.pdfOfficial; a.download = name; a.style.display = 'none';
+  document.body.appendChild(a); a.click(); a.remove();
 }
 
 /* ---------- 历史 ---------- */
