@@ -1,4 +1,4 @@
-const CACHE = 'miao-v2';
+const CACHE = 'miao-v3';
 const CORE = [
   './',
   './index.html',
