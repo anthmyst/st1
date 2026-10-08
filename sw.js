@@ -1,4 +1,4 @@
-const CACHE = 'miao-v1';
+const CACHE = 'miao-v2';
 const CORE = [
   './',
   './index.html',
@@ -27,6 +27,8 @@ self.addEventListener('fetch', e => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return; // 跨域(pdf/字体/数据api)不拦截
+  // PDF 下载必须交回浏览器原生处理：被 SW 接管会让 <a download> 的保存行为失效
+  if (url.pathname.toLowerCase().indexOf('.pdf') !== -1) return;
 
   // 数据 json 与页面导航：网络优先，失败回缓存（离线仍可看已加载内容）
   const isData = url.pathname.indexOf('/data/') !== -1;
