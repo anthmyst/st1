@@ -140,7 +140,6 @@ h1.title{
 }
 .src-btn:hover{background:var(--bg-2);color:var(--brand-2)}
 .src-btn:active{transform:scale(.94)}
-.src-btn.press{background:var(--bg-2);color:var(--brand-2);transform:scale(.94)}  /* 长按计时中的反馈 */
 .src-btn{user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
 .src-btn svg{width:15px;height:15px}
 .meta-line{
@@ -693,16 +692,14 @@ function bindTools(d){
     const clearSr = () => { if (srTimer){ clearTimeout(srTimer); srTimer = null; } };
     srcBtn.oncontextmenu = e => e.preventDefault();     // 长按不弹系统菜单
     srcBtn.onpointerdown = () => {
-      srcBtn.classList.add('press');                    // 长按计时中有视觉反馈
       srTimer = setTimeout(() => {
-        srcBtn.classList.remove('press');
         downloadPdf(d);
         try{ navigator.vibrate && navigator.vibrate(15); }catch(e){}
       }, 500);
     };
-    srcBtn.onpointerup = () => { clearSr(); srcBtn.classList.remove('press'); };  // 轻点不触发
-    srcBtn.onpointercancel = () => { clearSr(); srcBtn.classList.remove('press'); };
-    srcBtn.onpointerleave = () => { clearSr(); srcBtn.classList.remove('press'); };
+    srcBtn.onpointerup = clearSr;                       // 轻点不触发
+    srcBtn.onpointercancel = clearSr;
+    srcBtn.onpointerleave = clearSr;
     srcBtn.onclick = e => e.preventDefault();
   }
 }
