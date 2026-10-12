@@ -1,60 +1,33 @@
 {
-<<<<<<< HEAD
- "title": "Developing El Niño becomes strongest on record weeks before expected peak 厄尔尼诺现象持续发展，距预估峰值仍有数周便创下历史最强记录",
-=======
  "title": "Developing El Niño becomes strongest on record weeks before expected peak 厄尔尼诺持续发展，在预计达到峰值前数周已创下有记录以来最强水平",
->>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
  "seriesName": "媒体英语",
  "level": "中级",
  "ep": "Episode 261012",
  "pub": "2026-10-11T16:00:00.000Z",
  "url": "https://www.bbc.co.uk/learningenglish/chinese/features/media-english/ep-261012",
-<<<<<<< HEAD
- "audio": "https://cooltv.top/api/bbc-media?u=https%3A%2F%2Fdownloads.bbc.co.uk%2Flearningenglish%2Ffeatures%2Fme%2Fbbc_me_strongest_el_nino_on_record_.mp3",
- "pdf": "",
- "pdfOfficial": "data/media_archive/qh75xc.official.pdf",
-=======
  "audio": "https://cooltv.top/api/bbc-media?u=https%3A%2F%2Fdownloads.bbc.co.uk%2Flearningenglish%2Ffeatures%2Fme%2Fbbc_me_strongest_el_nino_on_record_to_peak.mp3",
  "pdf": "",
  "pdfOfficial": "data/archive_media/qh75xc.official.pdf",
->>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
  "paragraphs": [
   {
    "t": "note",
    "en": "",
-<<<<<<< HEAD
-   "zh": "据监测太平洋温度的科学家称，正在形成的厄尔尼诺气候现象目前已达到有记录以来的最强水平。"
-=======
    "zh": "2026 年 9 月 19 日，太平洋中东部关键海域的日海表温度比平均水平高出 3.05 摄氏度，超过了 2015 年极强厄尔尼诺现象期间创下的 3.02 摄氏度纪录。"
->>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "t": "p",
    "en": "Scientists say the developing El Ni&ntilde;o is already the strongest ever recorded, with sea temperatures in a key region of the Pacific more than three degrees above average, and this event is not expected to peak until later this year.",
-<<<<<<< HEAD
-   "zh": "科学家表示，目前正在形成的厄尔尼诺现象已达到有记录以来最强水平，太平洋重点海域的海水温度比平均温度高出3摄氏度以上，次轮厄尔尼诺现象预计要到今年晚些时候才会达到峰值。"
-=======
    "zh": "科学家表示，目前正在形成的厄尔尼诺现象已达到有记录以来最强水平，太平洋一个关键海域的海水温度比平均水平高出三度以上，而此次厄尔尼诺预计要到今年晚些时候才会达到峰值。"
->>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "t": "p",
    "en": "El Ni&ntilde;o is a natural climate phenomenon that occurs when unusually warm water develops across the tropical Pacific, disrupting weather patterns around the world.",
-<<<<<<< HEAD
-   "zh": "厄尔尼诺是一种自然气候现象，当热带太平洋海域的海水出现异常偏暖的情况时便会发生，扰乱全球各地的天气模式。"
-  },
-  {
-   "t": "p",
-   "en": "The Met Office says its impacts are already being felt, with wildfires in Indonesia and low water levels in the Panama Canal restricting international shipping. As it develops, it's expected to bring droughts and wildfires to parts of Australia, South America and southern Africa, while coastal Peru and Ecuador face the threat of torrential rain and flooding.",
-   "zh": "英国气象局表示，厄尔尼诺现象的影响已开始显现，印度尼西亚发生野火，巴拿马运河水位偏低，导致国际货物运输受限。随着该现象的进一步发展，预计澳大利亚、南美洲和南部非洲部分地区将遭遇干旱和野火。与此同时，秘鲁沿海地区和厄瓜多尔则将面临暴雨和洪水带来的威胁。"
-=======
    "zh": "厄尔尼诺是一种自然气候现象，当热带太平洋出现大范围异常偏暖的海水时便会发生，扰乱全球各地的天气模式。"
   },
   {
    "t": "p",
    "en": "The Met Office says its impacts are already being felt, with wildfires in Indonesia and low water levels in the Panama Canal restricting international shipping. As it develops, it's expected to bring droughts and wildfires to parts of Australia, South America and southern Africa, while coastal Peru and Ecuador face the threat of torrential rain and flooding .",
    "zh": "英国气象局表示，厄尔尼诺现象的影响已开始显现：印度尼西亚发生野火，巴拿马运河水位偏低，使国际航运受到限制。随着厄尔尼诺的进一步发展，预计澳大利亚、南美洲和南部非洲的部分地区将遭遇干旱和野火。与此同时，秘鲁和厄瓜多尔沿海地区面临暴雨和洪水的威胁。"
->>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "t": "h",
@@ -64,20 +37,12 @@
   {
    "t": "vocab",
    "en": "key",
-<<<<<<< HEAD
-   "zh": "关键的；重点的 region 地区；区域 peak 达到峰值 phenomenon 现象 occurs 发生；出现 disrupting 扰乱 patterns 模式；规律 wildfires 野火；自然环境中发生的大规模火灾 restricting 限制 droughts 干旱；旱灾 coastal 沿海的 face 面临 threat 威胁 torrential 倾泻的；倾盆的 flooding 洪水"
-=======
    "zh": "关键的 region 地区，区域 peak 达到峰值 phenomenon 现象 occurs 发生，出现 disrupting 扰乱，打乱 patterns 模式，规律 wildfires 野火 restricting 限制，阻碍 droughts 干旱，旱灾 coastal 沿海的 face 面临 threat 威胁 torrential 倾盆的 flooding 洪水，水灾"
->>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "t": "h",
    "en": "",
-<<<<<<< HEAD
-   "zh": "听力练习（答案见下页）"
-=======
    "zh": "听力练习"
->>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "t": "note",
@@ -116,20 +81,12 @@
   },
   {
    "t": "p",
-<<<<<<< HEAD
-   "en": "1. Scientists say the developing El Ni&ntilde;o is already the strongest ever recorded, with sea temperatures in a key region of the Pacific more than three degrees _______________, and this event is not expected to peak until later this year.",
-=======
    "en": "1. Scientists say the developing El Ni&ntilde;o is already the strongest ever recorded, with sea temperatures in a key region of the Pacific more than three degrees ______________, and this event is not expected to peak until later this year.",
->>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
    "zh": ""
   },
   {
    "t": "p",
-<<<<<<< HEAD
-   "en": "2. The Met Office says its impacts _______________ felt, with wildfires in Indonesia and low water levels in the Panama Canal restricting international shipping as it develops.",
-=======
    "en": "2. The Met Office says its impacts ______________ felt, with wildfires in Indonesia and low water levels in the Panama Canal restricting international shipping as it develops.",
->>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
    "zh": ""
   },
   {
@@ -144,14 +101,6 @@
   },
   {
    "t": "p",
-<<<<<<< HEAD
-   "en": "1. Is this article about cells being implanted or drugs being tested?",
-   "zh": ""
-  },
-  {
-   "t": "p",
-=======
->>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
    "en": "This article is about how El Ni&ntilde;o is already causing unusually warm Pacific waters and is affecting weather and international shipping.",
    "zh": "二、用一分钟阅读下列问题，然后听第二遍音频并回答问题。"
   },
@@ -162,11 +111,7 @@
   },
   {
    "t": "p",
-<<<<<<< HEAD
-   "en": "2. b. False. This event is not expected to peak until later this year.",
-=======
    "en": "2. a. True. This event is not expected to peak until later this year.",
->>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
    "zh": ""
   },
   {
