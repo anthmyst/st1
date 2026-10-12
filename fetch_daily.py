@@ -1,26 +1,26 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-每天抓取 cooltv.top「词典 → BBC 学英语」下多个栏目的最新一期。
+每天抓取 cooltv.top「词典 → BBC 学英语」的各栏目最新一期。
+
+当前抓取两个栏目（在 SERIES 里增删即可）:
+  - 随身英语  take-away-english  -> data/latest.json         + data/archive/
+  - 媒体英语  media-english      -> data/media_latest.json   + data/archive_media/
 
 用法:
-    python3 fetch_daily.py            # 各栏目抓取最新一期 + 刷新归档
-    python3 fetch_daily.py --all 30   # 各栏目抓取最新 30 期（首次建立归档时用）
+    python3 fetch_daily.py                     # 抓取各栏目最新一期 + 刷新归档
+    python3 fetch_daily.py --all 60            # 抓取各栏目最新 60 期（首次建归档）
+    python3 fetch_daily.py --series media      # 只抓指定栏目（tae / media）
 
-每个栏目产出:
-    data/<prefix>latest.json    该栏目最新一期完整数据
-    data/<prefix>episodes.json  该栏目最近若干期索引
-    data/<prefix>archive/*.json 每一期的完整数据归档
-
-当前栏目:
-    take-away-english  随身英语   (prefix 为空)
-    media-english      媒体英语   (prefix = media_)
+输出:
+    data/latest.json, data/media_latest.json          最新一期（网页直接读取）
+    data/episodes.json, data/media_episodes.json      最近若干期索引
+    data/archive/*.json, data/archive_media/*.json    每期完整数据归档
 """
 
 import argparse
 import json
 import os
-import re
 import sys
 import time
 from urllib.parse import quote
@@ -32,12 +32,25 @@ UA = "Mozilla/5.0 (TAE-Daily/1.0; +https://cooltv.top)"
 KEEP_BILINGUAL = {"14iz5ra", "14iz5rh", "14jns7a", "14jns84", "14jns8b"}
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "data")
-ARCHIVE = os.path.join(DATA, "archive")
 
-# (slug, 输出前缀, 中文名) —— 前缀为空时覆盖默认的 latest.json/episodes.json/archive
-SERIES_LIST = [
-    ("take-away-english", "", "随身英语"),
-    ("media-english", "media_", "媒体英语"),
+# 栏目配置：key 用于 --series 过滤，其余决定输出路径
+SERIES = [
+    {
+        "key": "tae",
+        "slug": "take-away-english",
+        "name": "随身英语",
+        "archive": "archive",
+        "latest": "latest.json",
+        "episodes": "episodes.json",
+    },
+    {
+        "key": "media",
+        "slug": "media-english",
+        "name": "媒体英语",
+        "archive": "archive_media",
+        "latest": "media_latest.json",
+        "episodes": "media_episodes.json",
+    },
 ]
 
 
@@ -57,18 +70,21 @@ def get_json(path, retries=3):
     raise RuntimeError(f"请求失败 {url}: {last}")
 
 
-def fetch_series_index(slug):
-    """栏目列表接口，拿到指定 slug 的基本信息。"""
-    d = get_json("/api/bbcle/series")
+def fetch_series_index(slug, fallback_name):
+    """栏目列表接口，拿到栏目的基本信息。"""
+    try:
+        d = get_json("/api/bbcle/series")
+    except Exception:                              # noqa: BLE001
+        return {"slug": slug, "name": fallback_name}
     for g in d.get("groups", []):
         for it in g.get("items", []):
             if it.get("slug") == slug:
                 return it
-    return {"slug": slug, "name": slug}
+    return {"slug": slug, "name": fallback_name}
 
 
 def fetch_episode_list(slug):
-    """指定栏目最新 60 期列表。"""
+    """栏目最新 60 期列表。"""
     d = get_json(f"/api/bbcle?series={slug}")
     if not d.get("ok"):
         raise RuntimeError(f"列表接口返回异常: {d}")
@@ -83,7 +99,7 @@ def fetch_article(link):
     return d
 
 
-def slim(article):
+def slim(article, name):
     """精简字段，只保留网页需要的。"""
     paras = []
     for p in article.get("paragraphs", []):
@@ -102,7 +118,7 @@ def slim(article):
         pdf = BASE + pdf
     return {
         "title": article.get("title") or "",
-        "seriesName": article.get("seriesName") or "",
+        "seriesName": article.get("seriesName") or name,
         "level": article.get("level") or "",
         "ep": article.get("ep") or "",
         "pub": article.get("pub") or "",
@@ -114,7 +130,7 @@ def slim(article):
     }
 
 
-def download_official_pdf(pdf_url, key, arch_dir=ARCHIVE):
+def download_official_pdf(pdf_url, key, archive_name):
     """把 BBC 官方英文 PDF 下载到本站目录。
 
     cooltv 的 /api/bbc-media 代理有防盗链：脚本直连（无 Referer）可下载，
@@ -124,127 +140,138 @@ def download_official_pdf(pdf_url, key, arch_dir=ARCHIVE):
     if not pdf_url:
         return ""
     fn = f"{(key or 'ep').replace(' ', '_')}.official.pdf"
-    path = os.path.join(arch_dir, fn)
+    path = os.path.join(DATA, archive_name, fn)
     try:
         if os.path.exists(path) and os.path.getsize(path) > 1000:
-            return f"data/{os.path.basename(arch_dir)}/{fn}"
+            return f"data/{archive_name}/{fn}"
         req = Request(pdf_url, headers={"User-Agent": UA})
         with urlopen(req, timeout=60) as r, open(path, "wb") as f:
             f.write(r.read())
         if os.path.getsize(path) > 1000:
-            return f"data/{os.path.basename(arch_dir)}/{fn}"
+            return f"data/{archive_name}/{fn}"
         os.remove(path)
     except Exception as e:                          # noqa: BLE001
         print(f"！官方 PDF 下载失败 {key}: {e}", file=sys.stderr)
     return ""
 
 
-def purge_generated_pdfs(arch_dir=ARCHIVE):
-    """清理已生成的中英对照 PDF：用户只要官方版，不再生成/保留对照版。
-
-    删除 arch_dir 下 *.pdf（排除 *.official.pdf）。
-    """
+def purge_generated_pdfs(archive_name):
+    """清理已生成的中英对照 PDF：用户只要官方版，不再生成/保留对照版。"""
+    adir = os.path.join(DATA, archive_name)
+    if not os.path.isdir(adir):
+        return
     removed = 0
-    for fn in os.listdir(arch_dir):
+    for fn in os.listdir(adir):
         if fn.endswith(".pdf") and not fn.endswith(".official.pdf"):
             if fn[:-4] in KEEP_BILINGUAL:      # 这几期无官方 PDF，对照版要留着
                 continue
             try:
-                os.remove(os.path.join(arch_dir, fn))
+                os.remove(os.path.join(adir, fn))
                 removed += 1
             except OSError:
                 pass
+    lp = os.path.join(DATA, "latest.pdf")
+    if os.path.exists(lp):
+        try:
+            os.remove(lp)
+            removed += 1
+        except OSError:
+            pass
     if removed:
-        print(f"已清理 {removed} 个中英对照 PDF（仅保留官方版）")
+        print(f"已清理 {removed} 个中英对照 PDF（{archive_name}，仅保留官方版）")
 
 
-def run_series(slug, prefix, display):
-    arch_dir = ARCHIVE if not prefix else os.path.join(DATA, prefix + "archive")
-    os.makedirs(arch_dir, exist_ok=True)
-    purge_generated_pdfs(arch_dir)
-    # 主栏目(前缀为空)额外清理历史生成的 latest.pdf
-    if arch_dir == ARCHIVE:
-        lp = os.path.join(DATA, "latest.pdf")
-        if os.path.exists(lp):
-            try:
-                os.remove(lp)
-            except OSError:
-                pass
+def run_series(cfg, want):
+    """抓取单个栏目，返回 (新增期数, 归档总期数, 最新一期)。"""
+    name = cfg["name"]
+    adir = os.path.join(DATA, cfg["archive"])
+    os.makedirs(adir, exist_ok=True)
+    purge_generated_pdfs(cfg["archive"])
 
-    series = fetch_series_index(slug)
-    items = fetch_episode_list(slug)
+    series = fetch_series_index(cfg["slug"], name)
+    items = fetch_episode_list(cfg["slug"])
     if not items:
-        print(f"！[{display}] 未取到任何期数", file=sys.stderr)
-        return
+        print(f"！[{name}] 未取到任何期数", file=sys.stderr)
+        return 0, 0, None
 
-    want = max(1, args.all)
-    picked = items[:want]
+    picked = items[:max(1, want)]
 
-    have = {fn[:-5] for fn in os.listdir(arch_dir) if fn.endswith(".json")}
+    # 读取已有归档，避免重复抓取
+    have = set()
+    for fn in os.listdir(adir):
+        if fn.endswith(".json"):
+            have.add(fn[:-5])
 
     new_count = 0
     for idx, it in enumerate(picked):
         link = it.get("link") or ""
         key = (it.get("id") or "").strip() or f"ep{idx}"
-        if not link or key in have:
+        if not link:
             continue
+        if key in have:
+            continue                      # 已归档，跳过
         try:
             art = fetch_article(link)
         except Exception as e:                      # noqa: BLE001
-            print(f"！跳过 [{display}] {it.get('title', '')[:40]} —— {e}", file=sys.stderr)
+            print(f"！跳过 {it.get('title', '')[:40]} —— {e}", file=sys.stderr)
             continue
-        data = slim(art)
+        data = slim(art, name)
         data["id"] = it.get("id") or ""
         data["desc"] = it.get("desc") or ""
-        # 官方英文 PDF 落盘到本站，避免浏览器直连 cooltv 代理（403 + 暴露来源）
-        off = download_official_pdf(data.get("pdfOfficial") or "", key, arch_dir)
-        data["pdfOfficial"] = off or data.get("pdfOfficial") or ""
-        with open(os.path.join(arch_dir, f"{key}.json"), "w", encoding="utf-8") as f:
+        data["pdfOfficial"] = (download_official_pdf(data.get("pdfOfficial") or "", key, cfg["archive"])
+                               or data.get("pdfOfficial") or "")
+        with open(os.path.join(adir, f"{key}.json"), "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=1)
         have.add(key)
         new_count += 1
-        print(f"  ✓ [{display}] {data['ep'] or key}  {data['title'][:52]}")
+        print(f"  ✓ [{name}] {data['ep'] or key}  {data['title'][:52]}")
 
-    # ---- 生成 <prefix>latest.json / <prefix>episodes.json ----
-    all_files = [f for f in os.listdir(arch_dir) if f.endswith(".json")]
+    # ---- 归档整理：按 pub 排序，回填官方 PDF 到本地 ----
     eps = []
-    for fn in all_files:
+    for fn in os.listdir(adir):
+        if not fn.endswith(".json"):
+            continue
         try:
-            with open(os.path.join(arch_dir, fn), encoding="utf-8") as f:
+            with open(os.path.join(adir, fn), encoding="utf-8") as f:
                 eps.append(json.load(f))
         except Exception:                           # noqa: BLE001
             continue
     eps.sort(key=lambda x: (x.get("pub") or "", x.get("ep") or ""), reverse=True)
     if not eps:
-        print(f"！[{display}] 归档为空", file=sys.stderr)
-        return
+        print(f"！[{name}] 归档为空", file=sys.stderr)
+        return new_count, 0, None
 
-    # 把仍指向 cooltv 代理的官方 PDF 下载到本站（历史归档回填）
     for e in eps:
         changed = False
         eid = e.get("id") or ""
         if e.get("pdf") and eid not in KEEP_BILINGUAL:
-            e["pdf"] = ""
+            e["pdf"] = ""                # 不再生成中英对照 PDF，清掉残留引用
             changed = True
         if e.get("thumb"):
-            e["thumb"] = ""
+            e["thumb"] = ""              # 不再抓取封面图，清掉已删除图片的残留路径
             changed = True
         off = e.get("pdfOfficial") or ""
         if off.startswith("http"):
-            local = download_official_pdf(off, eid, arch_dir)
-            e["pdfOfficial"] = local if local else ""
-            changed = True
+            local = download_official_pdf(off, eid, cfg["archive"])
+            if local:
+                e["pdfOfficial"] = local
+                changed = True
+            else:
+                # 官方 PDF 已失效（BBC 未发布或已下架）：留着死链会点开空白页，先清掉
+                e["pdfOfficial"] = ""
+                changed = True
+        # 拿不到官方 PDF 时，若本地还有保留的中英对照版，就用它兜底
         if not (e.get("pdfOfficial") or "").strip():
-            cand = f"data/{prefix}archive/{eid}.pdf"
+            cand = f"data/{cfg['archive']}/{eid}.pdf"
             if os.path.exists(os.path.join(HERE, *cand.split("/"))):
                 e["pdfOfficial"] = cand
                 changed = True
         if changed and e.get("id"):
-            with open(os.path.join(arch_dir, f"{e.get('id')}.json"), "w", encoding="utf-8") as f:
+            with open(os.path.join(adir, f"{e.get('id')}.json"), "w", encoding="utf-8") as f:
                 json.dump(e, f, ensure_ascii=False, indent=1)
 
     latest = eps[0]
-    with open(os.path.join(DATA, f"{prefix}latest.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join(DATA, cfg["latest"]), "w", encoding="utf-8") as f:
         json.dump(latest, f, ensure_ascii=False, indent=1)
 
     index = [{
@@ -253,32 +280,40 @@ def run_series(slug, prefix, display):
         "desc": e.get("desc") or "",
         "pub": e.get("pub") or "",
         "level": e.get("level") or "",
-        "file": f"data/{prefix}archive/{e.get('id')}.json",
+        "file": f"data/{cfg['archive']}/{e.get('id')}.json",
     } for e in eps[:60] if e.get("id")]
-    with open(os.path.join(DATA, f"{prefix}episodes.json"), "w", encoding="utf-8") as f:
-        json.dump({"series": display, "slug": slug,
+    with open(os.path.join(DATA, cfg["episodes"]), "w", encoding="utf-8") as f:
+        json.dump({"series": series.get("name", name),
+                   "slug": cfg["slug"],
                    "updatedAt": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
                    "latest": index[0] if index else None,
                    "items": index}, f, ensure_ascii=False, indent=1)
 
-    print(f"\n[{display}] 完成：新增 {new_count} 期，归档共 {len(eps)} 期")
-    print(f"[{display}] 最新一期：{latest.get('ep')}  {latest.get('title')}")
+    return new_count, len(eps), latest
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--all", type=int, default=1,
-                    help="每个栏目抓取最新 N 期（默认 1，仅最新一期）")
-    ap.add_argument("--min", dest="minimum", type=int, default=1,
-                    help="归档中至少保留的期数")
-    global args
+                    help="抓取每个栏目最新 N 期（默认 1，仅最新一期）")
+    ap.add_argument("--series", default="",
+                    help="只抓指定栏目 key（tae / media），默认全部")
     args = ap.parse_args()
 
-    for slug, prefix, display in SERIES_LIST:
-        try:
-            run_series(slug, prefix, display)
-        except Exception as e:                      # noqa: BLE001
-            print(f"！[{display}] 系列抓取失败: {e}", file=sys.stderr)
+    targets = SERIES
+    if args.series:
+        targets = [c for c in SERIES if c["key"] == args.series]
+        if not targets:
+            print(f"！未知栏目 {args.series}，可选: {', '.join(c['key'] for c in SERIES)}",
+                  file=sys.stderr)
+            sys.exit(1)
+
+    for cfg in targets:
+        print(f"\n=== {cfg['name']} ({cfg['slug']}) ===")
+        n, total, latest = run_series(cfg, args.all)
+        if latest:
+            print(f"  → 新增 {n} 期，归档共 {total} 期")
+            print(f"  → 最新一期：{latest.get('ep')}  {latest.get('title')}")
 
 
 if __name__ == "__main__":

@@ -1,6 +1,7 @@
 {
  "series": "媒体英语",
  "slug": "media-english",
+<<<<<<< HEAD
  "updatedAt": "2026-10-12T22:40:28+0000",
  "latest": {
   "ep": "Episode 261012",
@@ -9,15 +10,33 @@
   "pub": "2026-10-11T16:00:00.000Z",
   "level": "中级",
   "file": "data/media_archive/qh75xc.json"
+=======
+ "updatedAt": "2026-10-13T07:06:22+0800",
+ "latest": {
+  "ep": "Episode 261012",
+  "title": "Developing El Niño becomes strongest on record weeks before expected peak 厄尔尼诺持续发展，在预计达到峰值前数周已创下有记录以来最强水平",
+  "desc": "",
+  "pub": "2026-10-11T16:00:00.000Z",
+  "level": "中级",
+  "file": "data/archive_media/qh75xc.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
  },
  "items": [
   {
    "ep": "Episode 261012",
+<<<<<<< HEAD
    "title": "Developing El Niño becomes strongest on record weeks before expected peak 厄尔尼诺现象持续发展，距预估峰值仍有数周便创下历史最强记录",
    "desc": "",
    "pub": "2026-10-11T16:00:00.000Z",
    "level": "中级",
    "file": "data/media_archive/qh75xc.json"
+=======
+   "title": "Developing El Niño becomes strongest on record weeks before expected peak 厄尔尼诺持续发展，在预计达到峰值前数周已创下有记录以来最强水平",
+   "desc": "",
+   "pub": "2026-10-11T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/archive_media/qh75xc.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 261005",
@@ -25,7 +44,11 @@
    "desc": "Find out why human cells have been put into mice brains",
    "pub": "2026-10-04T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh75wi.json"
+=======
+   "file": "data/archive_media/qh75wi.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260928",
@@ -33,7 +56,11 @@
    "desc": "Are you a fan of very hot beverages?",
    "pub": "2026-09-27T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6lsf.json"
+=======
+   "file": "data/archive_media/qh6lsf.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260921",
@@ -41,7 +68,11 @@
    "desc": "First AI surgery performed",
    "pub": "2026-09-20T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6ls8.json"
+=======
+   "file": "data/archive_media/qh6ls8.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260914",
@@ -49,7 +80,11 @@
    "desc": "Are regional UK accents causing people problems at work?",
    "pub": "2026-09-13T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6lre.json"
+=======
+   "file": "data/archive_media/qh6lre.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260907",
@@ -57,7 +92,11 @@
    "desc": "Find out what happens when humpback whales move into new waters",
    "pub": "2026-09-06T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6lqk.json"
+=======
+   "file": "data/archive_media/qh6lqk.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260831",
@@ -65,7 +104,11 @@
    "desc": "A huge discovery in Wales",
    "pub": "2026-08-30T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6kyw.json"
+=======
+   "file": "data/archive_media/qh6kyw.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260824",
@@ -73,7 +116,11 @@
    "desc": "Learn how spider monkeys get the best fruit",
    "pub": "2026-08-23T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6ky2.json"
+=======
+   "file": "data/archive_media/qh6ky2.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260817",
@@ -81,7 +128,11 @@
    "desc": "Hope for this tiny, near-extinct species of snail",
    "pub": "2026-08-16T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6kx8.json"
+=======
+   "file": "data/archive_media/qh6kx8.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260810",
@@ -89,7 +140,11 @@
    "desc": "Chimpanzees hug to build social relationships",
    "pub": "2026-08-09T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6kx1.json"
+=======
+   "file": "data/archive_media/qh6kx1.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260803",
@@ -97,7 +152,11 @@
    "desc": "Learn about the $50m dinosaur",
    "pub": "2026-08-02T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6kw7.json"
+=======
+   "file": "data/archive_media/qh6kw7.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260727",
@@ -105,7 +164,11 @@
    "desc": "How did a precious fossil escaped the eyes?",
    "pub": "2026-07-26T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6k3w.json"
+=======
+   "file": "data/archive_media/qh6k3w.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260720",
@@ -113,7 +176,11 @@
    "desc": "The 11th century embroidery depicts when Anglo-Saxon England was taken over by the Normans in 1066",
    "pub": "2026-07-19T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6k3p.json"
+=======
+   "file": "data/archive_media/qh6k3p.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260713",
@@ -121,7 +188,11 @@
    "desc": "A simpler structure near Stonehenge has been examined",
    "pub": "2026-07-12T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6k2v.json"
+=======
+   "file": "data/archive_media/qh6k2v.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260706",
@@ -129,7 +200,11 @@
    "desc": "Climate change is blamed for a migration of around 200,000 octopuses to southwest England",
    "pub": "2026-07-05T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6k21.json"
+=======
+   "file": "data/archive_media/qh6k21.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260629",
@@ -137,7 +212,11 @@
    "desc": "Hundreds of heat records are expected to be broken in Europe",
    "pub": "2026-06-28T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6j9p.json"
+=======
+   "file": "data/archive_media/qh6j9p.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260622",
@@ -145,7 +224,11 @@
    "desc": "A 98-year-old man completed a 9-minute wing walk, setting a new world record",
    "pub": "2026-06-21T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6j9i.json"
+=======
+   "file": "data/archive_media/qh6j9i.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260615",
@@ -153,7 +236,11 @@
    "desc": "Celebrity-painted gnomes to be sold for charity",
    "pub": "2026-06-14T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6j8o.json"
+=======
+   "file": "data/archive_media/qh6j8o.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260608",
@@ -161,7 +248,11 @@
    "desc": "Lots of people now use AI tools, but they could be making us less intelligent",
    "pub": "2026-06-07T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6j7u.json"
+=======
+   "file": "data/archive_media/qh6j7u.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260601",
@@ -169,7 +260,11 @@
    "desc": "The 2026 London Marathon was the biggest and fastest so far",
    "pub": "2026-05-31T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6j7n.json"
+=======
+   "file": "data/archive_media/qh6j7n.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260525",
@@ -177,7 +272,11 @@
    "desc": "New medical centre for London Zoo",
    "pub": "2026-05-24T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6ifc.json"
+=======
+   "file": "data/archive_media/qh6ifc.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260518",
@@ -185,7 +284,11 @@
    "desc": "How can you see some the UK’s most beautiful Unesco sites sustainably?",
    "pub": "2026-05-17T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6iei.json"
+=======
+   "file": "data/archive_media/qh6iei.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260511",
@@ -193,7 +296,11 @@
    "desc": "When do you prefer to exercise, if at all?",
    "pub": "2026-05-10T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6ieb.json"
+=======
+   "file": "data/archive_media/qh6ieb.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260504",
@@ -201,7 +308,11 @@
    "desc": "Want to see some Queen Elizabeth II's famous fashion looks?",
    "pub": "2026-05-03T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6idh.json"
+=======
+   "file": "data/archive_media/qh6idh.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260427",
@@ -209,7 +320,11 @@
    "desc": "Why is there fewer fish?",
    "pub": "2026-04-26T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6hl5.json"
+=======
+   "file": "data/archive_media/qh6hl5.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260420",
@@ -217,7 +332,11 @@
    "desc": "Dogs that are part poodle might be naughtier than their pure-bred parents",
    "pub": "2026-04-19T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6hky.json"
+=======
+   "file": "data/archive_media/qh6hky.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260413",
@@ -225,7 +344,11 @@
    "desc": "2,689 mile-long path opened after 18 years",
    "pub": "2026-04-12T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6hk4.json"
+=======
+   "file": "data/archive_media/qh6hk4.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260406",
@@ -233,7 +356,11 @@
    "desc": "How do hedgehogs communicate?",
    "pub": "2026-04-05T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6hja.json"
+=======
+   "file": "data/archive_media/qh6hja.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260330",
@@ -241,7 +368,11 @@
    "desc": "Do collagen supplements really work?",
    "pub": "2026-03-29T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6grm.json"
+=======
+   "file": "data/archive_media/qh6grm.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260323",
@@ -249,7 +380,11 @@
    "desc": "Why are piles of penguin feathers problematic?",
    "pub": "2026-03-22T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6gqs.json"
+=======
+   "file": "data/archive_media/qh6gqs.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260316",
@@ -257,7 +392,11 @@
    "desc": "Why are polar bears getting fatter?",
    "pub": "2026-03-15T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6gpy.json"
+=======
+   "file": "data/archive_media/qh6gpy.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260309",
@@ -265,7 +404,11 @@
    "desc": "What makes this gold pendant so special?",
    "pub": "2026-03-08T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6gp4.json"
+=======
+   "file": "data/archive_media/qh6gp4.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260302",
@@ -273,7 +416,11 @@
    "desc": "Rome to charge for some attractions",
    "pub": "2026-03-01T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6gox.json"
+=======
+   "file": "data/archive_media/qh6gox.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260223",
@@ -281,7 +428,11 @@
    "desc": "What can we learn from this cave painting?",
    "pub": "2026-02-22T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6fwj.json"
+=======
+   "file": "data/archive_media/qh6fwj.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260216",
@@ -289,7 +440,11 @@
    "desc": "What do these new maps of Antarctica show us?",
    "pub": "2026-02-15T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6fvp.json"
+=======
+   "file": "data/archive_media/qh6fvp.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260209",
@@ -297,7 +452,11 @@
    "desc": "Why do so many animals 'kiss' and when did kissing begin?",
    "pub": "2026-02-08T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6fuv.json"
+=======
+   "file": "data/archive_media/qh6fuv.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260202",
@@ -305,7 +464,11 @@
    "desc": "2025 was cooler than 2024, but is that the whole story?",
    "pub": "2026-02-01T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6fuo.json"
+=======
+   "file": "data/archive_media/qh6fuo.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260126",
@@ -313,7 +476,11 @@
    "desc": "What's special about these oysters?",
    "pub": "2026-01-25T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6f2d.json"
+=======
+   "file": "data/archive_media/qh6f2d.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260119",
@@ -321,7 +488,11 @@
    "desc": "Which animals are most endangered this year?",
    "pub": "2026-01-18T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6f1j.json"
+=======
+   "file": "data/archive_media/qh6f1j.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260112",
@@ -329,7 +500,11 @@
    "desc": "What risks are there from deep sea mining?",
    "pub": "2026-01-11T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6f1c.json"
+=======
+   "file": "data/archive_media/qh6f1c.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 260105",
@@ -337,7 +512,11 @@
    "desc": "Do you often see rage bait?",
    "pub": "2026-01-04T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qh6f0i.json"
+=======
+   "file": "data/archive_media/qh6f0i.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 251229",
@@ -345,7 +524,11 @@
    "desc": "What are scientists surprised about?",
    "pub": "2025-12-28T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qghskp.json"
+=======
+   "file": "data/archive_media/qghskp.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 251222",
@@ -353,7 +536,11 @@
    "desc": "International experts want action to be taken against ultra-processed food",
    "pub": "2025-12-21T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qghski.json"
+=======
+   "file": "data/archive_media/qghski.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 251215",
@@ -361,7 +548,11 @@
    "desc": "Researchers have found why diabetes can be severe in children",
    "pub": "2025-12-14T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qghsjo.json"
+=======
+   "file": "data/archive_media/qghsjo.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 251208",
@@ -369,7 +560,11 @@
    "desc": "Why is one longer walk better than lots of shorter ones?",
    "pub": "2025-12-07T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qghsiu.json"
+=======
+   "file": "data/archive_media/qghsiu.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 251201",
@@ -377,7 +572,11 @@
    "desc": "Wolf spider species not extinct",
    "pub": "2025-11-30T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qghsin.json"
+=======
+   "file": "data/archive_media/qghsin.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 251124",
@@ -385,7 +584,11 @@
    "desc": "The new award has a panel of child and adult judges",
    "pub": "2025-11-23T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qghrqb.json"
+=======
+   "file": "data/archive_media/qghrqb.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 251117",
@@ -393,7 +596,11 @@
    "desc": "Why are mosquitoes now in this cold country?",
    "pub": "2025-11-16T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qghrph.json"
+=======
+   "file": "data/archive_media/qghrph.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 251110",
@@ -401,7 +608,11 @@
    "desc": "What can surgeons learn from sawflies?",
    "pub": "2025-11-09T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qghrpa.json"
+=======
+   "file": "data/archive_media/qghrpa.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 251103",
@@ -409,7 +620,11 @@
    "desc": "Why are rat populations increasing in cities?",
    "pub": "2025-11-02T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qghrog.json"
+=======
+   "file": "data/archive_media/qghrog.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 251027",
@@ -417,7 +632,11 @@
    "desc": "Hope for patients and their families",
    "pub": "2025-10-26T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qghqw5.json"
+=======
+   "file": "data/archive_media/qghqw5.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 251020",
@@ -425,7 +644,11 @@
    "desc": "AI could predict your future health",
    "pub": "2025-10-19T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qghqvy.json"
+=======
+   "file": "data/archive_media/qghqvy.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 251013",
@@ -433,7 +656,11 @@
    "desc": "Do these newly discovered rocks mean there was once life on Mars?",
    "pub": "2025-10-12T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qghqv4.json"
+=======
+   "file": "data/archive_media/qghqv4.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 251006",
@@ -441,7 +668,11 @@
    "desc": "Why are energy drinks being banned?",
    "pub": "2025-10-05T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qghqua.json"
+=======
+   "file": "data/archive_media/qghqua.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 250929",
@@ -449,7 +680,11 @@
    "desc": "Dinosaur with metre-long spikes found in Morocco",
    "pub": "2025-09-28T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qgh6q7.json"
+=======
+   "file": "data/archive_media/qgh6q7.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 250922",
@@ -457,7 +692,11 @@
    "desc": "Can an AI tool fill in the gaps in our knowledge of human history?",
    "pub": "2025-09-21T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qgh6q0.json"
+=======
+   "file": "data/archive_media/qgh6q0.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 250915",
@@ -465,7 +704,11 @@
    "desc": "Which new species are appearing in UK waters?",
    "pub": "2025-09-14T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qgh6p6.json"
+=======
+   "file": "data/archive_media/qgh6p6.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 250908",
@@ -473,7 +716,11 @@
    "desc": "Why friendship is important to gorilla society",
    "pub": "2025-09-07T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qgh6oc.json"
+=======
+   "file": "data/archive_media/qgh6oc.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 250901",
@@ -481,7 +728,11 @@
    "desc": "Ancient mummies from Siberia found with tattoos",
    "pub": "2025-08-31T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qgh6o5.json"
+=======
+   "file": "data/archive_media/qgh6o5.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   },
   {
    "ep": "Episode 250825",
@@ -489,7 +740,11 @@
    "desc": "How many steps should you walk a day for your health?",
    "pub": "2025-08-24T16:00:00.000Z",
    "level": "中级",
+<<<<<<< HEAD
    "file": "data/media_archive/qgh5vu.json"
+=======
+   "file": "data/archive_media/qgh5vu.json"
+>>>>>>> 413a52a (weekly update: 新增媒体英语栏目抓取（随身英语+媒体英语双栏目）)
   }
  ]
 }
