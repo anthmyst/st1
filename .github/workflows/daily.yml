@@ -2,8 +2,8 @@ name: daily-take-away-english
 
 on:
   schedule:
-    # UTC 周一 22:30 = 北京时间周二 06:30，每周自动抓取一次（10/6、10/13…）
-    - cron: "30 22 * * 1"
+    # UTC 周日 17:00 = 北京时间周一 01:00，每周自动抓取一次
+    - cron: "0 17 * * 0"
   workflow_dispatch: {}   # 允许手动触发
 
 permissions:
@@ -20,6 +20,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: 同步远端最新
+        # data 由脚本每次重新生成（幂等），所以直接以远端为准，
+        # 避免本地落后导致后续 rebase 冲突、把冲突标记写进数据
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
 
       - uses: actions/setup-python@v5
         with:
@@ -41,13 +48,32 @@ jobs:
           if [[ -n "$(git status --porcelain data)" ]]; then
             git add data
             git commit -m "weekly update: $(date -u +%F) 最新一期"
-            git pull --rebase origin main
-            git push
+            git push origin main
             echo "changed=true" >> "$GITHUB_OUTPUT"
           else
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "今天没有新内容"
           fi
+
+      - name: 校验数据（有冲突标记或损坏就中止，不部署脏数据）
+        run: |
+          if grep -rl '<<<<<<<' data/; then
+            echo "data 残留 Git 冲突标记，中止部署"
+            exit 1
+          fi
+          python3 - <<'PY'
+          import json, glob, sys
+          bad = []
+          for f in glob.glob('data/**/*.json', recursive=True):
+              try:
+                  json.load(open(f, encoding='utf-8'))
+              except Exception as e:
+                  bad.append(f'{f}: {e}')
+          if bad:
+              print('\n'.join(bad[:10]))
+              sys.exit(1)
+          print('数据校验通过')
+          PY
 
       - name: 组装 Pages 站点
         run: |
