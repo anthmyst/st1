@@ -1,16 +1,24 @@
 {
  "series": "随身英语",
  "slug": "take-away-english",
- "updatedAt": "2026-10-09T12:59:54+0000",
+ "updatedAt": "2026-10-12T22:40:27+0000",
  "latest": {
-  "ep": "Episode 261005",
-  "title": "Why we like collecting things 我们为什么喜欢收藏东西",
+  "ep": "Episode 261012",
+  "title": "Is social media still 'social'? 社交媒体还 “社交” 吗？",
   "desc": "",
-  "pub": "2026-10-04T16:00:00.000Z",
+  "pub": "2026-10-11T16:00:00.000Z",
   "level": "中级",
-  "file": "data/archive/14joj3a.json"
+  "file": "data/archive/14joj44.json"
  },
  "items": [
+  {
+   "ep": "Episode 261012",
+   "title": "Is social media still 'social'? 社交媒体还 “社交” 吗？",
+   "desc": "",
+   "pub": "2026-10-11T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/archive/14joj44.json"
+  },
   {
    "ep": "Episode 261005",
    "title": "Why we like collecting things 我们为什么喜欢收藏东西",
@@ -482,14 +490,6 @@
    "pub": "2025-08-24T16:00:00.000Z",
    "level": "中级",
    "file": "data/archive/14iyj2m.json"
-  },
-  {
-   "ep": "Episode 250818",
-   "title": "Can we trust technology in sport? 体育竞赛中应用的科技可靠吗？",
-   "desc": "Technology and humans can make mistakes, so who should we trust?",
-   "pub": "2025-08-17T16:00:00.000Z",
-   "level": "中级",
-   "file": "data/archive/14iyj1s.json"
   }
  ]
 }
