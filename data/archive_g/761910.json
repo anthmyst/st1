@@ -1,0 +1,156 @@
+{
+ "id": "761910",
+ "title": "深谈中国的机器人革命内情(1)",
+ "enTitle": "",
+ "seriesName": "G",
+ "level": "",
+ "ep": "2026-07-01",
+ "pub": "2026-07-01",
+ "url": "https://www.kekenet.com/Article/202607/761910.shtml",
+ "audio": "https://k6.kekenet.com/Sound/2026/07/guard26070901_13095177sM.mp3",
+ "pdf": "",
+ "pdfOfficial": 10,
+ "desc": "深谈中国的机器人革命内情(1)",
+ "paragraphs": [
+  {
+   "t": "p",
+   "en": "Chen Liang, the founder of Guchi Robotics, an automation company headquartered in Shanghai, is a tall, heavy-set man in his mid-40s with square-rimmed glasses.",
+   "zh": "固智机器人是一家总部坐落于上海的自动化企业，创始人陈亮年近四十五岁，身材高大壮实，戴着方框眼镜。"
+  },
+  {
+   "t": "p",
+   "en": "His everyday manner is calm and understated, but when he is in his element – up close with the technology he builds, or in business meetings discussing the imminent replacement of human workers by robots – he wears an exuberant smile that brings to mind an intern on his first day at his dream job.",
+   "zh": "他平日里待人沉稳、行事低调内敛，但只要身处自己熟稔的领域——近距离接触自研设备，或是在商务会议上探讨机器人即将大规模替代人工的话题时，脸上就会洋溢着神采飞扬的笑容，像刚入职心仪岗位的实习生一般充满热忱。"
+  },
+  {
+   "t": "p",
+   "en": "Guchi makes the machines that install wheels, dashboards and windows for many of the top Chinese car brands, including BYD and Nio.",
+   "zh": "固智机器人主营汽车装配设备，为比亚迪、蔚来等多家国内头部车企完成车轮、仪表盘、车窗的安装作业。"
+  },
+  {
+   "t": "p",
+   "en": "He took the name from the Chinese word guzhi, \"steadfast intelligence\", though the fact that it sounded like an Italian luxury brand was not entirely unwelcome.",
+   "zh": "品牌名称取自中文“固智”，寓意坚定不移的智能；而这个读音近似意大利奢侈品牌的名字，当初选用时，这份巧合也并非全然不受青睐。"
+  },
+  {
+   "t": "p",
+   "en": "For the better part of two decades, Chen has tried to solve what, to him, is an engineering problem: how to eliminate – or, in his view, liberate – as many workers in car factories as technologically possible.",
+   "zh": "近二十年来，陈亮一直在钻研一道在他眼中属于工程领域的难题：如何依托现有技术，尽可能削减汽车工厂的人工岗位，或者用他的话说，把工人从重复劳作中解放出来。"
+  },
+  {
+   "t": "p",
+   "en": "Late last year, I visited him at Guchi headquarters on the western outskirts of Shanghai.",
+   "zh": "去年年末，我前往位于上海西郊的固智机器人总部拜访了他。"
+  },
+  {
+   "t": "p",
+   "en": "Next to the head office are several warehouses where Guchi's engineers tinker with robots to fit the specifications of their customers.",
+   "zh": "办公楼旁设有多间仓库，固智的工程师们在仓库内调试机器人，使其适配不同客户的生产标准。"
+  },
+  {
+   "t": "p",
+   "en": "Chen, an engineer by training, founded Guchi in 2019 with the aim of tackling the hardest automation task in the car factory: \"final assembly\", the last leg of production, when all the composite pieces – the dashboard, windows, wheels and seat cushions – come together.",
+   "zh": "陈亮本身是工科出身，2019年创办固智机器人，目标是攻克汽车制造车间自动化难度最高的工序——整车总装。这是整车生产的最后环节，仪表盘、车窗、车轮、坐垫等所有零部件都会在此完成组装。"
+  },
+  {
+   "t": "p",
+   "en": "At present, his robots can mount wheels, dashboards and windows on to a car without any human intervention, but 80% of the final assembly, he estimates, has yet to be automated.",
+   "zh": "目前，他研发的机器人可在无人介入的情况下完成车轮、仪表盘、车窗的装车作业，但据他估算，整车总装环节仍有八成工序尚未实现自动化。"
+  },
+  {
+   "t": "p",
+   "en": "That is what Chen has set his sights on.",
+   "zh": "这正是陈亮一心想要攻克的目标。"
+  },
+  {
+   "t": "p",
+   "en": "As in much of the world, AI has become part of everyday life in China.",
+   "zh": "和全球多数地区一样，人工智能已经融入中国人的日常生活。"
+  },
+  {
+   "t": "p",
+   "en": "But what most excites Chinese politicians and industrialists are the strides being made in the field of robotics, which, when combined with advances in AI, could revolutionise the world of work.",
+   "zh": "但最令国内政界与产业界人士振奋的，是机器人产业取得的跨越式发展。机器人技术搭配人工智能的各项突破，或将彻底重塑全球劳动业态。"
+  },
+  {
+   "t": "p",
+   "en": "The technology behind China's current robotics boom is deep learning, the mathematical engine behind large language models such as ChatGPT, which learn by discerning patterns from huge datasets.",
+   "zh": "当前中国机器人产业蓬勃发展，背后依托的技术是深度学习，这也是ChatGPT等大语言模型的底层数学逻辑，该技术通过从海量数据中识别规律实现自主学习。"
+  },
+  {
+   "t": "p",
+   "en": "Many researchers believe that machines can learn to navigate the physical world the way ChatGPT learned to navigate language: not by following rules, but by absorbing enough data for something like human dexterity to emerge.",
+   "zh": "众多研究人员认为，机器可以复刻ChatGPT学习语言的模式，去适应真实物理环境：不再生硬遵循程序，而是通过积累足量数据，衍生出近似人类的灵活操作能力。"
+  },
+  {
+   "t": "p",
+   "en": "The aim, for many technologists, is the development of humanoid robots capable of performing factory labour – work that employs hundreds of millions of people worldwide.",
+   "zh": "许多技术从业者的终极目标，是研发能够胜任工厂劳作的人形机器人——全球有数亿人口从事这类生产工作。"
+  },
+  {
+   "t": "p",
+   "en": "The resources being pumped into achieving this goal are staggering.",
+   "zh": "为实现这一目标，各方投入的资源规模十分惊人。"
+  },
+  {
+   "t": "p",
+   "en": "In 2025, China announced a ￡100bn fund for strategic technologies including quantum computing, clean energy and robotics.",
+   "zh": "2025年，中国宣布设立规模达1000亿英镑的专项资金，扶持量子计算、清洁能源、机器人等战略性前沿技术。"
+  },
+  {
+   "t": "p",
+   "en": "Major cities have invested their own resources into robotics projects, too.",
+   "zh": "各大城市也配套投入自有资金，落地各类机器人项目。"
+  },
+  {
+   "t": "p",
+   "en": "There are now roughly 140 Chinese firms hoping to build humanoids.",
+   "zh": "目前国内约有140家企业投身人形机器人研发赛道。"
+  },
+  {
+   "t": "p",
+   "en": "Some of the frontrunners made their debut in February, at the lunar new year festival gala, a state-choreographed spectacle loosely comparable to the Super Bowl in terms of bombast and national significance.",
+   "zh": "今年二月，多款行业头部人形机器人登上央视春晚舞台完成首秀。这场由官方统筹打造的晚会场面盛大、承载民族象征意义，其宣传声势与国民关注度大致可对标美国超级碗赛事。"
+  },
+  {
+   "t": "p",
+   "en": "Hundreds of millions watched as robots performed comedy sketches and martial arts routines.",
+   "zh": "数亿观众观看了机器人表演小品、演练武术套路。"
+  },
+  {
+   "t": "p",
+   "en": "The speed of progress has been startling.",
+   "zh": "行业迭代速度快得令人惊叹。"
+  },
+  {
+   "t": "p",
+   "en": "Last year, the robots were doing a synchronised cheerleading routine. This year, they did cartwheels and parkour.",
+   "zh": "去年春晚的机器人还只能整齐划一完成啦啦队集体操，今年它们已经能完成侧手翻、跑酷等高难度动作。"
+  },
+  {
+   "t": "p",
+   "en": "The intended message was clear: the robots are coming, and China will be the nation building them.",
+   "zh": "其中传递的信号清晰直白：机器人时代已然到来，而中国将成为人形机器人的核心研发制造大国。"
+  },
+  {
+   "t": "p",
+   "en": "A world in which AI-powered humanoid robots are produced at scale still seems to belong in the realm of science fiction.",
+   "zh": "大规模量产人工智能驱动人形机器人的图景，如今看起来仍像是科幻小说里的情节。"
+  },
+  {
+   "t": "p",
+   "en": "Late last year, I visited 11 robotics companies in China across five cities to try to grasp just how close we are to the robot future.",
+   "zh": "去年年末，我走访了中国五座城市共十一家机器人企业，试图摸清人类距离机器人普及的未来究竟还有多远。"
+  },
+  {
+   "t": "p",
+   "en": "I met many ambitious entrepreneurs, who were operating in an environment so deeply integrated with municipal governments that the distinction between private and public was losing its meaning.",
+   "zh": "我接触到一大批怀揣远大抱负的创业者，他们身处与地方政府深度绑定的产业环境中，民营与公办的边界已然模糊。"
+  },
+  {
+   "t": "p",
+   "en": "All of them were engaged, in different ways, in the race to build and commercialise robots capable of replacing human workers – and some of them already have eager western buyers.",
+   "zh": "这些企业都以各自的方式投身竞赛，研发可替代人工的工业机器人并推动商业化落地，其中部分企业已经收到欧美客户的采购意向。"
+  }
+ ]
+}

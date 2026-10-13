@@ -1,2 +1,3 @@
-# 当前无第三方依赖：抓取脚本只使用 Python 标准库。
-# （中英对照 PDF 已停用，只保留官方 PDF，因此不再需要 weasyprint）
+# 抓取脚本依赖
+# 标准库已覆盖 cooltv 栏目；可可英语(kekenet) 接口响应为 AES 加密，需 pycryptodome 解密。
+pycryptodome>=3.15

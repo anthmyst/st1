@@ -1,0 +1,241 @@
+{
+ "id": "761914",
+ "title": "深谈中国的机器人革命内情(5)",
+ "enTitle": "",
+ "seriesName": "G",
+ "level": "",
+ "ep": "2026-07-13",
+ "pub": "2026-07-13",
+ "url": "https://www.kekenet.com/Article/202607/761914.shtml",
+ "audio": "https://k6.kekenet.com/Sound/2026/07/guard26070905_1712666vHM.mp3",
+ "pdf": "",
+ "pdfOfficial": 10,
+ "desc": "深谈中国的机器人革命内情(5)",
+ "paragraphs": [
+  {
+   "t": "p",
+   "en": "In the same week I visited Galbot with Chen Liang, I made my way to the outskirts of Beijing, to what the city government claims is China's \"largest robot training centre\".",
+   "zh": "在我和陈亮一同走访嘉博特的同一周，我前往北京城郊，参观当地政府宣称的国内“规模最大机器人实训中心”。"
+  },
+  {
+   "t": "p",
+   "en": "The training center is affiliated with Leju Robotics, a company whose robots do not learn from simulations, but real examples provided by human data collectors, or teleoperators.",
+   "zh": "该实训中心隶属于乐聚机器人。这家企业的机器人不依靠虚拟仿真训练，而是依托人工操控员采集真实作业数据完成学习。"
+  },
+  {
+   "t": "p",
+   "en": "The company's flagship humanoid, Kuavo, has already been deployed in some electric vehicle factories around China, performing basic tasks such as unstacking cardboard boxes.",
+   "zh": "企业旗舰人形机器人夸父（Kuavo）已经落地国内多家电动汽车工厂，完成拆纸箱等基础流水线作业。"
+  },
+  {
+   "t": "p",
+   "en": "Upon entering the lobby, I was greeted by a giant wall monitor displaying a map of China, with five glowing red dots representing each city where Leju had training centres.",
+   "zh": "一走进大厅，迎面是一面巨型显示屏，屏幕上展示着中国地图，五个红色光点熠熠发光，分别代表乐聚机器人设有实训中心的五座城市。"
+  },
+  {
+   "t": "p",
+   "en": "To the right of the dot was the number of action sequences each site has collected.",
+   "zh": "光点右侧标注着各站点采集到的动作序列数据总量。"
+  },
+  {
+   "t": "p",
+   "en": "The largest collection site was here in Beijing, where roughly 100 teleoperators were arranged in neat rows in a sectioned-off corner of a warehouse.",
+   "zh": "数据采集规模最大的站点就在北京这间实训中心，仓库一片隔离区域内，约一百名远程操控员整齐落座。"
+  },
+  {
+   "t": "p",
+   "en": "Each workstation had two people to every robot, doing a different task, such as wiping down a table, organising cutlery or moving a glass of water.",
+   "zh": "每个操作台配备两名工作人员协同操控一台机器人，分工完成不同任务，比如擦拭桌面、整理餐具、端起水杯等。"
+  },
+  {
+   "t": "p",
+   "en": "On the second floor, teleoperators trained robots on industrial-use cases, such as sorting and packing boxes.",
+   "zh": "二楼的操控员则针对工业场景训练机器人，例如分拣、装箱作业。"
+  },
+  {
+   "t": "p",
+   "en": "Leju and its corporate affiliates sell some of its data to third parties.",
+   "zh": "乐聚及其合作关联企业会将部分采集数据对外出售给第三方机构。"
+  },
+  {
+   "t": "p",
+   "en": "The company has also publicly released a slice – 100 hours' worth – which international researchers can use to hone their vision-language-action models.",
+   "zh": "公司还公开开放了一百小时时长的数据集，供全球科研人员优化视觉-语言-动作模型。"
+  },
+  {
+   "t": "p",
+   "en": "I stood at the side of the room and watched as one worker in a VR-like headset manoeuvred his robot's hand around a potato, lifting it slowly from a table and lowering it into a basket.",
+   "zh": "我站在房间一侧观察，一名工作人员佩戴类似VR头显的设备，操控机械机械手抓取土豆，缓缓将它从桌面提起，放入篮筐。"
+  },
+  {
+   "t": "p",
+   "en": "Then the robot reached for a blue cloth to wipe down the table.",
+   "zh": "随后机器人伸出机械臂拿起蓝色抹布擦拭桌面。"
+  },
+  {
+   "t": "p",
+   "en": "Another worker sat behind a laptop, where he logged each action – say, whether it was successful or not – into the database.",
+   "zh": "另一名工作人员坐在笔记本电脑前，把每一次操作结果录入数据库，记录动作是否执行成功。"
+  },
+  {
+   "t": "p",
+   "en": "On the second floor, a team of engineers processed the data, which would eventually be fed into a vision-language-action model.",
+   "zh": "二楼，一组工程师对采集到的数据进行处理，这些数据最终会输入视觉-语言-动作模型完成训练。"
+  },
+  {
+   "t": "p",
+   "en": "At another workstation, one worker guided his robot to pour water into a bowl. It missed.",
+   "zh": "另一处操作台，一名工作人员操控机器人往碗里倒水，操作出现失误。"
+  },
+  {
+   "t": "p",
+   "en": "The water spilled, and began running over the edge.",
+   "zh": "水洒了出来，顺着碗沿流淌。"
+  },
+  {
+   "t": "p",
+   "en": "Its human partner stood up from the desk and cleaned up the mess.",
+   "zh": "搭档工作人员起身清理洒落的水渍。"
+  },
+  {
+   "t": "p",
+   "en": "Then they did the action sequence again.",
+   "zh": "之后二人重新重复这套操作流程。"
+  },
+  {
+   "t": "p",
+   "en": "There wereroughly equal numbers of men and women among the teleoperators.",
+   "zh": "远程操控员男女比例大致均衡。"
+  },
+  {
+   "t": "p",
+   "en": "Most looked like they were in their late teens or early 20s.",
+   "zh": "大部分人看起来十八九岁，二十岁出头。"
+  },
+  {
+   "t": "p",
+   "en": "They had been hired through a labour dispatch company, part of a largely invisible network that underwrites China's economy.",
+   "zh": "他们由劳务派遣公司统一招录，这类劳务输送体系支撑着中国庞大的经济产业链，却很少被大众关注。"
+  },
+  {
+   "t": "p",
+   "en": "Dispatchers recruit workers from villages and vocational colleges, and move them seasonally to where labour is needed, from the iPhone assembly line to working as enforcers during China's rigid pandemic lockdowns.",
+   "zh": "派遣机构从乡村、职业院校招募务工人员，根据用工需求季节性调配岗位，从苹果手机组装流水线，到疫情严格封控期间的防疫执勤人员，都依靠这套体系输送人力。"
+  },
+  {
+   "t": "p",
+   "en": "The same system provides robot trainers for the humanoid age.",
+   "zh": "如今人形机器人时代，这套劳务体系又为行业输送机器人训练员。"
+  },
+  {
+   "t": "p",
+   "en": "Leju's teleoperators hailed from Shandong, in eastern China, where they are part of a vocational training programme at a local university, studying for practical-sounding majors such as \"big data\" and \"the internet\".",
+   "zh": "乐聚的远程操控员大多来自东部山东省，他们就读当地高校的职业实训项目，专业名称听起来实用性很强，比如大数据、互联网相关专业。"
+  },
+  {
+   "t": "p",
+   "en": "Before the robotics boom, these workers may have labelled road signs for autonomous driving systems or moderated content for technology platforms.",
+   "zh": "机器人产业兴起之前，这批年轻人可能从事自动驾驶路标标注，或是互联网平台内容审核工作。"
+  },
+  {
+   "t": "p",
+   "en": "The workers told me they typically do 15 different tasks a day with the robots – 10 times each, on eight-hour shifts.",
+   "zh": "工作人员告诉我，他们每天操控机器人完成十五种不同任务，每种任务重复十遍，实行八小时工作制。"
+  },
+  {
+   "t": "p",
+   "en": "Chinese officials have framed teleoperations as a \"new vocational training programme\", but there are already reports of how dehumanising the work can be.",
+   "zh": "国内官方将远程操控岗位定义为“新型职业实训项目”，但已有报道指出这份工作容易让人产生工具感，丧失人文归属感。"
+  },
+  {
+   "t": "p",
+   "en": "One former employee who worked at a robot training lab in Tesla's Palo Alto headquarters told a Business Insider reporter it was like being \"a lab rat under a microscope\".",
+   "zh": "特斯拉帕洛阿尔托总部机器人实验室一名前员工向《商业内幕》记者坦言，这份工作如同“显微镜下的实验小白鼠”。"
+  },
+  {
+   "t": "p",
+   "en": "When I brought up these questions to the workers, I was stopped by a spokesperson.",
+   "zh": "我刚向现场工作人员抛出这类疑问，就被企业公关人员上前制止。"
+  },
+  {
+   "t": "p",
+   "en": "But in my brief conversations with them, they seemed curious about their work.",
+   "zh": "但短暂的交流中，他们对自己的工作仍抱有好奇。"
+  },
+  {
+   "t": "p",
+   "en": "According to recruitment posters, there are no degree requirements and the pay is about 6,000 to 10,000 yuan a month – about the same as full-time delivery drivers, but with better hours.",
+   "zh": "招聘海报显示，该岗位无学历门槛，月薪六千至一万元，收入和全职外卖骑手大致持平，但工作时长更规律。"
+  },
+  {
+   "t": "p",
+   "en": "Ulrik Hansen, the co-founder of Encord, a data services company based in Silicon Valley, told me that teleoperation is on the verge of \"a huge boom\".",
+   "zh": "硅谷数据服务企业恩科德联合创始人乌尔里克·汉森表示，远程操控行业即将迎来“大规模爆发”。"
+  },
+  {
+   "t": "p",
+   "en": "Encord has a teleoperations centre in the Bay Area and one is opening in Mexico soon.",
+   "zh": "恩科德在旧金山湾区设有远程操控中心，墨西哥分部也即将落成。"
+  },
+  {
+   "t": "p",
+   "en": "To those who say that robots will take workers' jobs, Hansen likes to say that teleoperations are the \"new manufacturing job\".",
+   "zh": "面对“机器人会抢走人类工作”的论调，汉森常说，远程操控是一种“新型制造业岗位”。"
+  },
+  {
+   "t": "p",
+   "en": "Confusingly, the word \"teleoperations\", refers both to the process of training a robot, as well as the remote control of a robot.",
+   "zh": "容易产生混淆的是，“远程操控”一词既指代机器人数据训练流程，也指远程操控机器人作业本身。"
+  },
+  {
+   "t": "p",
+   "en": "\"For every 15 to 20 robots, you need a person to manage those robots,\" Hansen said.",
+   "zh": "“每十五至二十台机器人，就需要一名人员运维管理。”汉森说道。"
+  },
+  {
+   "t": "p",
+   "en": "When asked about the vast majority of workers who would not end up managing the robots, Hansen said that the new jobs would outnumber those that are lost, though he did not offer specifics.",
+   "zh": "当被问及大部分劳动者无法转型为机器人管理员该如何安置时，汉森称新增岗位数量会超过被替代的岗位，但并未给出具体数据支撑。"
+  },
+  {
+   "t": "p",
+   "en": "Every company I asked rejected my requests to speak to their teleoperators, so I tried another way.",
+   "zh": "我采访的所有企业均拒绝安排我与远程操控员单独沟通，于是我换了一种方式尝试了解。"
+  },
+  {
+   "t": "p",
+   "en": "There are many job postings for robot trainers on the social media apps Little Red Book and Douyin, the Chinese TikTok, where the comments were filled with the same message: \"Are you still recruiting?\"",
+   "zh": "小红书、抖音等社交平台上有大量机器人训练员招聘帖，评论区满是相同提问：“还招人吗？”"
+  },
+  {
+   "t": "p",
+   "en": "I asked some of the jobseekers if they would speak with me, introducing myself as a journalist reporting on China's robotics boom.",
+   "zh": "我以报道中国机器人产业发展的记者身份，私信询问部分求职者能否接受采访。"
+  },
+  {
+   "t": "p",
+   "en": "A few days went by without a reply.",
+   "zh": "数日过去，没有任何人回复。"
+  },
+  {
+   "t": "p",
+   "en": "Then one worker wrote back: \"Go ahead.\" I typed out my first question and hit send.",
+   "zh": "后来有一名求职者回复：“你问吧。”我敲下第一个问题发送。"
+  },
+  {
+   "t": "p",
+   "en": "The message immediately bounced back: my account had been flagged for unusual activity.",
+   "zh": "消息瞬间被退回，我的账号被判定存在异常操作。"
+  },
+  {
+   "t": "p",
+   "en": "I must have triggered a spam filter or an algorithm designed to pick up unwelcome questions from reporters.",
+   "zh": "想必是触发了平台垃圾信息过滤机制，或是专门拦截记者敏感提问的算法。"
+  },
+  {
+   "t": "p",
+   "en": "The teleoperators exist at the centre of one of the most consequential technological transformations of our time, yet their contributions have been largely invisible.",
+   "zh": "远程操控员身处当下这场影响深远的科技变革核心，但他们的付出几乎从未被大众看见。"
+  }
+ ]
+}

@@ -1,0 +1,246 @@
+{
+ "id": "761912",
+ "title": "深谈中国的机器人革命内情(3)",
+ "enTitle": "",
+ "seriesName": "G",
+ "level": "",
+ "ep": "2026-07-07",
+ "pub": "2026-07-07",
+ "url": "https://www.kekenet.com/Article/202607/761912.shtml",
+ "audio": "https://k6.kekenet.com/Sound/2026/07/guard26070903_1526220bAw.mp3",
+ "pdf": "",
+ "pdfOfficial": 10,
+ "desc": "深谈中国的机器人革命内情(3)",
+ "paragraphs": [
+  {
+   "t": "p",
+   "en": "The purpose of Chen's visit was to see how Galbot's robots could be deployed inside an electric vehicle factory, one of the most complex manufacturing environments in the world.",
+   "zh": "陈亮此行的目的，是考察嘉博特人形机器人落地电动汽车工厂的可行性，电动汽车生产线是全球复杂度最高的制造场景之一。"
+  },
+  {
+   "t": "p",
+   "en": "Such a feat requires training the robots on a glut of factory scenarios, but there is no ready-made database waiting to be drawn upon.",
+   "zh": "想要实现这一目标，需要依托海量工厂场景数据训练机器人，但目前没有现成数据库可供调用。"
+  },
+  {
+   "t": "p",
+   "en": "For Galbot to have any chance of deploying their robots in a factory, they need a specialist with decades of complex manufacturing experience who can define the right tasks for the humanoid, what data it needs to learn, and even fill in what the robot cannot yet do.",
+   "zh": "嘉博特若想让机器人真正落地工厂，就需要拥有数十年复杂制造经验的专业人员，明确人形机器人适配的作业内容、训练所需数据类型，甚至划定机器人暂时无法完成的工作边界。"
+  },
+  {
+   "t": "p",
+   "en": "That is what Chen offers to do.",
+   "zh": "而这正是陈亮能够提供的专业支持。"
+  },
+  {
+   "t": "p",
+   "en": "We rode an elevator up to the top of a tower, and filed into a meeting room with a view of Peking University's lush green campus.",
+   "zh": "我们搭乘电梯来到大厦顶层，走进一间会议室，窗外能望见绿意盎然的北京大学校园。"
+  },
+  {
+   "t": "p",
+   "en": "A senior Galbot engineer arrived soon after and began to give Chen an overview of the company's latest developments.",
+   "zh": "没过多久，嘉博特一名资深工程师到场，向陈亮介绍公司最新研发进展。"
+  },
+  {
+   "t": "p",
+   "en": "Galbot robots had recently been deployed in 10 pharmacies around Beijing, he said, dispensing medication 24 hours a day.",
+   "zh": "这名工程师称，嘉博特机器人近期已进驻北京十余家药店，实现24小时自动配药。"
+  },
+  {
+   "t": "p",
+   "en": "Powered by Nvidia chips, they cost about 700,000 yuan (￡76,000).",
+   "zh": "机器人搭载英伟达芯片，单台成本约七十万元人民币，折合七万六千英镑。"
+  },
+  {
+   "t": "p",
+   "en": "At one point, the engineer paused on a slide discussing the technology behind Galbot's humanoids.",
+   "zh": "讲到嘉博特人形机器人底层技术的幻灯片时，工程师稍作停顿。"
+  },
+  {
+   "t": "p",
+   "en": "Before the rise of deep learning, the engineer pointed out, industrial roboticists like Chen trained their machines by hand.",
+   "zh": "他介绍，在深度学习技术兴起之前，像陈亮这样的工业机器人从业者只能手动调试设备。"
+  },
+  {
+   "t": "p",
+   "en": "Programmers wrote explicit instructions for every movement.",
+   "zh": "程序员要为每一个动作编写明确指令。"
+  },
+  {
+   "t": "p",
+   "en": "When something went wrong, they debugged the code and added another line to handle new scenarios.",
+   "zh": "一旦设备运行出错，就要修改代码，新增指令应对新场景。"
+  },
+  {
+   "t": "p",
+   "en": "Deep learning promises to replace handwritten instructions with the more flexible VLA model.",
+   "zh": "深度学习技术有望用灵活度更高的视觉-语言-动作模型，替代人工编写的固定程序。"
+  },
+  {
+   "t": "p",
+   "en": "A prime bottleneck to creating such models – a big reason why the \"ChatGPT moment\" for robots hasn't yet arrived – is the scarcity of data.",
+   "zh": "这类模型研发的一大核心瓶颈，也是机器人领域迟迟没能迎来类似ChatGPT技术突破的关键原因，就是训练数据稀缺。"
+  },
+  {
+   "t": "p",
+   "en": "Researchers have two ways to collect this data.",
+   "zh": "研究人员收集数据主要有两种途径。"
+  },
+  {
+   "t": "p",
+   "en": "One is through a manual process called teleoperations, where humans guide a robot to do a precise task sometimes hundreds of thousands of times.",
+   "zh": "第一种是人工远程操控采集，操作人员反复操控机器人完成精准作业，有时需要重复数十万次。"
+  },
+  {
+   "t": "p",
+   "en": "Each task records a package of data, including visual information, hand positioning, torque, depth, among others, called an \"action sequence\" that will later be used to train the VLA.",
+   "zh": "每一次作业都会记录一套完整数据，包含画面信息、机械臂位置、扭矩、景深等内容，形成一套“动作序列”，后续用于训练视觉-语言-动作模型。"
+  },
+  {
+   "t": "p",
+   "en": "The method is labour-intensive, which is why Galbot prefers the second: building virtual environments.",
+   "zh": "这种方式耗费大量人力，因此嘉博特更倾向第二种方案：搭建虚拟仿真环境。"
+  },
+  {
+   "t": "p",
+   "en": "\"It's like Avatar,\" the engineer told us, referring to the blockbuster film.",
+   "zh": "“这就像电影《阿凡达》里的设定，”工程师向我们解释道。"
+  },
+  {
+   "t": "p",
+   "en": "\"I don't have to physically step on to the battlefield, I just lie in my pod, and can simulate it all.\"",
+   "zh": "“我不用亲身进入真实作业场地，只需要待在操控舱内，就能模拟全部作业场景。”"
+  },
+  {
+   "t": "p",
+   "en": "The engineer showed us real-life videos of Galbot robots being tested as store clerks, elderly care companions and robot dogs navigating live street traffic for deliveries.",
+   "zh": "工程师给我们播放了实拍视频，展示嘉博特机器人充当商店店员、养老陪护，还有机器狗穿梭城市道路完成配送的测试画面。"
+  },
+  {
+   "t": "p",
+   "en": "The delivery robots, the engineer claimed, could be ready in \"two to three years\" if they devoted sufficient resources to it. (They hadn't decided yet.)",
+   "zh": "工程师称，如果投入充足研发资源，配送机器人有望在两到三年内落地商用。（公司目前尚未敲定相关规划。）"
+  },
+  {
+   "t": "p",
+   "en": "After learning of all the possibilities, Chen could barely contain his excitement.",
+   "zh": "听完各类技术落地可能性后，陈亮难掩内心的激动。"
+  },
+  {
+   "t": "p",
+   "en": "He proposed a plan to train Galbot's humanoids to drive a screw.",
+   "zh": "他提出一套合作方案，由双方共同训练嘉博特人形机器人完成螺丝紧固作业。"
+  },
+  {
+   "t": "p",
+   "en": "Human workers do this instinctively, but breaking it down for an unscripted robot reveals numerous micro-decisions – finding the hole, lining up the screw, applying the right amount of pressure and torque, and knowing when to stop.",
+   "zh": "人类工人做这类动作全凭本能，但如果要让一台无预设程序的机器人完成，就要拆解出无数细微判断动作：找准螺丝孔、对齐螺丝、把控合适的压力与扭矩、判断何时停止拧紧。"
+  },
+  {
+   "t": "p",
+   "en": "The engineer told Chen that Galbot robots could already grasp and manipulate tools like a screwdriver, but he wasn't yet sure it could align the screw or know how hard to turn it.",
+   "zh": "工程师告诉陈亮，嘉博特机器人已经能够抓取、操作螺丝刀这类工具，但目前还无法精准对齐螺丝，也把控不好拧动力度。"
+  },
+  {
+   "t": "p",
+   "en": "\"Let's define responsibilities,\" Chen reassured him. \"What you can reliably handle, and what I'll take over.\"",
+   "zh": "“我们来划分分工边界，”陈亮安抚对方，“你们能稳定完成的部分由你们负责，剩下的难点交给我们解决。”"
+  },
+  {
+   "t": "p",
+   "en": "The two sides agreed on a target: to be viable in the factory, the Galbot humanoid would need to fasten a screw in less than eight seconds.",
+   "zh": "双方定下了一个研发目标：想要机器人具备工厂落地价值，嘉博特人形机器人完成单颗螺丝紧固的用时必须控制在八秒以内。"
+  },
+  {
+   "t": "p",
+   "en": "The engineer leaned back, slightly overwhelmed.",
+   "zh": "工程师向后靠在椅背上，面露几分压力。"
+  },
+  {
+   "t": "p",
+   "en": "\"You guys have such a wide range of expertise in engineering.\"",
+   "zh": "“贵司在工程领域的技术储备实在太全面了。”"
+  },
+  {
+   "t": "p",
+   "en": "\"Different genes,\" Chen replied smoothly. \"We can solve the industry's problems together.\"",
+   "zh": "“技术基因各有侧重而已，”陈亮从容回应，“我们可以携手解决行业难题。”"
+  },
+  {
+   "t": "p",
+   "en": "After the meeting, I walked a block north to a nearby mall, where Galbot had stationed one of its retail robots behind a kiosk in a promotional display.",
+   "zh": "会谈结束后，我向北步行一个街区来到附近商场，嘉博特在这里的一处展台投放了一台零售服务机器人做推广展示。"
+  },
+  {
+   "t": "p",
+   "en": "The G1 model is white and mannequin-like.",
+   "zh": "这款G1通体白色，外形酷似人体模特。"
+  },
+  {
+   "t": "p",
+   "en": "There was still a human worker standing by, presumably in case something went awry.",
+   "zh": "展台旁仍配有一名工作人员值守，以防设备出现故障。"
+  },
+  {
+   "t": "p",
+   "en": "I ordered a Pocari Sweat, a Japanese energy drink, on a tablet.",
+   "zh": "我在平板上点了一瓶宝矿力水特，一款日本电解质饮料。"
+  },
+  {
+   "t": "p",
+   "en": "The G1 swivelled toward the shelf, its mechanical arms jutting out to the sides like wings, before one pincer closed around my drink and picked it up.",
+   "zh": "G1机器人转向货架，两侧机械臂像翅膀一样向外伸展，其中一支夹爪抓起饮品。"
+  },
+  {
+   "t": "p",
+   "en": "It deposited the bottle on to the counter from slightly too high, so the drink, though it didn't fall over, bounced a few centimetres to the side.",
+   "zh": "它将瓶子从略高的位置放到台面，饮料虽没有倾倒，却在台面上弹开了几厘米。"
+  },
+  {
+   "t": "p",
+   "en": "Chen had emphasised, throughout our time together, that this technology was moving faster than I could imagine.",
+   "zh": "在我和陈亮相处的全程，他一直强调，这项技术的迭代速度远超我的想象。"
+  },
+  {
+   "t": "p",
+   "en": "But my experience with the G1 robot – essentially a glorified, semi-competent vending machine – made me sceptical.",
+   "zh": "但这台G1机器人给我的体验，本质上只是一台功能勉强够用、经过华丽包装的自动售货机，这让我心生怀疑。"
+  },
+  {
+   "t": "p",
+   "en": "Two months later, in February, I watched the lunar new year gala from my apartment.",
+   "zh": "两个月后，到了二月，我在家收看央视春晚。"
+  },
+  {
+   "t": "p",
+   "en": "Galbot's robot appeared in a pre-recorded segment, and it looked different.",
+   "zh": "嘉博特机器人出现在一段预录节目里，外观焕然一新。"
+  },
+  {
+   "t": "p",
+   "en": "The pincers were gone, replaced by 10 articulated fingers.",
+   "zh": "原先的夹爪不见了，取而代之的是十根可灵活活动的仿生手指。"
+  },
+  {
+   "t": "p",
+   "en": "The arms were no longer bulky but lithe and anthropomorphic.",
+   "zh": "机械臂不再笨重，线条纤细，更贴近人类手臂形态。"
+  },
+  {
+   "t": "p",
+   "en": "When the robot reached for a water bottle on the shelf, it moved much faster and more assuredly than before.",
+   "zh": "机器人伸手去拿货架上的矿泉水瓶时，动作比之前更快、更稳。"
+  },
+  {
+   "t": "p",
+   "en": "How much of this was edited or stage-managed, I do not know.",
+   "zh": "我不知道这段画面经过了多少剪辑与舞台编排。"
+  },
+  {
+   "t": "p",
+   "en": "But I got a taste of what Chen was feeling.",
+   "zh": "但这一刻，我稍稍体会到了陈亮所说的那种期待。"
+  }
+ ]
+}

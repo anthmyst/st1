@@ -1,0 +1,151 @@
+{
+ "id": "761915",
+ "title": "深谈中国的机器人革命内情(6)",
+ "enTitle": "",
+ "seriesName": "G",
+ "level": "",
+ "ep": "2026-07-16",
+ "pub": "2026-07-16",
+ "url": "https://www.kekenet.com/Article/202607/761915.shtml",
+ "audio": "https://k6.kekenet.com/Sound/2026/07/guard26070906_1802154h9v.mp3",
+ "pdf": "",
+ "pdfOfficial": 10,
+ "desc": "深谈中国的机器人革命内情(6)",
+ "paragraphs": [
+  {
+   "t": "p",
+   "en": "In China today, it often feels as if new technologies are becoming normalised far more quickly than elsewhere.",
+   "zh": "如今在中国，各类新技术落地普及的速度远超其他国家。"
+  },
+  {
+   "t": "p",
+   "en": "In the city of Chongqing, on Saturday nights, there are \"drone shows\" in which thousands of drones arrange themselves above the Yangtze River to form giant luminescent images in the sky: of cityscapes, flowers, animals.",
+   "zh": "重庆每到周六夜晚会举办无人机表演，数千架无人机在长江上空编队，在空中勾勒出巨型发光图案：城市风光、鲜花、各类动物造型应有尽有。"
+  },
+  {
+   "t": "p",
+   "en": "In Chengdu, cyclists who stray into motor lanes are admonished by humanoid traffic cops.",
+   "zh": "在成都，闯入机动车道的骑行者会被人形交通劝导机器人提醒纠正。"
+  },
+  {
+   "t": "p",
+   "en": "Commuters in Wuhan, Shenzhen and Beijing are hailing driverless taxis.",
+   "zh": "武汉、深圳、北京的市民已经可以呼叫无人驾驶出租车出行。"
+  },
+  {
+   "t": "p",
+   "en": "Part of the reason for this extensive rollout is simply that technology is cheaper to deploy.",
+   "zh": "新技术大范围落地，一部分原因是相关设备部署成本更低。"
+  },
+  {
+   "t": "p",
+   "en": "But it is also the result of a coordinated effort.",
+   "zh": "同时这也是多方统筹推进的成果。"
+  },
+  {
+   "t": "p",
+   "en": "During my visits to robotics startups, I often bumped into mid-level officials from cities such as Shenzhen and Hefei.",
+   "zh": "走访各家机器人初创企业期间，我经常碰到来自深圳、合肥等城市的中层政府工作人员。"
+  },
+  {
+   "t": "p",
+   "en": "They sat in meeting rooms listening attentively to engineers half their age.",
+   "zh": "他们坐在会议室里，认真聆听年纪仅为自己一半的工程师发言。"
+  },
+  {
+   "t": "p",
+   "en": "They aim to entice startups back to their localities, to raise them into local champions that attract talent and jobs.",
+   "zh": "各地政府希望吸引初创企业落地本地，将其培育成行业龙头，以此吸纳人才、创造就业岗位。"
+  },
+  {
+   "t": "p",
+   "en": "The Leju facility – more than 10,000 sq metres of factory space inside an industrial park – had been provided to the company by the district government, as part of a joint venture agreement, just two months before my visit.",
+   "zh": "乐聚这处一万多平方米的园区厂房，是区政府在我到访前两个月，按照合作协议免费提供给企业使用的。"
+  },
+  {
+   "t": "p",
+   "en": "Viktor Wang, co-founder of PsiBot, a startup that specialises in making dexterous robotic hands, told me he had received multiple unsolicited offers from municipal governments eager to help him establish training centres.",
+   "zh": "灵巧机械手研发企业PsiBot联合创始人王维克告诉我，已有多个城市政府主动向他抛出橄榄枝，愿意协助其建设实训基地。"
+  },
+  {
+   "t": "p",
+   "en": "\"It's not just Beijing – Suzhou, Shanghai, Wuhan, everyone is willing to put money behind these [robotics] projects,\" he said.",
+   "zh": "“不只是北京，苏州、上海、武汉各地都愿意为机器人项目投入资金。”他说道。"
+  },
+  {
+   "t": "p",
+   "en": "The competition is intense. Each city acts like a patron in the Hunger Games, backing their own tribute.",
+   "zh": "城市间的产业竞争十分激烈，各地如同竞技赛事的支持者，大力扶持本土机器人企业。"
+  },
+  {
+   "t": "p",
+   "en": "Hangzhou has Unitree. Shanghai has AgiBot. Beijing has Galbot. Shenzhen has UBTech.",
+   "zh": "杭州有宇树科技，上海有爱智机器人，北京有嘉博特，深圳有优必选。"
+  },
+  {
+   "t": "p",
+   "en": "A day after my visit to Leju, Wang invited me to try out a teleoperation sequence at his Beijing offices.",
+   "zh": "参观完乐聚的次日，王维克邀请我前往其北京办公室体验远程操控机器人作业流程。"
+  },
+  {
+   "t": "p",
+   "en": "The task was to pick up clothes from a pile and drop them into a bin.",
+   "zh": "任务是从一堆衣物中分拣衣物并投入收纳箱。"
+  },
+  {
+   "t": "p",
+   "en": "PsiBot has been in talks with the fast-fashion retailer Shein to replace workers performing the most basic tasks on the garment line, and Wang told me he thinks he can achieve this by September.",
+   "zh": "PsiBot正与快时尚品牌希音洽谈合作，计划用机器人替代服装生产线基础岗位工人，王维克称有望在今年九月实现落地。"
+  },
+  {
+   "t": "p",
+   "en": "I put on skeletal gloves with Velcro straps linked electronically to a humanoid's hands positioned beside me.",
+   "zh": "我戴上带魔术贴的体感骨架手套，手套通过电子线路连接身旁人形机器人的手部。"
+  },
+  {
+   "t": "p",
+   "en": "The connection between my hand and the machine was not as smooth as I was expecting: it felt clunky, like operating the claw machine in an arcade.",
+   "zh": "手部设备与机器人的联动流畅度不及预期，操作起来十分生硬，如同电玩城抓娃娃机。"
+  },
+  {
+   "t": "p",
+   "en": "As I tried to grab the clothes with my robot hands, my mind half-expected to feel some tactile resistance.",
+   "zh": "我操控机械爪抓取衣物时，内心下意识期待能感受到真实的触感阻力。"
+  },
+  {
+   "t": "p",
+   "en": "It took me several tries to get the machine to do the required motion.",
+   "zh": "我反复尝试多次，才让机器人完成标准抓取动作。"
+  },
+  {
+   "t": "p",
+   "en": "Teleoperating, I realised, is not simply a matter of performing human actions that the robot learns.",
+   "zh": "我这时意识到，远程操控不只是单纯完成人类动作供机器人学习。"
+  },
+  {
+   "t": "p",
+   "en": "When you're doing a sequence, you must move at a speed that the machine can register.",
+   "zh": "整套操作流程中，操作人员的动作速度必须适配设备的数据采集速率。"
+  },
+  {
+   "t": "p",
+   "en": "You must keep your arms in a set position throughout.",
+   "zh": "全程手臂要保持固定姿态。"
+  },
+  {
+   "t": "p",
+   "en": "You cannot do normal human things such as scratch an itch. (Doing so would \"pollute\" the data.)",
+   "zh": "不能做出挠痒这类人类日常小动作，否则会造成数据污染。"
+  },
+  {
+   "t": "p",
+   "en": "The process was more physically taxing and stranger than I expected.",
+   "zh": "整套操作流程的体力消耗与怪异感超出我的预想。"
+  },
+  {
+   "t": "p",
+   "en": "We are training our robots to be more like humans; doing so requires that humans act more like robots.",
+   "zh": "我们努力训练机器人模仿人类，而实现这一目标，却需要人类像机器一样刻板行动。"
+  }
+ ]
+}

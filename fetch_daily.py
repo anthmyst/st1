@@ -3,19 +3,23 @@
 """
 每天抓取 cooltv.top「词典 → BBC 学英语」的各栏目最新一期。
 
-当前抓取两个栏目（在 SERIES 里增删即可）:
-  - 随身英语  take-away-english  -> data/latest.json         + data/archive/
-  - 媒体英语  media-english      -> data/media_latest.json   + data/archive_media/
+当前抓取三个栏目（在 SERIES 里增删即可）:
+  - 随身英语  take-away-english  -> data/latest.json         + data/archive/       (cooltv 接口)
+  - 媒体英语  media-english      -> data/media_latest.json   + data/archive_media/ (cooltv 接口)
+  - G(英国卫报) kekenet course 17491 -> data/g_latest.json   + data/archive_g/     (kekenet 接口，AES 解密)
 
 用法:
     python3 fetch_daily.py                     # 抓取各栏目最新一期 + 刷新归档
     python3 fetch_daily.py --all 60            # 抓取各栏目最新 60 期（首次建归档）
-    python3 fetch_daily.py --series media      # 只抓指定栏目（tae / media）
+    python3 fetch_daily.py --series g          # 只抓指定栏目（tae / media / g）
 
 输出:
-    data/latest.json, data/media_latest.json          最新一期（网页直接读取）
-    data/episodes.json, data/media_episodes.json      最近若干期索引
-    data/archive/*.json, data/archive_media/*.json    每期完整数据归档
+    data/latest.json, data/media_latest.json, data/g_latest.json          最新一期（网页直接读取）
+    data/episodes.json, data/media_episodes.json, data/g_episodes.json   最近若干期索引
+    data/archive/*.json, data/archive_media/*.json, data/archive_g/*.json 每期完整数据归档
+
+依赖:
+    可可英语接口响应为 AES 加密，需 pycryptodome（pip install pycryptodome）
 """
 
 import argparse
@@ -51,7 +55,184 @@ SERIES = [
         "latest": "media_latest.json",
         "episodes": "media_episodes.json",
     },
+    {
+        "key": "g",
+        "slug": "guardian",
+        "name": "G",
+        "archive": "archive_g",
+        "latest": "g_latest.json",
+        "episodes": "g_episodes.json",
+        "source": "kekenet",         # 走 kekenet 接口（非 cooltv）
+        "course_id": "17491",        # 英国卫报
+    },
 ]
+
+
+# ----------------------------------------------------------------------------
+# 可可英语（kekenet）专栏抓取
+#   数据接口: POST https://mob2015.kekenet.com/keke/mobile/index.php
+#   响应 Data 字段为 AES-256-CBC(Pkcs7) 加密，解密后得到 JSON。
+#   音频托管在 https://k6.kekenet.com/，支持 Range，可直接热链（无需下载进仓库）。
+# ----------------------------------------------------------------------------
+KEKE_API = "https://mob2015.kekenet.com/keke/mobile/index.php"
+KEKE_AUDIO = "https://k6.kekenet.com/"
+KEKE_KEY = "51E881E6F2A6Y9K8"          # AES 密钥（UTF-8，16 字节）
+KEKE_IV = "9F0885C2D686C418"           # AES 初始向量（UTF-8，16 字节）
+
+try:
+    from Crypto.Cipher import AES as _AES
+    _HAVE_CRYPTO = True
+except Exception:                       # noqa: BLE001
+    _HAVE_CRYPTO = False
+
+
+def _keke_decrypt(hexstr):
+    """把接口返回的加密 Data 还原为明文字符串。"""
+    if not _HAVE_CRYPTO:
+        raise RuntimeError("缺少 pycryptodome，无法解密 kekenet 数据（pip install pycryptodome）")
+    ct = bytes.fromhex(hexstr)
+    cipher = _AES.new(KEKE_KEY.encode("utf-8"), _AES.MODE_CBC, KEKE_IV.encode("utf-8"))
+    pt = cipher.decrypt(ct)
+    pad = pt[-1]
+    if 1 <= pad <= 16:
+        pt = pt[:-pad]
+    return pt.decode("utf-8", errors="replace")
+
+
+def keke_call(method, params, retries=3):
+    """调用 kekenet 接口并解密返回（失败自动重试）。"""
+    body = {
+        "Method": method,
+        "Params": params,
+        "Token": "", "Terminal": 13, "Version": "4.0", "UID": "",
+        "AppFlag": 18, "Sign": "", "ApTime": int(time.time() * 1000),
+        "ApVersionCode": 100,
+    }
+    last = None
+    for i in range(retries):
+        try:
+            req = Request(KEKE_API, data=json.dumps(body).encode("utf-8"),
+                          headers={"User-Agent": UA, "Content-Type": "application/json"})
+            with urlopen(req, timeout=30) as r:
+                d = json.loads(r.read().decode("utf-8"))
+            if d.get("Code") != 200 or not d.get("Data"):
+                return None
+            return json.loads(_keke_decrypt(d["Data"]))
+        except Exception as e:          # noqa: BLE001
+            last = e
+            if i < retries - 1:
+                time.sleep(1.5 * (i + 1))
+    raise RuntimeError(f"kekenet 接口 {method} 失败: {last}")
+
+
+def run_kekenet(cfg, want):
+    """抓取可可英语某专栏，返回 (新增期数, 归档总期数, 最新一期)。"""
+    name = cfg["name"]
+    course_id = cfg["course_id"]
+    adir = os.path.join(DATA, cfg["archive"])
+    os.makedirs(adir, exist_ok=True)
+
+    # 1) 列表（按发布时间倒序；接口每页上限 20 条，按需翻页补足 want）
+    items = []
+    page = 1
+    while len(items) < want:
+        try:
+            listing = keke_call("web_waikan_wknewslist",
+                                {"catid": str(course_id), "PageSize": 20,
+                                 "PageIndex": page, "Sort": "inputtime desc"})
+        except Exception as e:          # noqa: BLE001
+            print(f"！[{name}] 列表第 {page} 页失败: {e}", file=sys.stderr)
+            break
+        if not listing or not listing.get("list"):
+            break
+        page_items = listing["list"]
+        items.extend(page_items)
+        if len(page_items) < 20:
+            break
+        page += 1
+    if not items:
+        print(f"！[{name}] 未取到任何期数", file=sys.stderr)
+        return 0, 0, None
+
+    # 2) 逐篇抓详情，已归档的跳过
+    have = {fn[:-5] for fn in os.listdir(adir) if fn.endswith(".json")}
+    new_count = 0
+    for it in items[:max(1, want)]:
+        nid = str(it.get("id") or "").strip()
+        if not nid or nid in have:
+            continue
+        try:
+            art = keke_call("web_waikan_wkgetcontent", {"id": int(nid)})
+        except Exception as e:          # noqa: BLE001
+            print(f"！跳过 {it.get('title', '')[:40]} —— {e}", file=sys.stderr)
+            continue
+        if not art:
+            continue
+        paras = []
+        for p in art.get("content", []) or []:
+            en = (p.get("en") or "").strip()
+            zh = (p.get("cn") or "").strip()
+            if not en and not zh:
+                continue
+            paras.append({"t": "p", "en": en, "zh": zh})
+        audio = (art.get("mp3") or art.get("playurl") or art.get("download") or "")
+        if audio and not audio.startswith("http"):
+            audio = KEKE_AUDIO + audio.lstrip("/")
+        data = {
+            "id": nid,
+            "title": art.get("title") or it.get("title") or "",
+            "enTitle": art.get("en_title") or "",
+            "seriesName": name,
+            "level": art.get("level_title") or "",
+            "ep": it.get("updatetime") or art.get("updatetime") or nid,
+            "pub": it.get("updatetime") or art.get("updatetime") or "",
+            "url": art.get("web_url") or art.get("shareurl") or "",
+            "audio": audio,
+            "pdf": "",
+            "pdfOfficial": art.get("pdf_down") or "",
+            "desc": art.get("abstract") or it.get("title") or "",
+            "paragraphs": paras,
+        }
+        with open(os.path.join(adir, f"{nid}.json"), "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=1)
+        have.add(nid)
+        new_count += 1
+        print(f"  ✓ [{name}] {data['ep']}  {data['title'][:52]}  ({len(paras)} 段)")
+
+    # 3) 整理归档 + 生成 latest / episodes（与 cooltv 栏目同构）
+    eps = []
+    for fn in os.listdir(adir):
+        if not fn.endswith(".json"):
+            continue
+        try:
+            with open(os.path.join(adir, fn), encoding="utf-8") as f:
+                eps.append(json.load(f))
+        except Exception:               # noqa: BLE001
+            continue
+    eps.sort(key=lambda x: (x.get("pub") or ""), reverse=True)
+    if not eps:
+        print(f"！[{name}] 归档为空", file=sys.stderr)
+        return new_count, 0, None
+
+    latest = eps[0]
+    with open(os.path.join(DATA, cfg["latest"]), "w", encoding="utf-8") as f:
+        json.dump(latest, f, ensure_ascii=False, indent=1)
+
+    index = [{
+        "ep": e.get("ep") or "",
+        "title": e.get("title") or "",
+        "desc": e.get("desc") or "",
+        "pub": e.get("pub") or "",
+        "level": e.get("level") or "",
+        "file": f"data/{cfg['archive']}/{e.get('id')}.json",
+    } for e in eps[:60] if e.get("id")]
+    with open(os.path.join(DATA, cfg["episodes"]), "w", encoding="utf-8") as f:
+        json.dump({"series": name, "slug": cfg["slug"],
+                   "updatedAt": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
+                   "latest": index[0] if index else None,
+                   "items": index}, f, ensure_ascii=False, indent=1)
+
+    return new_count, len(eps), latest
 
 
 def get_json(path, retries=3):
@@ -310,7 +491,10 @@ def main():
 
     for cfg in targets:
         print(f"\n=== {cfg['name']} ({cfg['slug']}) ===")
-        n, total, latest = run_series(cfg, args.all)
+        if cfg.get("source") == "kekenet":
+            n, total, latest = run_kekenet(cfg, args.all)
+        else:
+            n, total, latest = run_series(cfg, args.all)
         if latest:
             print(f"  → 新增 {n} 期，归档共 {total} 期")
             print(f"  → 最新一期：{latest.get('ep')}  {latest.get('title')}")
