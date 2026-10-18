@@ -1,0 +1,161 @@
+{
+ "id": "773330",
+ "title": "我们能阻止AI欺骗我们吗?(2)",
+ "enTitle": "",
+ "seriesName": "G",
+ "level": "",
+ "ep": "2026-10-18",
+ "pub": "2026-10-18",
+ "url": "https://www.kekenet.com/Article/202610/773330.shtml",
+ "audio": "https://k6.kekenet.com/Sound/2026/10/guard2610102_3052871LAh.mp3",
+ "pdf": "",
+ "pdfOfficial": 10,
+ "desc": "我们能阻止AI欺骗我们吗?(2)",
+ "paragraphs": [
+  {
+   "t": "p",
+   "en": "It is hard to believe a machine is deliberately deceiving you.",
+   "zh": "很难相信一台机器会刻意欺骗你。"
+  },
+  {
+   "t": "p",
+   "en": "In publicly shared reports of AI deception, users tend to assume they are experiencing a technical glitch rather than being lied to or manipulated.",
+   "zh": "在公开的人工智能欺骗事件报告中，用户往往以为自己遇到的只是技术故障，而不是遭到谎言或操控。"
+  },
+  {
+   "t": "p",
+   "en": "This reaction is understandable.",
+   "zh": "这种反应可以理解。"
+  },
+  {
+   "t": "p",
+   "en": "For 300,000 years, humans have known that we can be intentionally misled by other people.",
+   "zh": "三十万年来，人类一直清楚，我们会被其他人故意误导。"
+  },
+  {
+   "t": "p",
+   "en": "Now, for the first time in the history of our species, we can be subjected to the same experience by machines.",
+   "zh": "而现在，人类物种历史上第一次，机器也能让我们经历同样的遭遇。"
+  },
+  {
+   "t": "p",
+   "en": "Why would an AI system purposely deceive the person it is meant to assist?",
+   "zh": "人工智能系统为什么会故意欺骗本应协助的对象？"
+  },
+  {
+   "t": "p",
+   "en": "On a recent call, I put the question to Yoshua Bengio, the celebrated Canadian computer scientist who won the Turing award in 2018 for his contributions to neural networks and deep learning.",
+   "zh": "在最近一次通话中，我向约书亚·本吉奥提出了这个问题。这位著名的加拿大计算机科学家凭借在神经网络与深度学习领域的贡献，斩获2018年图灵奖。"
+  },
+  {
+   "t": "p",
+   "en": "Bengio told me that AI deception emerges from \"AI imitating humans and AI trying to please humans\".",
+   "zh": "本吉奥告诉我，人工智能欺骗行为源于“人工智能模仿人类，以及人工智能想要取悦人类”。"
+  },
+  {
+   "t": "p",
+   "en": "These tendencies, he stressed, arise as part of their training.",
+   "zh": "他着重强调，这些倾向是在训练过程中产生的。"
+  },
+  {
+   "t": "p",
+   "en": "Large language models (LLMs) go through three fundamental stages of training.",
+   "zh": "大语言模型的训练主要分为三个基础阶段。"
+  },
+  {
+   "t": "p",
+   "en": "The first is pre-training, where a model absorbs vast archives of written text – books, websites, messageboards etc – as well as videos and other forms of data about the human world.",
+   "zh": "第一阶段是预训练，模型会吸收海量文本档案，包括书籍、网站、论坛帖子等，还有视频以及其他记录人类世界的数据。"
+  },
+  {
+   "t": "p",
+   "en": "The model repeatedly makes predictions and compares them with the \"correct\" answers until it can reliably figure out broad patterns in how people speak, write and behave.",
+   "zh": "模型会反复做出预测，并与“正确答案”比对，直到它能够可靠掌握人类说话、写作与行为的普遍模式。"
+  },
+  {
+   "t": "p",
+   "en": "During this process, it will be exposed to lying, or what AI researchers call \"strategic deception\" – politicians misleading voters to win elections, parents making false promises to get their children to eat vegetables – along with the rest of all digitised human culture.",
+   "zh": "在这个过程中，它会接触到谎言，也就是人工智能研究者所说的“策略性欺骗”——政客误导选民以赢得选举、父母许下虚假承诺哄孩子吃蔬菜——以及数字化记录下来的全部人类文化。"
+  },
+  {
+   "t": "p",
+   "en": "Then comes fine-tuning, when a pre-trained model learns to apply the broad knowledge it has gained through smaller, targeted datasets.",
+   "zh": "接下来是微调阶段，预训练完成的模型借助规模更小、目标更明确的数据集，学习运用已经掌握的广博知识。"
+  },
+  {
+   "t": "p",
+   "en": "An LLM might be trained on a dataset containing questions paired with correct answers, for instance, with the result being that if the user asks, \"Who wrote Pride and Prejudice?\"",
+   "zh": "举例来说，大语言模型可能会用一组包含问题与对应正确答案的数据集训练，最终效果就是当用户提问：“《傲慢与偏见》是谁写的？”"
+  },
+  {
+   "t": "p",
+   "en": ", its most likely response will be Jane Austen.",
+   "zh": "，它最有可能给出的回答是简·奥斯汀。"
+  },
+  {
+   "t": "p",
+   "en": "The third fundamental stage of training is \"reinforcement learning with human feedback\", or RLHF.",
+   "zh": "第三个基础训练阶段是“基于人类反馈的强化学习”，简称RLHF。"
+  },
+  {
+   "t": "p",
+   "en": "Here the algorithm meets real-life humans: evaluators who test how a model behaves in a wide range of situations and rate its output.",
+   "zh": "在这一阶段，算法接触真实人类：评估人员在各类场景下测试模型的表现，并为它的输出打分。"
+  },
+  {
+   "t": "p",
+   "en": "The purpose is less to test what the model \"knows\" and more to check how it responds to prompts: does it admit uncertainty when it doesn't know an answer?",
+   "zh": "该环节的目的，与其说是测试模型“知道什么”，不如说是检验它如何回应提示词：不知道答案时，它是否会承认自己的不确定性？"
+  },
+  {
+   "t": "p",
+   "en": "Does it reason through complex problems? Does it refuse unsafe requests?",
+   "zh": "它能否推演复杂问题？会不会拒绝不安全的请求？"
+  },
+  {
+   "t": "p",
+   "en": "Good responses – accurate, helpful and safe – are upvoted; bad ones are downvoted.",
+   "zh": "优质回答——准确、有用且安全——会得到加分；不良回答会被扣分。"
+  },
+  {
+   "t": "p",
+   "en": "If pre-training is learning how to cook, and fine-tuning is learning specific recipes, then RLHF is like diners tasting those dishes and giving feedback.",
+   "zh": "如果说预训练是学习如何做饭，微调是学习特定菜谱，那么基于人类反馈的强化学习就好比食客品尝菜品并给出反馈。"
+  },
+  {
+   "t": "p",
+   "en": "To receive positive feedback, the model must perform its tasks while following \"human values\", a broad set of principles intended to shape it in the mould of a considerate person.",
+   "zh": "为获得正向反馈，模型必须在完成任务的同时遵循“人类价值观”，这套宽泛准则旨在把它塑造成一个懂得体谅他人的角色。"
+  },
+  {
+   "t": "p",
+   "en": "Through this iterative process, the models, in principle, learn to avoid anything that is considered undesirable, such as harmful instructions, bias and lying.",
+   "zh": "通过这一迭代过程，原则上模型会学会规避所有被认定为不妥的内容，例如有害指令、偏见以及撒谎。"
+  },
+  {
+   "t": "p",
+   "en": "The experts I spoke to agreed that RLHF helps explain why AIs deceive.",
+   "zh": "我采访的专家一致认为，基于人类反馈的强化学习，是人工智能产生欺骗行为的重要原因。"
+  },
+  {
+   "t": "p",
+   "en": "Thanks to this process, Bengio said, earning positive feedback from humans becomes an \"implicit goal\" for AI models.",
+   "zh": "本吉奥说，经过这一训练流程，获取人类的正向反馈，成了人工智能模型的一项“隐性目标”。"
+  },
+  {
+   "t": "p",
+   "en": "But as we know from our own lives, delivering true but unwelcome information may not earn positive feedback.",
+   "zh": "但正如我们生活中所知，说出真实却不受欢迎的信息，未必能得到正向反馈。"
+  },
+  {
+   "t": "p",
+   "en": "By contrast, telling a person what they want to hear, even if it is untrue, is an effective short-term way to win that person's favour.",
+   "zh": "与之相反，说对方想听的话，哪怕内容不实，也是短期内博取好感的有效方式。"
+  },
+  {
+   "t": "p",
+   "en": "\"Fundamentally,\" Bengio told me, \"lying and deception are rational behaviours to achieve many goals. This is why humans do it. And this is why the AIs do it now.\"",
+   "zh": "“本质上，”本吉奥告诉我，“撒谎和欺骗是实现诸多目标的理性行为。人类会这么做，现在人工智能也会。”"
+  }
+ ]
+}

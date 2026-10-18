@@ -1,16 +1,24 @@
 {
  "series": "随身英语",
  "slug": "take-away-english",
- "updatedAt": "2026-10-13T05:17:53+0000",
+ "updatedAt": "2026-10-18T19:20:50+0000",
  "latest": {
-  "ep": "Episode 261012",
-  "title": "Is social media still 'social'? 社交媒体还 “社交” 吗？",
+  "ep": "Episode 261019",
+  "title": "Return of the sleeper train in Europe 欧洲卧铺列车再度兴起",
   "desc": "",
-  "pub": "2026-10-11T16:00:00.000Z",
+  "pub": "2026-10-18T16:00:00.000Z",
   "level": "中级",
-  "file": "data/archive/14joj44.json"
+  "file": "data/archive/14joj4b.json"
  },
  "items": [
+  {
+   "ep": "Episode 261019",
+   "title": "Return of the sleeper train in Europe 欧洲卧铺列车再度兴起",
+   "desc": "",
+   "pub": "2026-10-18T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/archive/14joj4b.json"
+  },
   {
    "ep": "Episode 261012",
    "title": "Is social media still 'social'? 社交媒体还 “社交” 吗？",
@@ -482,14 +490,6 @@
    "pub": "2025-08-31T16:00:00.000Z",
    "level": "中级",
    "file": "data/archive/14iyjux.json"
-  },
-  {
-   "ep": "Episode 250825",
-   "title": "How can restaurants earn a Michelin star? 餐厅怎样获得米其林星级？",
-   "desc": "What makes a restaurant outstanding?",
-   "pub": "2025-08-24T16:00:00.000Z",
-   "level": "中级",
-   "file": "data/archive/14iyj2m.json"
   }
  ]
 }

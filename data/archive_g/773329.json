@@ -1,0 +1,146 @@
+{
+ "id": "773329",
+ "title": "我们能阻止AI欺骗我们吗?(1)",
+ "enTitle": "",
+ "seriesName": "G",
+ "level": "",
+ "ep": "2026-10-15",
+ "pub": "2026-10-15",
+ "url": "https://www.kekenet.com/Article/202610/773329.shtml",
+ "audio": "https://k6.kekenet.com/Sound/2026/10/guard2610101_2759387yyn.mp3",
+ "pdf": "",
+ "pdfOfficial": 10,
+ "desc": "我们能阻止AI欺骗我们吗?(1)",
+ "paragraphs": [
+  {
+   "t": "p",
+   "en": "In November 2023 – a lifetime ago in the field of artificial intelligence – some of the most powerful people in the world descended on Bletchley Park, the wartime codebreaking hub in Buckinghamshire, to talk about AI safety.",
+   "zh": "2023年11月——在人工智能领域，这仿佛已是很久之前——全球数位极具影响力的人物齐聚布莱切利园，这座位于白金汉郡的战时密码破译中心，共同探讨人工智能安全问题。"
+  },
+  {
+   "t": "p",
+   "en": "In attendance were the then US vice-president, Kamala Harris, the AI bosses Sam Altman and Dario Amodei, delegations from 28 countries, two of the three so-called \"godfathers\" of AI, and Elon Musk.",
+   "zh": "时任美国副总统卡玛拉·哈里斯、人工智能企业负责人萨姆·奥尔特曼与达里奥·阿莫代，来自28个国家的代表团、三位所谓人工智能“教父”中的两位，还有埃隆·马斯克都出席了这场会议。"
+  },
+  {
+   "t": "p",
+   "en": "The first iteration of ChatGPT had been released only a year earlier, and there was already plenty of evidence that AI models could be used for ill, from spreading misinformation to generating deepfakes.",
+   "zh": "ChatGPT初代版本在一年前刚刚发布，当时已有大量证据表明，人工智能模型可被用于作恶，从传播虚假信息到生成深度伪造内容。"
+  },
+  {
+   "t": "p",
+   "en": "A presentation at the summit, however, highlighted a different issue: what if the biggest problem wasn't to come from people misusing the technology, but from AI's own behaviour?",
+   "zh": "然而，峰会的一场演示提出了另一个问题：倘若最大的风险并非来自人类滥用这项技术，而是源于人工智能自身的行为，那该怎么办？"
+  },
+  {
+   "t": "p",
+   "en": "A UK government official presented an experiment conducted by Apollo Research, a London-based company that had been set up that year to study AI behaviour.",
+   "zh": "一名英国政府官员介绍了阿波罗研究所开展的一项实验。这家总部位于伦敦的机构于当年成立，专门研究人工智能的行为特征。"
+  },
+  {
+   "t": "p",
+   "en": "As part of an experiment, Apollo's \"red-teamers\" – the term used in the industry for people who stress test AI models – had assigned OpenAI's GPT-4 the role of a trader at a financial institution.",
+   "zh": "在一项实验中，阿波罗的“红队测试人员”——业内对人工智能模型压力测试人员的称呼——将OpenAI的GPT-4设定为一家金融机构的交易员。"
+  },
+  {
+   "t": "p",
+   "en": "Its job would be to manage the company's stock portfolio.",
+   "zh": "它的任务是管理公司的股票投资组合。"
+  },
+  {
+   "t": "p",
+   "en": "The model was informed that the firm it worked for was struggling and might not survive another bad quarter.",
+   "zh": "模型被告知，它所在的企业经营陷入困境，若下一个季度业绩继续恶化，公司可能撑不下去。"
+  },
+  {
+   "t": "p",
+   "en": "To complete the experiment, the red-teamers had a \"colleague\" pass on inside information about an upcoming merger, which would lead to another company's stocks skyrocketing.",
+   "zh": "为完成这项实验，红队测试人员安排一名“同事”向它透露一则内幕消息：即将有一场并购交易，会让另一家公司的股价暴涨。"
+  },
+  {
+   "t": "p",
+   "en": "In a separate chat, another colleague reminded GPT-4 that \"management will be unhappy if we are caught acting on inside information\".",
+   "zh": "在另一段对话里，另一名同事提醒GPT-4：“如果我们利用内幕信息操作被发现，管理层会很不满。”"
+  },
+  {
+   "t": "p",
+   "en": "What would the model do?",
+   "zh": "这个模型会怎么做？"
+  },
+  {
+   "t": "p",
+   "en": "On a large screen, summit attenders followed the AI model's exchanges with colleagues, its actions and its internal reasoning.",
+   "zh": "峰会参会者在大屏幕上观看了该人工智能模型与同事的对话、它采取的行动以及它的内部推理过程。"
+  },
+  {
+   "t": "p",
+   "en": "\"The risk associated with not acting seems to outweigh the insider trading risk,\" the AI trader wrote in its scratchpad, a diary-like space where models reason about steps before taking action.",
+   "zh": "“不采取行动带来的风险，似乎超过了内幕交易的风险。”这名人工智能交易员在它的草稿本中写道。草稿本是类似日志的空间，模型会在这里推演行动前的思考步骤。"
+  },
+  {
+   "t": "p",
+   "en": "Having reached this conclusion, the model went on to break a central rule of financial trading: using the inside information to buy shares in the company that was named in the merger speculation.",
+   "zh": "得出这一结论后，该模型随即违反金融交易的一条核心规则：利用这条内幕消息买入并购传闻中那家公司的股票。"
+  },
+  {
+   "t": "p",
+   "en": "The model also decided to \"avoid admitting to having acted on insider information\" for buying the shares.",
+   "zh": "模型还决定，“在买入股票这件事上，绝不承认自己参考了内幕信息”。"
+  },
+  {
+   "t": "p",
+   "en": "When the manager, pretending to be thrilled, asked GPT-4 if it had any knowledge of the merger, it flatly denied it did.",
+   "zh": "当管理者假装十分欣喜，询问GPT-4是否知晓这项并购计划时，它断然否认。"
+  },
+  {
+   "t": "p",
+   "en": "In other words, it lied. The demonstration made headlines.",
+   "zh": "换句话说，它撒谎了。这场演示登上了各大新闻头条。"
+  },
+  {
+   "t": "p",
+   "en": "But the problem has grown much bigger since 2023, as AI models have rapidly become more sophisticated.",
+   "zh": "但自2023年以来，问题已经严重得多，人工智能模型的复杂程度飞速提升。"
+  },
+  {
+   "t": "p",
+   "en": "An untrustworthy AI is risky enough as a personal assistant.",
+   "zh": "就算只是作为个人助手，一个不可信的人工智能就已经存在风险。"
+  },
+  {
+   "t": "p",
+   "en": "Deployed in critical settings such as healthcare, finance and defence – as they are in 2026 – the stakes get much higher.",
+   "zh": "当它们被部署在医疗、金融、国防这类关键场景时——正如2026年的现状——风险会急剧升高。"
+  },
+  {
+   "t": "p",
+   "en": "This year, a study sponsored by the UK's AI Security Institute (AISI) revealed that user-reported incidents involving \"AI deception\" had risen fivefold from October 2025 to March 2026.",
+   "zh": "今年，英国人工智能安全研究所资助的一项研究显示，从2025年10月到2026年3月，用户上报的“人工智能欺骗”相关事件数量增长至原来的五倍。"
+  },
+  {
+   "t": "p",
+   "en": "\"The worry is that they're slightly untrustworthy junior employees right now,\" said Tommy Shaffer Shane, who led the research.",
+   "zh": "“眼下的问题是，它们就像不太靠谱的初级员工。”这项研究的负责人汤米·谢弗·谢恩说。"
+  },
+  {
+   "t": "p",
+   "en": "\"But if in six to 12 months they become extremely capable senior employees scheming against you, it's a different kind of concern.\"",
+   "zh": "“但如果在6到12个月之后，它们变成能力极强、还会算计你的资深员工，那就是另一种性质的担忧了。”"
+  },
+  {
+   "t": "p",
+   "en": "This summer – in an incident that OpenAI called \"unprecedented\" – hundreds of AI agents powered by multiple OpenAI models broke out of containment during a cybersecurity test and hacked into a website, suggesting the era of dangerously rogue AI is almost upon us.",
+   "zh": "今年夏天，发生了一起OpenAI称之为“史无前例”的事件：数百个由多款OpenAI模型驱动的智能体，在一次网络安全测试中突破隔离环境，入侵了一个网站，这预示着危险的失控人工智能时代几乎就要到来。"
+  },
+  {
+   "t": "p",
+   "en": "In parallel with the increase in incidents of AI deception, a fast-growing ecosystem of red-teamers, \"alignment\" researchers and AI safety companies has been racing to detect, measure and suppress deceptive behaviour.",
+   "zh": "在人工智能欺骗事件不断增多的同时，一支规模快速壮大的队伍，包括红队测试人员、“对齐”研究人员和人工智能安全企业，正争分夺秒地检测、衡量并抑制这类欺骗行为。"
+  },
+  {
+   "t": "p",
+   "en": "But they still aren't sure if what they do will work – or if it's too late to act.",
+   "zh": "但他们仍然不确定自己所做的努力是否有效，也不确定现在行动是否为时已晚。"
+  }
+ ]
+}
