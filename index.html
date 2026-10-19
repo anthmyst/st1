@@ -326,8 +326,10 @@ body.hide-en .para .en{opacity:.22;filter:blur(.4px)}
 .pop .def{display:block;font-size:13px;font-weight:600;margin-top:4px;color:#faf6f1;line-height:1.5}
 .pop .tip{display:block;font-size:11px;font-weight:500;opacity:.8;margin-top:5px}
 .pop .ph{display:block;font-size:11px;opacity:.7;margin-top:3px;font-style:italic}
-.pop .def.en{opacity:.82;font-weight:500}
+.pop .def.en{opacity:.82;font-weight:500;text-align:left}
 .pop .def.dim{opacity:.55;font-weight:500}
+.pop .pos{display:block;font-size:11px;opacity:.75;margin-top:2px;font-style:italic}
+.pop .ex{display:block;font-size:11px;opacity:.7;margin-top:3px;font-style:italic;text-align:left}
 
 .foot{
   text-align:center;font-size:11.5px;color:var(--ink-3);
@@ -411,7 +413,7 @@ const $ = s => document.querySelector(s);
 const app = $('#app'), au = $('#au'), pop = $('#pop');
 let DATA = null, eps = [], curEp = '';
 let vocabMap = {};  // 当前文章 英文词→中文释义 映射（取自词汇表）
-const DICT_BASE = "https://cooltv.top/api/dict?w=";  // cooltv 自有中文字典 API（需后端加 CORS 头）
+const DICT_BASE = "https://api.dictionaryapi.dev/api/v2/entries/en/";  // 免费公共词典 API：支持 CORS、无需 key，返回英文释义+音标
 const dictCache = {};  // 查词结果缓存，避免重复请求
 let rateIdx = 0; const RATES = [1, 0.85, 0.7, 1.25];
 let loop = false;
@@ -451,21 +453,41 @@ function setPopBody(word, extra){
     + (extra || '')
     + `<span class="tip">🔊 点击听发音</span>`;
 }
-function applyDef(key, word, local, d){
+// 把 dictionaryapi.dev 的数组返回解析为统一结构（英文释义 + 音标 + 例句）
+function parseDict(data){
+  if (!Array.isArray(data) || !data.length) return null;
+  const e = data[0];
+  let phonetic = '';
+  if (Array.isArray(e.phonetics)){
+    const p = e.phonetics.find(x => x && x.text) || e.phonetics[0];
+    phonetic = (p && p.text) || '';
+  }
+  const defs = [], posSet = new Set();
+  let example = '';
+  (e.meanings || []).forEach(m => {
+    if (m.partOfSpeech) posSet.add(m.partOfSpeech);
+    (m.definitions || []).forEach(d => {
+      if (d.definition) defs.push(d.definition);
+      if (!example && d.example) example = d.example;
+    });
+  });
+  return { phonetic, pos: [...posSet].join(', '), defs: defs.slice(0, 4), example };
+}
+function applyDef(key, word, local, info){
   if (pop.dataset.word !== word) return;   // 已切换到别的词，丢弃本次结果
   let extra = '';
-  if (local){
-    extra += `<span class="def">${esc(local)}</span>`;
-  } else if (d && d.found){
-    if (d.phonetic) extra += `<span class="ph">/${esc(d.phonetic)}/</span>`;
-    const zh = (d.translation || []).join('；');
-    const en = (d.definition || []).slice(0, 3).join('；');
-    if (zh) extra += `<span class="def">${esc(zh)}</span>`;
-    if (en) extra += `<span class="def en">${esc(en)}</span>`;
-  } else if (d && d.found === false){
+  if (local) extra += `<span class="def">${esc(local)}</span>`;   // 文章自带中文释义优先
+  if (info && info.__err){
+    if (!local) extra += `<span class="def dim">（查词暂不可用）</span>`;
+  } else if (info && info.__nf){
+    if (!local) extra += `<span class="def dim">（词典未收录）</span>`;
+  } else if (info){
+    if (info.phonetic) extra += `<span class="ph">/${esc(info.phonetic)}/</span>`;
+    if (info.pos) extra += `<span class="pos">${esc(info.pos)}</span>`;
+    (info.defs || []).forEach(d => extra += `<span class="def en">• ${esc(d)}</span>`);
+    if (info.example) extra += `<span class="ex">“${esc(info.example)}”</span>`;
+  } else if (!local){
     extra += `<span class="def dim">（词典未收录）</span>`;
-  } else {
-    extra += `<span class="def dim">（查词暂不可用）</span>`;
   }
   setPopBody(word, extra);
   if (pop._rect) placePop(pop._rect);
@@ -484,10 +506,13 @@ function showPop(el, word){
   } else if (dictCache[key] !== undefined){
     applyDef(key, word, local, dictCache[key]);       // 命中缓存
   } else if (key){
-    fetch(DICT_BASE + encodeURIComponent(key))        // 任意词实时查 cooltv 词典
-      .then(res => res.ok ? res.json() : null)
-      .then(d => { dictCache[key] = d; applyDef(key, word, local, d); })
-      .catch(() => { dictCache[key] = null; applyDef(key, word, local, null); });
+    fetch(DICT_BASE + encodeURIComponent(key))        // 任意词实时查公共词典（英文释义+音标）
+      .then(res => res.ok ? res.json() : Promise.reject('nf'))
+      .then(data => { const info = parseDict(data); dictCache[key] = info; applyDef(key, word, local, info); })
+      .catch(err => {
+        const info = (err === 'nf') ? { __nf: true } : { __err: true };
+        dictCache[key] = info; applyDef(key, word, local, info);
+      });
   } else {
     applyDef(key, word, local, null);
   }
