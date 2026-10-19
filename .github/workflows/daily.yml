@@ -2,8 +2,8 @@ name: daily-take-away-english
 
 on:
   schedule:
-    # UTC 周日 17:00 = 北京时间周一 01:00，每周自动抓取一次
-    - cron: "0 17 * * 0"
+    # UTC 周一 11:00 = 北京时间周一 19:00，每周自动抓取一次
+    - cron: "0 11 * * 1"
   workflow_dispatch: {}   # 允许手动触发
 
 permissions:
