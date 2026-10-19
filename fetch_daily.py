@@ -306,7 +306,7 @@ def slim(article, name):
         "url": article.get("url") or "",
         "audio": audio,
         "pdf": "",                 # 由本地生成的中英对照 PDF 填充
-        "pdfOfficial": "",          # 不再抓取/保留官方 PDF
+        "pdfOfficial": pdf,        # BBC 官方英文 PDF（直链）
         "paragraphs": paras,
     }
 
@@ -399,7 +399,8 @@ def run_series(cfg, want):
         data = slim(art, name)
         data["id"] = it.get("id") or ""
         data["desc"] = it.get("desc") or ""
-        data["pdfOfficial"] = ""        # 不再下载官方 PDF
+        data["pdfOfficial"] = (download_official_pdf(data.get("pdfOfficial") or "", key, cfg["archive"])
+                               or data.get("pdfOfficial") or "")
         with open(os.path.join(adir, f"{key}.json"), "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=1)
         have.add(key)
@@ -430,9 +431,22 @@ def run_series(cfg, want):
         if e.get("thumb"):
             e["thumb"] = ""              # 不再抓取封面图，清掉已删除图片的残留路径
             changed = True
-        if e.get("pdfOfficial"):
-            e["pdfOfficial"] = ""           # 不再保留官方 PDF
-            changed = True
+        off = e.get("pdfOfficial") or ""
+        if off.startswith("http"):
+            local = download_official_pdf(off, eid, cfg["archive"])
+            if local:
+                e["pdfOfficial"] = local
+                changed = True
+            else:
+                # 官方 PDF 已失效（BBC 未发布或已下架）：留着死链会点开空白页，先清掉
+                e["pdfOfficial"] = ""
+                changed = True
+        # 拿不到官方 PDF 时，若本地还有保留的中英对照版，就用它兜底
+        if not (e.get("pdfOfficial") or "").strip():
+            cand = f"data/{cfg['archive']}/{eid}.pdf"
+            if os.path.exists(os.path.join(HERE, *cand.split("/"))):
+                e["pdfOfficial"] = cand
+                changed = True
         if changed and e.get("id"):
             with open(os.path.join(adir, f"{e.get('id')}.json"), "w", encoding="utf-8") as f:
                 json.dump(e, f, ensure_ascii=False, indent=1)

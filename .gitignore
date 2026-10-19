@@ -2,3 +2,6 @@ _site/
 __pycache__/
 *.pyc
 .DS_Store
+# 官方 PDF 不进 git 仓库（体积约 50MB），仅在部署产物 _site 中提供在线下载
+data/**/*.pdf
+data/*.pdf
