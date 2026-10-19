@@ -731,22 +731,19 @@ function bindTools(d){
   }
 }
 
-/* 官方 PDF：先取回内容存成文件；实在不行再打开预览兜底 */
-async function downloadPdf(d){
+/* 官方 PDF：cooltv.top 代理链接——浏览器带 Referer 会被 403，且跨域无 CORS 头，
+   不能用 fetch 取 blob。改用 no-referrer 锚点新开标签，由浏览器/cooltv 决定预览或保存。 */
+function downloadPdf(d){
   if (!d || !d.pdfOfficial) return;
-  const name = (d.ep || d.id || 'bbc').replace(/\s+/g, '_') + '.pdf';
-  try{
-    const r = await fetch(d.pdfOfficial);
-    if (r.ok){
-      const url = URL.createObjectURL(await r.blob());
-      const a = document.createElement('a');
-      a.href = url; a.download = name; a.style.display = 'none';
-      document.body.appendChild(a); a.click(); a.remove();
-      setTimeout(() => URL.revokeObjectURL(url), 3000);
-      return;
-    }
-  }catch(err){}
-  window.open(d.pdfOfficial, '_blank');            // 兜底：打开 PDF 预览
+  const a = document.createElement('a');
+  a.href = d.pdfOfficial;
+  a.target = '_blank';
+  a.rel = 'noopener noreferrer';
+  a.referrerPolicy = 'no-referrer';
+  a.style.display = 'none';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
 }
 
 /* ---------- 历史 ---------- */

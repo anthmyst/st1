@@ -310,64 +310,13 @@ def slim(article, name):
         "paragraphs": paras,
     }
 
-
-def download_official_pdf(pdf_url, key, archive_name):
-    """把 BBC 官方英文 PDF 下载到本站目录。
-
-    cooltv 的 /api/bbc-media 代理有防盗链：脚本直连（无 Referer）可下载，
-    但浏览器新标签打开会带 Referer 被拒（403 空白页），且地址栏暴露 cooltv.top。
-    所以抓取时落盘，页面指向本站文件。
-    """
-    if not pdf_url:
-        return ""
-    fn = f"{(key or 'ep').replace(' ', '_')}.official.pdf"
-    path = os.path.join(DATA, archive_name, fn)
-    try:
-        if os.path.exists(path) and os.path.getsize(path) > 1000:
-            return f"data/{archive_name}/{fn}"
-        req = Request(pdf_url, headers={"User-Agent": UA})
-        with urlopen(req, timeout=60) as r, open(path, "wb") as f:
-            f.write(r.read())
-        if os.path.getsize(path) > 1000:
-            return f"data/{archive_name}/{fn}"
-        os.remove(path)
-    except Exception as e:                          # noqa: BLE001
-        print(f"！官方 PDF 下载失败 {key}: {e}", file=sys.stderr)
-    return ""
-
-
-def purge_generated_pdfs(archive_name):
-    """清理已生成的中英对照 PDF：用户只要官方版，不再生成/保留对照版。"""
-    adir = os.path.join(DATA, archive_name)
-    if not os.path.isdir(adir):
-        return
-    removed = 0
-    for fn in os.listdir(adir):
-        if fn.endswith(".pdf") and not fn.endswith(".official.pdf"):
-            if fn[:-4] in KEEP_BILINGUAL:      # 这几期无官方 PDF，对照版要留着
-                continue
-            try:
-                os.remove(os.path.join(adir, fn))
-                removed += 1
-            except OSError:
-                pass
-    lp = os.path.join(DATA, "latest.pdf")
-    if os.path.exists(lp):
-        try:
-            os.remove(lp)
-            removed += 1
-        except OSError:
-            pass
-    if removed:
-        print(f"已清理 {removed} 个中英对照 PDF（{archive_name}，仅保留官方版）")
-
+    # PDF 改为直接链接 cooltv.top 官方代理（/api/bbc-media?u=…），不再本地下载/落盘。
 
 def run_series(cfg, want):
     """抓取单个栏目，返回 (新增期数, 归档总期数, 最新一期)。"""
     name = cfg["name"]
     adir = os.path.join(DATA, cfg["archive"])
     os.makedirs(adir, exist_ok=True)
-    purge_generated_pdfs(cfg["archive"])
 
     series = fetch_series_index(cfg["slug"], name)
     items = fetch_episode_list(cfg["slug"])
@@ -399,8 +348,6 @@ def run_series(cfg, want):
         data = slim(art, name)
         data["id"] = it.get("id") or ""
         data["desc"] = it.get("desc") or ""
-        data["pdfOfficial"] = (download_official_pdf(data.get("pdfOfficial") or "", key, cfg["archive"])
-                               or data.get("pdfOfficial") or "")
         with open(os.path.join(adir, f"{key}.json"), "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=1)
         have.add(key)
@@ -431,22 +378,6 @@ def run_series(cfg, want):
         if e.get("thumb"):
             e["thumb"] = ""              # 不再抓取封面图，清掉已删除图片的残留路径
             changed = True
-        off = e.get("pdfOfficial") or ""
-        if off.startswith("http"):
-            local = download_official_pdf(off, eid, cfg["archive"])
-            if local:
-                e["pdfOfficial"] = local
-                changed = True
-            else:
-                # 官方 PDF 已失效（BBC 未发布或已下架）：留着死链会点开空白页，先清掉
-                e["pdfOfficial"] = ""
-                changed = True
-        # 拿不到官方 PDF 时，若本地还有保留的中英对照版，就用它兜底
-        if not (e.get("pdfOfficial") or "").strip():
-            cand = f"data/{cfg['archive']}/{eid}.pdf"
-            if os.path.exists(os.path.join(HERE, *cand.split("/"))):
-                e["pdfOfficial"] = cand
-                changed = True
         if changed and e.get("id"):
             with open(os.path.join(adir, f"{e.get('id')}.json"), "w", encoding="utf-8") as f:
                 json.dump(e, f, ensure_ascii=False, indent=1)
