@@ -1,16 +1,24 @@
 {
  "series": "媒体英语",
  "slug": "media-english",
- "updatedAt": "2026-10-18T19:20:52+0000",
+ "updatedAt": "2026-10-19T10:57:57+0000",
  "latest": {
-  "ep": "Episode 261012",
-  "title": "Developing El Niño becomes strongest on record weeks before expected peak 厄尔尼诺持续发展，在预计达到峰值前数周已创下有记录以来最强水平",
+  "ep": "Episode 261019",
+  "title": "\"Disastrous\" year of ice loss for Swiss glaciers 瑞士冰川经历 “灾难性” 的一年：冰量大量流失",
   "desc": "",
-  "pub": "2026-10-11T16:00:00.000Z",
+  "pub": "2026-10-18T16:00:00.000Z",
   "level": "中级",
-  "file": "data/archive_media/qh75xc.json"
+  "file": "data/archive_media/qh75xj.json"
  },
  "items": [
+  {
+   "ep": "Episode 261019",
+   "title": "\"Disastrous\" year of ice loss for Swiss glaciers 瑞士冰川经历 “灾难性” 的一年：冰量大量流失",
+   "desc": "",
+   "pub": "2026-10-18T16:00:00.000Z",
+   "level": "中级",
+   "file": "data/archive_media/qh75xj.json"
+  },
   {
    "ep": "Episode 261012",
    "title": "Developing El Niño becomes strongest on record weeks before expected peak 厄尔尼诺持续发展，在预计达到峰值前数周已创下有记录以来最强水平",
@@ -482,14 +490,6 @@
    "pub": "2025-08-31T16:00:00.000Z",
    "level": "中级",
    "file": "data/archive_media/qgh6o5.json"
-  },
-  {
-   "ep": "Episode 250825",
-   "title": "Just 7,000 steps a day cuts health risks, study says 研究表明每天仅走 7000 步就可能降低患病风险",
-   "desc": "How many steps should you walk a day for your health?",
-   "pub": "2025-08-24T16:00:00.000Z",
-   "level": "中级",
-   "file": "data/archive_media/qgh5vu.json"
   }
  ]
 }
