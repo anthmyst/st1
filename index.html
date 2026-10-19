@@ -323,6 +323,8 @@ body.hide-en .para .en{opacity:.22;filter:blur(.4px)}
 }
 .pop.on{opacity:1;pointer-events:auto;transform:none}
 .pop .py{color:var(--brand-2);font-size:12px;font-weight:700;display:block;margin-top:1px}
+.pop .def{display:block;font-size:13px;font-weight:600;margin-top:4px;color:#faf6f1;line-height:1.5}
+.pop .tip{display:block;font-size:11px;font-weight:500;opacity:.8;margin-top:5px}
 
 .foot{
   text-align:center;font-size:11.5px;color:var(--ink-3);
@@ -405,6 +407,7 @@ body.hide-en .para .en{opacity:.22;filter:blur(.4px)}
 const $ = s => document.querySelector(s);
 const app = $('#app'), au = $('#au'), pop = $('#pop');
 let DATA = null, eps = [], curEp = '';
+let vocabMap = {};  // 当前文章 英文词→中文释义 映射（取自词汇表）
 let rateIdx = 0; const RATES = [1, 0.85, 0.7, 1.25];
 let loop = false;
 
@@ -431,7 +434,12 @@ function marks(txt){
 }
 function showPop(el, word){
   const r = el.getBoundingClientRect();
-  pop.innerHTML = `<span class="py">${esc(word)}</span>🔊 点击听发音`;
+  const key = word.toLowerCase().replace(/[^a-z' -]/g,'').trim();
+  const def = vocabMap[key] || vocabMap[(key.split(/[\s-]+/)[0]||'')] || '';
+  pop.dataset.word = word;
+  pop.innerHTML = `<span class="py">${esc(word)}</span>`
+    + (def ? `<span class="def">${esc(def)}</span>` : '')
+    + `<span class="tip">🔊 点击听发音</span>`;
   pop.classList.add('on');
   const pw = pop.offsetWidth;
   let left = r.left + r.width/2 - pw/2;
@@ -461,6 +469,8 @@ document.addEventListener('click', e => {
     document.querySelectorAll('.w.act').forEach(x => x.classList.remove('act'));
   }
 });
+// 点击气泡：重听当前词（让「点击听发音」名副其实）
+pop.addEventListener('click', () => speak(pop.dataset.word || ''));
 
 /* ---------- 底部 tabbar 交互 ---------- */
 const tabbar = document.querySelector('.tabbar');
@@ -521,6 +531,11 @@ function parseVocab(en, zh){
 /* ---------- 渲染 ---------- */
 function render(d){
   DATA = d; curEp = d.ep || d.id || '';
+  vocabMap = {};  // 每篇重新构建释义映射
+  // G 栏目的 ep 是 ISO 日期（2026-10-18），顶部统一显示为 EPISODE 261018 风格
+  const epLabel = (curSeries === 'g' && /^\d{4}-\d{2}-\d{2}$/.test(d.ep || ''))
+    ? 'EPISODE ' + String(d.ep).slice(2).replace(/-/g, '')
+    : (d.ep || '');
   const paras = d.paragraphs || [];
   let body = '', openSec = false, pn = 0, leadDone = false;
   for (const p of paras){
@@ -534,6 +549,11 @@ function render(d){
     }
     if (t === 'vocab'){
       const pairs = parseVocab(en, zh);
+      // 建立 英文词→中文释义 映射，供正文点击查词使用
+      pairs.forEach(([e,z]) => {
+        const k = (e||'').toLowerCase().replace(/[^a-z' -]/g,'').trim();
+        if (k){ vocabMap[k] = z; k.split(/[\s-]+/).forEach(tk => { if (tk) vocabMap[tk] = z; }); }
+      });
       const inner = pairs.length
         ? pairs.map(([e,z]) => `<div class="vrow"><span class="ven">${marks(e)}</span><span class="vzh">${esc(z)}</span></div>`).join('')
         : `<div>${esc(zh)||marks(en)}</div>`;
@@ -570,9 +590,9 @@ function render(d){
     <section class="hero">
       <div class="hero-body">
         <div class="kicker">
-          <span>${esc(d.ep || '')}</span>
+          <span>${esc(epLabel)}</span>
           <span class="dot"></span>
-          <span>${esc(d.seriesName || '随身英语')}</span>
+          <span>${esc(SERIES[curSeries].name)}</span>
           <button class="btn-hist" id="openHist2" title="往期" aria-label="往期">
             <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3.5 2"/></svg>
           </button>
@@ -773,7 +793,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(
 const SERIES = {
   tae:   { name:'随身英语', latest:'data/latest.json',        episodes:'data/episodes.json' },
   media: { name:'媒体英语', latest:'data/media_latest.json', episodes:'data/media_episodes.json' },
-  g:     { name:'G',        latest:'data/g_latest.json',      episodes:'data/g_episodes.json' },
+  g:     { name:'The Guardian', latest:'data/g_latest.json',  episodes:'data/g_episodes.json' },
 };
 let curSeries = 'tae';
 const view = { tae:{file:null, ep:null}, media:{file:null, ep:null}, g:{file:null, ep:null} };  // 各系列各自记住上次浏览的那一期
