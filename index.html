@@ -413,8 +413,7 @@ const $ = s => document.querySelector(s);
 const app = $('#app'), au = $('#au'), pop = $('#pop');
 let DATA = null, eps = [], curEp = '';
 let vocabMap = {};  // 当前文章 英文词→中文释义 映射（取自词汇表）
-const DICT_BASE = "https://api.dictionaryapi.dev/api/v2/entries/en/";  // 免费公共词典 API：支持 CORS、无需 key，返回英文释义+音标
-const dictCache = {};  // 查词结果缓存，避免重复请求
+// 联网查词在墙内无免 key 且 CORS 友好的公共 API，已禁用；点词仅用文章自带词汇表释义（见 showPop）
 let rateIdx = 0; const RATES = [1, 0.85, 0.7, 1.25];
 let loop = false;
 
@@ -453,69 +452,19 @@ function setPopBody(word, extra){
     + (extra || '')
     + `<span class="tip">🔊 点击听发音</span>`;
 }
-// 把 dictionaryapi.dev 的数组返回解析为统一结构（英文释义 + 音标 + 例句）
-function parseDict(data){
-  if (!Array.isArray(data) || !data.length) return null;
-  const e = data[0];
-  let phonetic = '';
-  if (Array.isArray(e.phonetics)){
-    const p = e.phonetics.find(x => x && x.text) || e.phonetics[0];
-    phonetic = (p && p.text) || '';
-  }
-  const defs = [], posSet = new Set();
-  let example = '';
-  (e.meanings || []).forEach(m => {
-    if (m.partOfSpeech) posSet.add(m.partOfSpeech);
-    (m.definitions || []).forEach(d => {
-      if (d.definition) defs.push(d.definition);
-      if (!example && d.example) example = d.example;
-    });
-  });
-  return { phonetic, pos: [...posSet].join(', '), defs: defs.slice(0, 4), example };
-}
-function applyDef(key, word, local, info){
-  if (pop.dataset.word !== word) return;   // 已切换到别的词，丢弃本次结果
-  let extra = '';
-  if (local) extra += `<span class="def">${esc(local)}</span>`;   // 文章自带中文释义优先
-  if (info && info.__err){
-    if (!local) extra += `<span class="def dim">（查词暂不可用）</span>`;
-  } else if (info && info.__nf){
-    if (!local) extra += `<span class="def dim">（词典未收录）</span>`;
-  } else if (info){
-    if (info.phonetic) extra += `<span class="ph">/${esc(info.phonetic)}/</span>`;
-    if (info.pos) extra += `<span class="pos">${esc(info.pos)}</span>`;
-    (info.defs || []).forEach(d => extra += `<span class="def en">• ${esc(d)}</span>`);
-    if (info.example) extra += `<span class="ex">“${esc(info.example)}”</span>`;
-  } else if (!local){
-    extra += `<span class="def dim">（词典未收录）</span>`;
-  }
-  setPopBody(word, extra);
-  if (pop._rect) placePop(pop._rect);
-}
+// 联网查词逻辑已禁用（墙内无免 key 且 CORS 友好的公共词典 API）；点词释义仅取自文章自带词汇表，见 showPop()
 function showPop(el, word){
   const r = el.getBoundingClientRect();
   const key = word.toLowerCase().replace(/[^a-z' -]/g,'').trim();
+  const local = vocabMap[key] || vocabMap[(key.split(/[\s-]+/)[0]||'')] || '';
   pop.dataset.word = word;
   pop._rect = r;
-  setPopBody(word, '');
+  // 墙内无免 key 且 CORS 友好的公共词典 API（dictionaryapi.dev 境外不可达、cooltv 无 CORS 且非自有），
+  // 故仅用文章自带词汇表作释义；任意词联网查需另行接入（key API 或自有代理）。
+  const extra = local ? `<span class="def">${esc(local)}</span>` : '';
+  setPopBody(word, extra);
   pop.classList.add('on');
   placePop(r);
-  const local = vocabMap[key] || vocabMap[(key.split(/[\s-]+/)[0]||'')] || '';
-  if (local){
-    applyDef(key, word, local, null);                 // 文章自带释义，无需联网
-  } else if (dictCache[key] !== undefined){
-    applyDef(key, word, local, dictCache[key]);       // 命中缓存
-  } else if (key){
-    fetch(DICT_BASE + encodeURIComponent(key))        // 任意词实时查公共词典（英文释义+音标）
-      .then(res => res.ok ? res.json() : Promise.reject('nf'))
-      .then(data => { const info = parseDict(data); dictCache[key] = info; applyDef(key, word, local, info); })
-      .catch(err => {
-        const info = (err === 'nf') ? { __nf: true } : { __err: true };
-        dictCache[key] = info; applyDef(key, word, local, info);
-      });
-  } else {
-    applyDef(key, word, local, null);
-  }
 }
 function speak(word){
   try{
