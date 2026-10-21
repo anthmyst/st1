@@ -433,10 +433,15 @@ def main():
 
     for cfg in targets:
         print(f"\n=== {cfg['name']} ({cfg['slug']}) ===")
-        if cfg.get("source") == "kekenet":
-            n, total, latest = run_kekenet(cfg, args.all)
-        else:
-            n, total, latest = run_series(cfg, args.all)
+        try:
+            if cfg.get("source") == "kekenet":
+                n, total, latest = run_kekenet(cfg, args.all)
+            else:
+                n, total, latest = run_series(cfg, args.all)
+        except Exception as e:                      # noqa: BLE001
+            # 单个栏目源临时故障（如 cooltv 503）不应中断整次部署，跳过即可
+            print(f"！[{cfg['name']}] 抓取失败，跳过本栏目：{e}", file=sys.stderr)
+            continue
         if latest:
             print(f"  → 新增 {n} 期，归档共 {total} 期")
             print(f"  → 最新一期：{latest.get('ep')}  {latest.get('title')}")
