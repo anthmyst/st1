@@ -374,7 +374,7 @@ body.hide-en .para .en{opacity:.22;filter:blur(.4px)}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7.5 4v16"/><path d="M14 8.5h4"/></svg>
     <span>T</span>
   </button>
-  <button type="button" data-go="vocab">
+  <button type="button" data-go="v">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1z"/></svg>
     <span>V</span>
   </button>
@@ -502,13 +502,12 @@ if (tabbar){
     b.classList.add('on');
     if (go === 'today'){
       if (curSeries !== 'tae') loadSeries('tae');   // 与 M 一致：已在本系列则停留当前期，否则切回随身英语
-    } else if (go === 'vocab'){
-      const h = [...document.querySelectorAll('.sec-h')].find(x => x.textContent.trim() === '词汇表');
-      if (h) window.scrollTo({ top: h.getBoundingClientRect().top + window.scrollY - 84, behavior: 'smooth' });
     } else if (go === 'media'){
       if (curSeries !== 'media') loadSeries('media');
     } else if (go === 'g'){
       if (curSeries !== 'g') loadSeries('g');
+    } else if (go === 'v'){
+      if (curSeries !== 'v') loadSeries('v');
     } else if (go === 'about'){
       const f = document.querySelector('.foot');
       if (f) window.scrollTo({ top: f.getBoundingClientRect().top + window.scrollY - 84, behavior: 'smooth' });
@@ -551,10 +550,14 @@ function parseVocab(en, zh){
 function render(d){
   DATA = d; curEp = d.ep || d.id || '';
   vocabMap = {};  // 每篇重新构建释义映射
-  // G 栏目的 ep 是 ISO 日期（2026-10-18），顶部统一显示为 EPISODE 261018 风格
-  const epLabel = (curSeries === 'g' && /^\d{4}-\d{2}-\d{2}$/.test(d.ep || ''))
+  // g / v 栏目的 ep 是 ISO 日期（如 2026-10-18），顶部统一显示为 EPISODE 261018 风格
+  const epLabel = (/^\d{4}-\d{2}-\d{2}$/.test(d.ep || ''))
     ? 'EPISODE ' + String(d.ep).slice(2).replace(/-/g, '')
     : (d.ep || '');
+  // 标题：英文部分作主标题；纯中文标题（g/v 栏目）则整串作主标题，避免 h1 为空
+  const tEn = enPart(d.title), tZh = zhPart(d.title);
+  const showTitle = tEn || tZh;
+  const showSub = (tEn && tZh) ? tZh : '';
   const paras = d.paragraphs || [];
   let body = '', openSec = false, pn = 0, leadDone = false;
   for (const p of paras){
@@ -617,12 +620,12 @@ function render(d){
           </button>
         </div>
         <div class="title-row">
-          <h1 class="title">${esc(enPart(d.title))}</h1>
+          <h1 class="title">${esc(showTitle)}</h1>
           <button class="src-btn" id="openSrc" title="下载官方 PDF（长按）" aria-label="下载官方 PDF（长按）">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2z"/><path d="M18 14h-8M15 18h-5M10 6h8v4h-8V6z"/></svg>
           </button>
         </div>
-        <p class="title-sub">${esc(zhPart(d.title))}</p>
+        <p class="title-sub">${esc(showSub)}</p>
         <div class="player">
           <button class="pp" id="pp" aria-label="播放">
             <svg viewBox="0 0 24 24" id="ppIcon"><path d="M8 5v14l11-7z"/></svg>
@@ -810,9 +813,10 @@ const SERIES = {
   tae:   { name:'随身英语', latest:'data/latest.json',        episodes:'data/episodes.json' },
   media: { name:'媒体英语', latest:'data/media_latest.json', episodes:'data/media_episodes.json' },
   g:     { name:'英国卫报', latest:'data/g_latest.json',  episodes:'data/g_episodes.json' },
+  v:     { name:'VOA常速', latest:'data/v_latest.json',  episodes:'data/v_episodes.json' },
 };
 let curSeries = 'tae';
-const view = { tae:{file:null, ep:null}, media:{file:null, ep:null}, g:{file:null, ep:null} };  // 各系列各自记住上次浏览的那一期
+const view = { tae:{file:null, ep:null}, media:{file:null, ep:null}, g:{file:null, ep:null}, v:{file:null, ep:null} };  // 各系列各自记住上次浏览的那一期
 
 async function loadSeries(key, initial){
   curSeries = key;

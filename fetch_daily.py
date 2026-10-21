@@ -7,16 +7,17 @@
   - 随身英语  take-away-english  -> data/latest.json         + data/archive/       (cooltv 接口)
   - 媒体英语  media-english      -> data/media_latest.json   + data/archive_media/ (cooltv 接口)
   - G(英国卫报) kekenet course 17491 -> data/g_latest.json   + data/archive_g/     (kekenet 接口，AES 解密)
+  - V(VOA常速)  kekenet course 20123 -> data/v_latest.json   + data/archive_v/     (kekenet 接口，AES 解密)
 
 用法:
     python3 fetch_daily.py                     # 抓取各栏目最新一期 + 刷新归档
     python3 fetch_daily.py --all 60            # 抓取各栏目最新 60 期（首次建归档）
-    python3 fetch_daily.py --series g          # 只抓指定栏目（tae / media / g）
+    python3 fetch_daily.py --series v          # 只抓指定栏目（tae / media / g / v）
 
 输出:
-    data/latest.json, data/media_latest.json, data/g_latest.json          最新一期（网页直接读取）
-    data/episodes.json, data/media_episodes.json, data/g_episodes.json   最近若干期索引
-    data/archive/*.json, data/archive_media/*.json, data/archive_g/*.json 每期完整数据归档
+    data/latest.json, data/media_latest.json, data/g_latest.json, data/v_latest.json  最新一期（网页直接读取）
+    data/episodes.json, data/media_episodes.json, data/g_episodes.json, data/v_episodes.json  最近若干期索引
+    data/archive/*.json, data/archive_media/*.json, data/archive_g/*.json, data/archive_v/*.json  每期完整数据归档
 
 依赖:
     可可英语接口响应为 AES 加密，需 pycryptodome（pip install pycryptodome）
@@ -64,6 +65,16 @@ SERIES = [
         "episodes": "g_episodes.json",
         "source": "kekenet",         # 走 kekenet 接口（非 cooltv）
         "course_id": "17491",        # 英国卫报
+    },
+    {
+        "key": "v",
+        "slug": "voa-standard",
+        "name": "VOA常速",
+        "archive": "archive_v",
+        "latest": "v_latest.json",
+        "episodes": "v_episodes.json",
+        "source": "kekenet",         # 走 kekenet 接口（同 G）
+        "course_id": "20123",        # VOA 常速英语（可可英语专栏）
     },
 ]
 
@@ -189,7 +200,7 @@ def run_kekenet(cfg, want):
             "url": art.get("web_url") or art.get("shareurl") or "",
             "audio": audio,
             "pdf": "",
-            "pdfOfficial": art.get("pdf_down") or "",
+            "pdfOfficial": "",          # kekenet 专栏无官方 PDF 直链（pdf_down 为标志位非 URL），故留空
             "desc": art.get("abstract") or it.get("title") or "",
             "paragraphs": paras,
         }

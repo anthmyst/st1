@@ -1,0 +1,96 @@
+{
+ "id": "773708",
+ "title": "美国实验室为量子互联网铺平道路",
+ "enTitle": "",
+ "seriesName": "VOA常速",
+ "level": "",
+ "ep": "2026-10-12",
+ "pub": "2026-10-12",
+ "url": "https://www.kekenet.com/broadcast/202610/773708.shtml",
+ "audio": "https://k6.kekenet.com/Sound/2026/10/voacs261012_3342582Vbt.mp3",
+ "pdf": "",
+ "pdfOfficial": "",
+ "desc": "美国实验室为量子互联网铺平道路",
+ "paragraphs": [
+  {
+   "t": "p",
+   "en": "When news spread late last year that the Fermilab National Accelerator Laboratory in suburban Chicago was part of a project achieving quantum teleportation, it conjured up scenes from the classic science fiction franchise Star Trek in which the show's characters could beam from one location to another.",
+   "zh": "去年年底，当有消息传出芝加哥郊外的费米国家加速器实验室参与了一个实现量子隐形传态的项目时，这不禁让人联想到经典科幻系列《星际迷航》中的场景——剧中角色可以从一个地点瞬间传送到另一个地点。"
+  },
+  {
+   "t": "p",
+   "en": "That's not what we're doing here. What we're doing here actually is we're moving information without even physically moving the qubit that contains information.",
+   "zh": "这并非我们在这里的目的。我们在这里实际做的是，无需物理移动承载信息的量子比特，就能传输信息。"
+  },
+  {
+   "t": "p",
+   "en": "Fermilab scientist Panagiotis Spentzouris is one of the co-authors of a study documenting the advancement of sending or teleporting information or qubit, a unit of quantum computing code.",
+   "zh": "费米实验室的科学家Panagiotis Spentzouris是这项研究的合著者之一，该研究记录了发送或传送信息或量子比特（量子计算代码的单位）的进展。"
+  },
+  {
+   "t": "p",
+   "en": "Over 40 kilometers through fiber cables, it brings developers one step closer to building a sustainable and widely used quantum internet, which would allow a lot of information to be shared faster and more securely.",
+   "zh": "它通过光纤电缆跨越四十多公里，让开发者距离构建可持续且被广泛使用的量子互联网更近一步，这种量子互联网能够让大量信息以更快、更安全的方式共享。"
+  },
+  {
+   "t": "p",
+   "en": "Quantum communication has very appealing attributes. I mean, you cannot eavesdrop in a way that will not be detected.",
+   "zh": "量子通信具有非常吸引人的特性。你无法在不被发现的情况下进行窃听。"
+  },
+  {
+   "t": "p",
+   "en": "What we achieved here with the systems is that we have produced systems that they can continually operate and perform quantum measurements at all times as a system, not just as a single experiment.",
+   "zh": "我们借助这些系统所达成的成果是，我们制造出了能够持续运行并随时作为系统进行量子测量的系统，而不仅仅是单次实验。"
+  },
+  {
+   "t": "p",
+   "en": "Physicist Maria Spiropulu, based at the California Institute of Technology in Pasadena, California, says quantum teleportation could sustain networks that enhance GPS and speed up and amplify communication at great distances with spacecraft and probes, among many other possibilities.",
+   "zh": "位于加利福尼亚州帕萨迪纳市的加州理工学院的物理学家Maria Spiropulu表示，量子隐形传态可以维持能增强全球定位系统性能、加快并放大与远距离航天器及探测器通信的网络，还具备许多其他可能性。"
+  },
+  {
+   "t": "p",
+   "en": "While building a new quantum internet would revolutionize the way we share sensitive information, the physical technology to make it all work is still in its infancy.",
+   "zh": "尽管构建全新的量子互联网会彻底改变我们传输敏感信息的方式，但支撑这一切落地的物理技术目前仍处于起步阶段。"
+  },
+  {
+   "t": "p",
+   "en": "You're trying to make them forward compatible so that when material scientists and condensed matter people give you more instrumentation and devices, more advanced devices that you can plug them in.",
+   "zh": "你在努力让它们具备向前兼容性，这样当材料科学家和凝聚态物理领域的人员为你提供更多仪器和设备、更先进的设备时，你就能把它们接入使用。"
+  },
+  {
+   "t": "p",
+   "en": "In 2020, the US Department of Energy laid out a blueprint for a national quantum network using its 17 national laboratories, including Fermilab as the central network for the project.",
+   "zh": "2020年，美国能源部利用其17个国家实验室制定了一份国家量子网络蓝图，其中费米实验室作为该项目的中央网络。"
+  },
+  {
+   "t": "p",
+   "en": "Scientists and researchers say it represents one of the most important technological frontiers of the 21st century and hope to implement it in the next decade.",
+   "zh": "科学家和研究人员表示，这代表了21世纪最重要的技术前沿之一，并希望能在未来十年将其落地应用。"
+  },
+  {
+   "t": "p",
+   "en": "There has been a lot of investment worldwide and in the US, for I want to say 30, maybe 40 years, it is well funded and explored, and there's both industry and academia and government that has invested.",
+   "zh": "全球范围内以及美国都有大量投资，我想说大约有30年，甚至可能40年，资金充足且研究深入，产业界、学术界和政府都进行了投资。"
+  },
+  {
+   "t": "p",
+   "en": "But experts say today's technology which only teleports information is still a long way off from realizing the dreams made popular by Star Trek.",
+   "zh": "但专家表示，如今只能传送信息的技术，距离实现《星际迷航》所普及的梦想仍有很长的路要走。"
+  },
+  {
+   "t": "p",
+   "en": "It doesn't mean that we can beam up Scotty or anybody else or a cat or anything else.",
+   "zh": "这并不意味着我们可以把斯科特或者任何其他人、或者一只猫、或者其他任何东西传送上去。"
+  },
+  {
+   "t": "p",
+   "en": "We cannot move matter right now, and if we ever manage to do it, it's going to be with a different process.",
+   "zh": "我们现在还无法移动物质，而如果我们有朝一日能够做到，也得通过一种截然不同的方法。"
+  },
+  {
+   "t": "p",
+   "en": "A process that unlike quantum teleportation still only exists in the realm of science fiction.",
+   "zh": "这一过程与量子隐形传态不同，目前仍只存在于科幻小说的范畴中。"
+  }
+ ]
+}

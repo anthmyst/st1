@@ -1,0 +1,121 @@
+{
+ "id": "754292",
+ "title": "地震预警系统减少消息延迟",
+ "enTitle": "",
+ "seriesName": "VOA常速",
+ "level": "",
+ "ep": "2026-05-07",
+ "pub": "2026-05-07",
+ "url": "https://www.kekenet.com/broadcast/202605/754292.shtml",
+ "audio": "https://k6.kekenet.com/Sound/2026/05/voacs260507_5127487Fkn.mp3",
+ "pdf": "",
+ "pdfOfficial": "",
+ "desc": "地震预警系统减少消息延迟",
+ "paragraphs": [
+  {
+   "t": "p",
+   "en": "So, both along the fault, we like those sensors really close the fault because that gives us really those first motions that are coming out of the earthquake.",
+   "zh": "这两个传感器都紧贴断层，我们很喜欢紧贴断层的传感器，因为这样能让我们真正捕捉到地震最初的震动情况。"
+  },
+  {
+   "t": "p",
+   "en": "It tells us the earthquake has started. So, once that earthquake started, seismic waves start travelling away from where that earthquake starts.",
+   "zh": "这样我们就知道地震发生了。一旦地震开始发生，地震波就会从地震起始处向外传播。"
+  },
+  {
+   "t": "p",
+   "en": "'P waves' or primary waves are the first waves that arrive. They're faster and you feel sort of a jolt coming up beneath you.",
+   "zh": "“P波”或“初至波”最先到达观测点，传播速度很快，你会感觉到脚下有种震动感。"
+  },
+  {
+   "t": "p",
+   "en": "The 'S waves' would travel along behind those and start shaking you back and forth.",
+   "zh": "“S波”会紧随其后，让你来回摇晃。"
+  },
+  {
+   "t": "p",
+   "en": "So, we're in Pasadena and we're at one of the seismic stations. At the bottom of this vault, this is what it is.",
+   "zh": "我们正在帕萨迪纳的一个地震监测站。在这个小仓库的地下，这就是传感器。"
+  },
+  {
+   "t": "p",
+   "en": "So, and it moves relative to the earth and basically whatever happens in here, gets turned into an electrical signal and boom.",
+   "zh": "这个传感器会随地面一同移动，基本上，无论地表发生什么运动，它都能将其转化为电信号。"
+  },
+  {
+   "t": "p",
+   "en": "It takes some very, very precise observation about what's happening.",
+   "zh": "要记录这些运动需要非常精密的监测。"
+  },
+  {
+   "t": "p",
+   "en": "We were one of the early adopters of the ShakeAlert system. We implemented it in January of 2017.",
+   "zh": "我们是早期采用ShakeAlert系统的机构之一。我们于2017年1月启用了该系统。"
+  },
+  {
+   "t": "p",
+   "en": "And it gives us precious seconds to anticipate an earthquake that may be coming to Los Angeles area and that will enable us to put an alert out to our operators.",
+   "zh": "它能让我们争取到宝贵的几秒钟时间来预判可能会袭击洛杉矶地区的地震，还能让我们向工作人员发出警报。"
+  },
+  {
+   "t": "p",
+   "en": "Part of the protocol is to slow down the train as it is moving in advance of an earthquake.",
+   "zh": "协议的一部分是让列车在地震发生前减速行驶。"
+  },
+  {
+   "t": "p",
+   "en": "So, the slower you're moving, the more safely you can operate the vehicle and stopping the vehicle is the best course of action for a large scale event.",
+   "zh": "开得越慢就越安全，在这种大型灾难面前，停车当然是最好的选择。"
+  },
+  {
+   "t": "p",
+   "en": "For very large earthquakes, the ShakeAlert early warning system is going to use seismometers.",
+   "zh": "对于影响范围很广的地震，ShakeAlert预警系统将开启地震仪，"
+  },
+  {
+   "t": "p",
+   "en": "But with the really big earthquakes, we're going to need information from these stations",
+   "zh": "但如果是真的非常剧烈的地震，我们就需要这些监测站的信息，"
+  },
+  {
+   "t": "p",
+   "en": "because what's going to happen is that if there's a really big earthquake, these stations are going to move very quickly in a very short amount of time.",
+   "zh": "因为如果真的发生大地震，这些监测站会在极短时间内快速移动。"
+  },
+  {
+   "t": "p",
+   "en": "And that information is critical to understand the biggest of earthquakes. We're talking earthquakes that are magnitude 8 and above.",
+   "zh": "这些信息对于最大程度了解地震是至关重要的。我们谈论的是8级及以上的地震。"
+  },
+  {
+   "t": "p",
+   "en": "Big earthquakes in places like Iran and Indonesia and they could stand to have their own earthquake early warning systems.",
+   "zh": "伊朗和印度尼西亚等地都发生过大地震，他们可以有自己的地震预警系统。"
+  },
+  {
+   "t": "p",
+   "en": "And this has actually become a really interesting international community. We're all learning from each other.",
+   "zh": "这实际上已经成为一个非常有趣的国际社区。我们都在互相学习。"
+  },
+  {
+   "t": "p",
+   "en": "One thing we want to do and the big currency of ShakeAlert is time. Time is really important to us.",
+   "zh": "我们想要进一步完善的，同时也是ShakeAlert的重要价值所在，就是争取时间。时间对我们来说真的很重要。"
+  },
+  {
+   "t": "p",
+   "en": "Currently, the time that it takes to get messages out is taking way too long and we want to reduce what we call 'latencies' as much as possible.",
+   "zh": "目前，信息传递所需的时间过长，我们希望尽可能减少所谓的“延迟”。"
+  },
+  {
+   "t": "p",
+   "en": "So, we're working with a whole array of partners, the telecommunications industry.",
+   "zh": "我们正在与整个电信行业的一系列合作伙伴合作。"
+  },
+  {
+   "t": "p",
+   "en": "We're working with mass notification providers, to get those messages out as quickly as possible.",
+   "zh": "我们正在与大规模通知服务提供商合作，以便尽快发布这些消息。"
+  }
+ ]
+}
